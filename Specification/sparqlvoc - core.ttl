@@ -26,7 +26,8 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
       void:Dataset;
     dct:created '2023-10-29'^^xsd:date;
     dct:creator
-      'Flores Bakker';
+      'Flores Bakker',
+      'Wouter Beek';
     dct:language 'iso639-1:en';
     dct:license 'http://creativecommons.org/licenses/by/4.0'^^xsd:anyURI;
     dct:publisher <https://rijksfinancien.nl>;
