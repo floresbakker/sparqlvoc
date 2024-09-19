@@ -1,33 +1,11 @@
-prefix dcm: <http://purl.org/dc/dcmitype/>
-prefix dct: <http://purl.org/dc/terms/>
 prefix ex: <https://www.example.org/>
-prefix decl: <https://data.rijksfinancien.nl/html/id/decl/>
-prefix foaf: <http://xmlns.com/foaf/0.1/>
-prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix rule: <https://data.rijksfinancien.nl/sparql/model/rule/>
-prefix section: <https://data.rijksfinancien.nl/sparql/text/>
-prefix sh: <http://www.w3.org/ns/shacl#>
-prefix shp: <https://data.rijksfinancien.nl/sparql/model/shp/>
-prefix skos: <http://www.w3.org/2004/02/skos/core#>
-prefix sparql: <https://data.rijksfinancien.nl/sparql/model/def/>
-prefix standard: <https://data.rijksfinancien.nl/xml/id/standard/>
-prefix status: <http://purl.org/adms/status/>
-prefix target: <https://data.rijksfinancien.nl/sparql/model/target/>
-prefix vann: <http://purl.org/vocab/vann/>
-prefix void: <http://rdfs.org/ns/void#>
-prefix xml: <http://www.w3.org/XML/1998/namespace#> 
-prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-
-
-
+prefix sparql: <http://www.w3.org/ns/sparql#model/def/>
  
 ex:exampleQuery 
                 rdf:type sparql:QueryUnit;
                 rdf:_1 ex:prologue;
-                rdf:_2 ex:selectQuery;
-                rdf:_3 ex:valuesClause.
+                rdf:_2 ex:selectQuery.
                 
 ex:prologue 
                 rdf:type sparql:Prologue;

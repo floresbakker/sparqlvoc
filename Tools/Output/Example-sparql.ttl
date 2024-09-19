@@ -1,20 +1,20 @@
 @prefix dcm: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix decl: <https://data.rijksfinancien.nl/html/id/decl/> .
+@prefix decl: <http://www.w3.org/ns/sparql#model/decl/> .
 @prefix ex: <https://www.example.org/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rule: <https://data.rijksfinancien.nl/sparql/model/rule/> .
-@prefix section: <https://data.rijksfinancien.nl/sparql/text/> .
+@prefix rule: <http://www.w3.org/ns/sparql#model/rule/> .
+@prefix section: <https://www.w3.org/TR/sparql11-query/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix shp: <https://data.rijksfinancien.nl/sparql/model/shp/> .
+@prefix shp: <http://www.w3.org/ns/sparql#model/shp/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix sparql: <https://data.rijksfinancien.nl/sparql/model/def/> .
-@prefix standard: <https://data.rijksfinancien.nl/xml/id/standard/> .
+@prefix sparql: <http://www.w3.org/ns/sparql#model/def/> .
+@prefix standard: <http://www.w3.org/ns/sparql#model/> .
 @prefix status: <http://purl.org/adms/status/> .
-@prefix target: <https://data.rijksfinancien.nl/sparql/model/target/> .
+@prefix target: <http://www.w3.org/ns/sparql#model/target/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -480,8 +480,12 @@ shp:Wildcard a sh:NodeShape ;
 ex:exampleQuery a sparql:QueryUnit ;
     rdf:_1 ex:prologue ;
     rdf:_2 ex:selectQuery ;
-    rdf:_3 ex:valuesClause ;
-    sparql:fragment "BASE <https:example.org/>PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>SELECT *WHERE {?s?p ; .}"^^xsd:string .
+    sparql:fragment """BASE <https:example.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT *
+WHERE {?s ?p ?o;
+ .}
+"""^^xsd:string .
 
 decl:prov sh:namespace "http://www.w3.org/ns/prov#"^^xsd:anyURI ;
     sh:prefix "prov" .
@@ -492,7 +496,7 @@ decl:rdf sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI 
 decl:rdfs sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ;
     sh:prefix "rdfs" .
 
-decl:sparql sh:namespace "https://data.rijksfinancien.nl/sparql/model/def/"^^xsd:anyURI ;
+decl:sparql sh:namespace "http://www.w3.org/ns/sparql#model/def/"^^xsd:anyURI ;
     sh:prefix "sparql" .
 
 decl:xsd sh:namespace "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI ;
@@ -509,6 +513,7 @@ sparql:BaseDecl a owl:Class ;
 sparql:GraphNodePath a owl:Class ;
     dct:conformsTo section:GraphNodePath ;
     rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:Node ;
     skos:definition ".."@en ;
     skos:prefLabel "Graph Node Path"@en .
 
@@ -526,6 +531,20 @@ sparql:GroupGraphPatternSub a owl:Class ;
     rdfs:subClassOf sparql:Node ;
     skos:definition "Represents a group graph pattern sub in SPARQL, containing a set of graph patterns that must all match."@en ;
     skos:prefLabel "Group Graph Pattern Sub"@en .
+
+sparql:ObjectListPath a owl:Class ;
+    dct:conformsTo section:ObjectListPath ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:Node ;
+    skos:definition ".."@en ;
+    skos:prefLabel "Object List Path"@en .
+
+sparql:ObjectPath a owl:Class ;
+    dct:conformsTo section:ObjectPath ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:Node ;
+    skos:definition ".."@en ;
+    skos:prefLabel "Object Path"@en .
 
 sparql:PNAME_NS a owl:Class ;
     dct:conformsTo section:PNAME_NS ;
@@ -562,7 +581,8 @@ sparql:PropertyListPathNotEmpty a owl:Class ;
     rdfs:isDefinedBy sparql: ;
     rdfs:subClassOf sparql:Node ;
     skos:definition ".."@en ;
-    skos:prefLabel "Property List Path Not Empty"@en .
+    skos:prefLabel "Property List Path Not Empty"@en ;
+    sparql:syntax ";" .
 
 sparql:QueryUnit a owl:Class ;
     dct:conformsTo section:QueryUnit ;
@@ -654,7 +674,7 @@ construct {
     } group by $this
   }
   # Build the SPARQL fragment for this node, by combining everything retrieved above.
-  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments)),xsd:string) as ?fragment)
+  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments),'\\n'),xsd:string) as ?fragment)
   
 }""" ;
     sh:prefixes sparql: .
@@ -730,7 +750,7 @@ construct {
   ?class sparql:syntax ?syntax.
  
   # Build the SPARQL fragment for this node.
-  bind(strdt(concat(str(?prefix), ?syntax),xsd:string) as ?fragment)
+  bind(strdt(concat(str(?prefix), ?syntax, ' '),xsd:string) as ?fragment)
   
 }""" ;
     sh:prefixes sparql: .
@@ -765,7 +785,7 @@ construct {
     } group by $this
   }
   # Build the SPARQL fragment for this node, by combining everything retrieved above.
-  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments)),xsd:string) as ?fragment)
+  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments), '\\n'),xsd:string) as ?fragment)
   
 }""" ;
     sh:prefixes sparql: .
@@ -782,9 +802,13 @@ construct {
   
 } where {
 
+  # Get the specific syntax of the SPARQL node
+  $this a ?class.
+  ?class sparql:syntax ?syntax.
+  
   # Get the SPARQL fragments of child nodes, if there are any.
   {
-    select $this (group_concat(str(?fragment);separator='') as ?fragments) {
+    select $this (group_concat(str(?fragment);separator=' ') as ?fragments) {
       {
         select $this ?member ?fragment {
           $this ?member ?node.
@@ -796,7 +820,7 @@ construct {
     } group by $this
   }
   # Build the SPARQL fragment for this node, by combining everything retrieved above.
-  bind(strdt(concat(if(?fragments='','',?fragments), ' ;'),xsd:string) as ?fragment)
+  bind(strdt(concat(' ',if(?fragments='','',?fragments), ?syntax, '\\n'),xsd:string) as ?fragment)
   
 }""" ;
     sh:prefixes sparql: .
@@ -831,7 +855,7 @@ construct {
     } group by $this
   }
   # Build the SPARQL fragment for this node, by combining everything retrieved above.
-  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments)),xsd:string) as ?fragment)
+  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments), '\\n'),xsd:string) as ?fragment)
   
 }""" ;
     sh:prefixes sparql: .
@@ -951,7 +975,7 @@ construct {
     } group by $this
   }
   # Build the SPARQL fragment for this node, by combining everything retrieved above.
-  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments)),xsd:string) as ?fragment)
+  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments), '\\n'),xsd:string) as ?fragment)
   
 }""" ;
     sh:prefixes sparql: .
@@ -976,6 +1000,12 @@ construct {
   
 }""" ;
     sh:prefixes sparql: .
+
+standard:sparql a dct:Standard ;
+    dct:created "2024-04-07"^^xsd:date ;
+    dct:source "https://www.w3.org/TR/sparql11-query/"^^xsd:anyURI ;
+    rdfs:isDefinedBy sparql: ;
+    skos:prefLabel "SPARQL"@en .
 
 target:BaseDecl a sh:SPARQLTarget ;
     rdfs:comment ""@en ;
@@ -1212,32 +1242,24 @@ select $this {
   
 }""" .
 
-section:Tree a dcm:Text ;
-    dct:isPartOf standard:sparql ;
-    dct:source "https://sparql.org/#node-trees"^^xsd:anyURI ;
-    rdfs:isDefinedBy sparql: ;
-    skos:prefLabel "Tree"@en .
-
-standard:sparql a dct:Standard ;
-    dct:created "2024-04-07"^^xsd:date ;
-    dct:source "https://sparql.org/"^^xsd:anyURI ;
-    rdfs:isDefinedBy sparql: ;
-    skos:prefLabel "SPARQL"@en .
-
 ex:baseDecl a sparql:BaseDecl ;
     rdf:_1 ex:iriRefBase ;
-    sparql:fragment "BASE <https:example.org/>"^^xsd:string .
+    sparql:fragment """BASE <https:example.org/>
+"""^^xsd:string .
 
 ex:graphNodePath a sparql:GraphNodePath ;
-    rdf:_1 ex:varOrTerm2 .
+    rdf:_1 ex:varOrTerm2 ;
+    sparql:fragment "?o"^^xsd:string .
 
 ex:groupGraphPattern a sparql:GroupGraphPattern ;
     rdf:_1 ex:groupGraphPatternSub ;
-    sparql:fragment "{?s?p ; .}"^^xsd:string .
+    sparql:fragment """{?s ?p ?o;
+ .}"""^^xsd:string .
 
 ex:groupGraphPatternSub a sparql:GroupGraphPatternSub ;
     rdf:_1 ex:triplesBlock ;
-    sparql:fragment "?s?p ; ."^^xsd:string .
+    sparql:fragment """?s ?p ?o;
+ ."""^^xsd:string .
 
 ex:iriRefBase a sparql:IRIRef ;
     rdf:value "https:example.org/" ;
@@ -1248,51 +1270,63 @@ ex:iriRef_RDF a sparql:IRIRef ;
     sparql:fragment "<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"^^xsd:string .
 
 ex:objectListPath a sparql:ObjectListPath ;
-    rdf:_1 ex:objectPath .
+    rdf:_1 ex:objectPath ;
+    sparql:fragment "?o"^^xsd:string .
 
 ex:objectPath a sparql:ObjectPath ;
-    rdf:_1 ex:graphNodePath .
+    rdf:_1 ex:graphNodePath ;
+    sparql:fragment "?o"^^xsd:string .
 
 ex:pname_NS a sparql:PNAME_NS ;
     rdf:_1 ex:prefix_RDF ;
-    sparql:fragment "rdf:"^^xsd:string .
+    sparql:fragment "rdf: "^^xsd:string .
 
 ex:prefixDecl a sparql:PrefixDecl ;
     rdf:_1 ex:pname_NS ;
     rdf:_2 ex:iriRef_RDF ;
-    sparql:fragment "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"^^xsd:string .
+    sparql:fragment """PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+"""^^xsd:string .
 
 ex:prefix_RDF a sparql:PN_PREFIX ;
     rdf:value "rdf" ;
-    sparql:fragment "rdf:"^^xsd:string .
+    sparql:fragment "rdf: "^^xsd:string .
 
 ex:prologue a sparql:Prologue ;
     rdf:_1 ex:baseDecl ;
     rdf:_2 ex:prefixDecl ;
-    sparql:fragment "BASE <https:example.org/>PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"^^xsd:string .
+    sparql:fragment """BASE <https:example.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+"""^^xsd:string .
 
 ex:propertyListPathNotEmpty a sparql:PropertyListPathNotEmpty ;
     rdf:_1 ex:verbSimple ;
     rdf:_2 ex:objectListPath ;
-    sparql:fragment "?p ;"^^xsd:string .
+    sparql:fragment """ ?p ?o;
+"""^^xsd:string .
 
 ex:selectClause1 a sparql:SelectClause ;
     rdf:_1 ex:wildcard ;
-    sparql:fragment "SELECT *"^^xsd:string .
+    sparql:fragment """SELECT *
+"""^^xsd:string .
 
 ex:selectQuery a sparql:SelectQuery ;
     rdf:_1 ex:selectClause1 ;
     rdf:_2 ex:whereClause1 ;
-    sparql:fragment "SELECT *WHERE {?s?p ; .}"^^xsd:string .
+    sparql:fragment """SELECT *
+WHERE {?s ?p ?o;
+ .}
+"""^^xsd:string .
 
 ex:triplesBlock a sparql:TriplesBlock ;
     rdf:_1 ex:triplesSameSubjectPath ;
-    sparql:fragment "?s?p ; ."^^xsd:string .
+    sparql:fragment """?s ?p ?o;
+ ."""^^xsd:string .
 
 ex:triplesSameSubjectPath a sparql:TriplesSameSubjectPath ;
     rdf:_1 ex:varOrTerm1 ;
     rdf:_2 ex:propertyListPathNotEmpty ;
-    sparql:fragment "?s?p ;"^^xsd:string .
+    sparql:fragment """?s ?p ?o;
+"""^^xsd:string .
 
 ex:varOrTerm1 a sparql:VarOrTerm ;
     rdf:_1 ex:variable_s ;
@@ -1320,10 +1354,18 @@ ex:verbSimple a sparql:VerbSimple ;
 
 ex:whereClause1 a sparql:WhereClause ;
     rdf:_1 ex:groupGraphPattern ;
-    sparql:fragment "WHERE {?s?p ; .}"^^xsd:string .
+    sparql:fragment """WHERE {?s ?p ?o;
+ .}
+"""^^xsd:string .
 
 ex:wildcard a sparql:Wildcard ;
     sparql:fragment "*"^^xsd:string .
+
+section:Tree a dcm:Text ;
+    dct:isPartOf standard:sparql ;
+    dct:source "https://sparql.org/#node-trees"^^xsd:anyURI ;
+    rdfs:isDefinedBy sparql: ;
+    skos:prefLabel "Tree"@en .
 
 sparql:IRIRef a owl:Class ;
     dct:conformsTo section:IRIRef ;
@@ -1376,9 +1418,9 @@ sparql: a void:Dataset,
     dct:subject "SPARQL"@en ;
     dct:title "SPARQL Vocabulary"@en ;
     vann:preferredNamespacePrefix "sparql" ;
-    vann:preferredNamespaceUri "http://www.w3.org/sparql/" ;
-    void:uriRegexPattern "^http://www.w3.org/sparql/" ;
-    void:uriSpace "http://www.w3.org/sparql/#"^^xsd:anyURI ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/sparql#model/def/" ;
+    void:uriRegexPattern "^http://www.w3.org/ns/sparql#model/def/" ;
+    void:uriSpace "http://www.w3.org/ns/sparql#model/def/"^^xsd:anyURI ;
     owl:imports dct:,
         rdf:,
         rdfs:,

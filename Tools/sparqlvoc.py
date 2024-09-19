@@ -28,7 +28,7 @@ current_dir = os.getcwd()
 directory_path = os.path.abspath(os.path.join(current_dir, '..'))
 
 # namespace declaration
-sparql = Namespace("https://data.rijksfinancien.nl/sparql/model/def/")
+sparql = Namespace("http://www.w3.org/ns/sparql#model/def/")
 
 # Function to read a graph (as a string) from a file 
 def readGraphFromFile(file_path):
@@ -61,30 +61,22 @@ def iteratePyShacl(sparql_generator, serializable_graph):
        
         statusquery = serializable_graph.query('''
             
-prefix sparql: <https://data.rijksfinancien.nl/sparql/model/def/>
-prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix sparql: <http://www.w3.org/ns/sparql#model/def/>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix sh: <http://www.w3.org/ns/shacl#>
+
 ASK
 WHERE 
   # 
   {
-    $this a/rdfs:subClassOf* sparql:Node.
-    
-  filter not exists {
-    $this sparql:syntax [].
-  }
+  ?query rdf:type sparql:QueryUnit;
+        sparql:fragment [].
 }
         ''')   
 
         resultquery = serializable_graph.query('''
             
-prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix sparql: <http://www.w3.org/ns/sparql#model/def/>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix sh: <http://www.w3.org/ns/shacl#>
-prefix sparql: <https://data.rijksfinancien.nl/sparql/model/def/>
 
 SELECT ?sparql_fragment
 WHERE {
@@ -98,12 +90,10 @@ WHERE {
         # Check whether another iteration is needed. If every OWL and RDFS construct contains a sparql:syntax statement, the processing is considered done.
         for status in statusquery:
             print ('status = ', status)
-            if status == True:
-                print('iteratie')
+            if status == False:
                 writeGraph(serializable_graph)
                 iteratePyShacl(sparql_generator, serializable_graph)
             else: 
-                 print('wel heel kort')
                  print ("File " + filename_stem+"-sparql.ttl" + " created in output folder.")
                  writeGraph(serializable_graph)
         

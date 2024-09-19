@@ -1,19 +1,19 @@
 prefix dcm: <http://purl.org/dc/dcmitype/>
 prefix dct: <http://purl.org/dc/terms/>
-prefix decl: <https://data.rijksfinancien.nl/html/id/decl/>
+prefix decl: <http://www.w3.org/ns/sparql#model/decl/>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix rule: <https://data.rijksfinancien.nl/sparql/model/rule/>
-prefix section: <https://data.rijksfinancien.nl/sparql/text/>
+prefix rule: <http://www.w3.org/ns/sparql#model/rule/>
+prefix section: <https://www.w3.org/TR/sparql11-query/>
 prefix sh: <http://www.w3.org/ns/shacl#>
-prefix shp: <https://data.rijksfinancien.nl/sparql/model/shp/>
+prefix shp: <http://www.w3.org/ns/sparql#model/shp/>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
-prefix sparql: <https://data.rijksfinancien.nl/sparql/model/def/>
-prefix standard: <https://data.rijksfinancien.nl/xml/id/standard/>
+prefix sparql: <http://www.w3.org/ns/sparql#model/def/>
+prefix standard: <http://www.w3.org/ns/sparql#model/>
 prefix status: <http://purl.org/adms/status/>
-prefix target: <https://data.rijksfinancien.nl/sparql/model/target/>
+prefix target: <http://www.w3.org/ns/sparql#model/target/>
 prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
 prefix xml: <http://www.w3.org/XML/1998/namespace#> 
@@ -52,13 +52,13 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
       decl:xsd;      
     owl:versionInfo '0.1.0';
     vann:preferredNamespacePrefix 'sparql';
-    vann:preferredNamespaceUri 'http://www.w3.org/sparql/';
-    void:uriRegexPattern '^http://www.w3.org/sparql/';
-    void:uriSpace 'http://www.w3.org/sparql/#'^^xsd:anyURI.
+    vann:preferredNamespaceUri 'http://www.w3.org/ns/sparql#model/def/';
+    void:uriRegexPattern '^http://www.w3.org/ns/sparql#model/def/';
+    void:uriSpace 'http://www.w3.org/ns/sparql#model/def/'^^xsd:anyURI.
 
   decl:sparql
     sh:prefix "sparql";
-    sh:namespace "https://data.rijksfinancien.nl/sparql/model/def/"^^xsd:anyURI.
+    sh:namespace "http://www.w3.org/ns/sparql#model/def/"^^xsd:anyURI.
 
   decl:prov
     sh:prefix "prov";
@@ -79,7 +79,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
   standard:sparql
     a dct:Standard;
     dct:created '2024-04-07'^^xsd:date;
-    dct:source 'https://sparql.org/'^^xsd:anyURI;
+    dct:source 'https://www.w3.org/TR/sparql11-query/'^^xsd:anyURI;
     skos:prefLabel 'SPARQL'@en;
     rdfs:isDefinedBy sparql:.
 
@@ -304,12 +304,6 @@ sparql:Expression
   skos:prefLabel 'Expression'@en;
   rdfs:isDefinedBy sparql:.
 
-
-
-
-
-
-
 sparql:ConstructQuery
   a owl:Class;
   rdfs:subClassOf sparql:Node;
@@ -447,6 +441,7 @@ sparql:PropertyListPathNotEmpty
   dct:conformsTo section:PropertyListPathNotEmpty;
   skos:definition ".."@en;
   skos:prefLabel "Property List Path Not Empty"@en;
+  sparql:syntax ';';
   rdfs:isDefinedBy sparql:. 
   
 sparql:VerbSimple
@@ -456,6 +451,22 @@ sparql:VerbSimple
   skos:definition ".."@en;
   skos:prefLabel "Verb Simple"@en;
   rdfs:isDefinedBy sparql:. 
+
+sparql:ObjectListPath
+  a owl:Class;
+  rdfs:subClassOf sparql:Node;
+  dct:conformsTo section:ObjectListPath;
+  skos:definition ".."@en;
+  skos:prefLabel "Object List Path"@en;
+  rdfs:isDefinedBy sparql:.  
+  
+sparql:ObjectPath
+  a owl:Class;
+  rdfs:subClassOf sparql:Node;
+  dct:conformsTo section:ObjectPath;
+  skos:definition ".."@en;
+  skos:prefLabel "Object Path"@en;
+  rdfs:isDefinedBy sparql:.   
 
 sparql:TriplesNodePath
   a owl:Class;
@@ -475,6 +486,7 @@ sparql:CollectionPath
 
 sparql:GraphNodePath
   a owl:Class;
+  rdfs:subClassOf sparql:Node;
   dct:conformsTo section:GraphNodePath;
   skos:definition ".."@en;
   skos:prefLabel "Graph Node Path"@en;
@@ -881,9 +893,13 @@ construct {
   
 } where {
 
+  # Get the specific syntax of the SPARQL node
+  $this a ?class.
+  ?class sparql:syntax ?syntax.
+  
   # Get the SPARQL fragments of child nodes, if there are any.
   {
-    select $this (group_concat(str(?fragment);separator='') as ?fragments) {
+    select $this (group_concat(str(?fragment);separator=' ') as ?fragments) {
       {
         select $this ?member ?fragment {
           $this ?member ?node.
@@ -895,7 +911,7 @@ construct {
     } group by $this
   }
   # Build the SPARQL fragment for this node, by combining everything retrieved above.
-  bind(strdt(concat(if(?fragments='','',?fragments), ' ;'),xsd:string) as ?fragment)
+  bind(strdt(concat(' ',if(?fragments='','',?fragments), ?syntax, '\\n'),xsd:string) as ?fragment)
   
 }''';
     rdfs:isDefinedBy sparql:.
@@ -1086,7 +1102,7 @@ construct {
     } group by $this
   }
   # Build the SPARQL fragment for this node, by combining everything retrieved above.
-  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments)),xsd:string) as ?fragment)
+  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments), '\\n'),xsd:string) as ?fragment)
   
 }''';
     rdfs:isDefinedBy sparql:.  
@@ -1152,7 +1168,7 @@ construct {
     } group by $this
   }
   # Build the SPARQL fragment for this node, by combining everything retrieved above.
-  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments)),xsd:string) as ?fragment)
+  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments), '\\n'),xsd:string) as ?fragment)
   
 }''';
     rdfs:isDefinedBy sparql:.      
@@ -1218,7 +1234,7 @@ construct {
     } group by $this
   }
   # Build the SPARQL fragment for this node, by combining everything retrieved above.
-  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments)),xsd:string) as ?fragment)
+  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments), '\\n'),xsd:string) as ?fragment)
   
 }''';
     rdfs:isDefinedBy sparql:.      
@@ -1284,7 +1300,7 @@ construct {
     } group by $this
   }
   # Build the SPARQL fragment for this node, by combining everything retrieved above.
-  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments)),xsd:string) as ?fragment)
+  bind(strdt(concat(?syntax,' ', if(?fragments='','',?fragments),'\\n'),xsd:string) as ?fragment)
   
 }''';
     rdfs:isDefinedBy sparql:.      
@@ -1423,7 +1439,7 @@ construct {
   ?class sparql:syntax ?syntax.
  
   # Build the SPARQL fragment for this node.
-  bind(strdt(concat(str(?prefix), ?syntax),xsd:string) as ?fragment)
+  bind(strdt(concat(str(?prefix), ?syntax, ' '),xsd:string) as ?fragment)
   
 }''';
     rdfs:isDefinedBy sparql:.  
