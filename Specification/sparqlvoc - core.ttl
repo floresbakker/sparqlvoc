@@ -186,7 +186,7 @@ sparql:Base
   a owl:Class;
   rdfs:subClassOf sparql:Keyword;
   dct:conformsTo section:Base;
-  skos:definition "Represents a BASE keyword in a SPARQL query."@en;
+  skos:definition "Represents the BASE keyword in a SPARQL query."@en;
   skos:prefLabel "BASE keyword"@en;
   sparql:syntax 'BASE';
   rdfs:isDefinedBy sparql:.
@@ -195,7 +195,7 @@ sparql:Prefix
   a owl:Class;
   rdfs:subClassOf sparql:Keyword;
   dct:conformsTo section:Prefix;
-  skos:definition "Represents a PREFIX keyword in a SPARQL query."@en;
+  skos:definition "Represents the PREFIX keyword in a SPARQL query."@en;
   skos:prefLabel "PREFIX keyword"@en;
   sparql:syntax 'PREFIX';
   rdfs:isDefinedBy sparql:.
@@ -293,7 +293,7 @@ sparql:Select
   a owl:Class;
   rdfs:subClassOf sparql:Keyword;
   dct:conformsTo section:Select;
-  skos:definition "Represents a SELECT keyword in SPARQL."@en;
+  skos:definition "Represents the SELECT keyword in SPARQL."@en;
   skos:prefLabel "SELECT keyword"@en;
   sparql:syntax 'SELECT';
   rdfs:isDefinedBy sparql:.
@@ -302,7 +302,7 @@ sparql:Distinct
   a owl:Class;
   rdfs:subClassOf sparql:Keyword;
   dct:conformsTo section:Distinct;
-  skos:definition "Represents a DISTINCT keyword in SPARQL."@en;
+  skos:definition "Represents the DISTINCT keyword in SPARQL."@en;
   skos:prefLabel "DISTINCT keyword"@en;
   sparql:syntax 'DISTINCT';
   rdfs:isDefinedBy sparql:.
@@ -311,9 +311,18 @@ sparql:Reduced
   a owl:Class;
   rdfs:subClassOf sparql:Keyword;
   dct:conformsTo section:Reduced;
-  skos:definition "Represents a REDUCED keyword in SPARQL."@en;
+  skos:definition "Represents the REDUCED keyword in SPARQL."@en;
   skos:prefLabel "REDUCED keyword"@en;
   sparql:syntax 'REDUCED';
+  rdfs:isDefinedBy sparql:.
+
+sparql:As
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:As;
+  skos:definition "Represents the AS keyword in a SPARQL query."@en;
+  skos:prefLabel "AS keyword"@en;
+  sparql:syntax 'AS';
   rdfs:isDefinedBy sparql:.
 
 sparql:Variable
@@ -448,6 +457,15 @@ sparql:ConstructQuery
   skos:prefLabel "Construct Query"@en;
   rdfs:isDefinedBy sparql:.
 
+sparql:Construct
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:Construct;
+  skos:definition "Represents the CONSTRUCT keyword in a SPARQL query."@en;
+  skos:prefLabel "CONSTRUCT keyword"@en;
+  sparql:syntax 'CONSTRUCT';
+  rdfs:isDefinedBy sparql:.  
+
 sparql:DescribeQuery
   a owl:Class;
   rdfs:subClassOf sparql:StructuralNode;
@@ -455,6 +473,15 @@ sparql:DescribeQuery
   skos:definition "Represents a DESCRIBE query in SPARQL, returning descriptions of resources."@en;
   skos:prefLabel "Describe Query"@en;
   rdfs:isDefinedBy sparql:.
+
+sparql:Describe
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:Describe;
+  skos:definition "Represents the DESCRIBE keyword in a SPARQL query."@en;
+  skos:prefLabel "DESCRIBE keyword"@en;
+  sparql:syntax 'DESCRIBE';
+  rdfs:isDefinedBy sparql:.    
 
 sparql:AskQuery
   a owl:Class;
@@ -464,6 +491,15 @@ sparql:AskQuery
   skos:prefLabel "Ask Query"@en;
   rdfs:isDefinedBy sparql:.
 
+sparql:Ask
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:Ask;
+  skos:definition "Represents the ASK keyword in a SPARQL query."@en;
+  skos:prefLabel "ASK keyword"@en;
+  sparql:syntax 'ASK';
+  rdfs:isDefinedBy sparql:.  
+
 sparql:DatasetClause
   a owl:Class;
   rdfs:subClassOf sparql:StructuralNode;
@@ -472,6 +508,15 @@ sparql:DatasetClause
   skos:prefLabel "Dataset Clause"@en;
   rdfs:isDefinedBy sparql:.
 
+sparql:From
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:From;
+  skos:definition "Represents the FROM keyword in a SPARQL query."@en;
+  skos:prefLabel "FROM keyword"@en;
+  sparql:syntax 'FROM';
+  rdfs:isDefinedBy sparql:.  
+  
 sparql:DefaultGraphClause
   a owl:Class;
   rdfs:subClassOf sparql:StructuralNode;
@@ -488,6 +533,15 @@ sparql:NamedGraphClause
   skos:prefLabel "Named Graph Clause"@en;
   rdfs:isDefinedBy sparql:.
 
+sparql:Named
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:Named;
+  skos:definition "Represents the Named keyword in a SPARQL query."@en;
+  skos:prefLabel "NAMED keyword"@en;
+  sparql:syntax 'NAMED';
+  rdfs:isDefinedBy sparql:.  
+  
 sparql:SourceSelector
   a owl:Class;
   rdfs:subClassOf sparql:StructuralNode;
@@ -649,6 +703,15 @@ sparql:OptionalGraphPattern
   skos:prefLabel "Optional Graph Pattern"@en;
   rdfs:isDefinedBy sparql:.
 
+sparql:Optional
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:Optional;
+  skos:definition "Represents the OPTIONAL keyword in a SPARQL query."@en;
+  skos:prefLabel "OPTIONAL keyword"@en;
+  sparql:syntax 'OPTIONAL';
+  rdfs:isDefinedBy sparql:.  
+
 sparql:GraphGraphPattern
   a owl:Class;
   rdfs:subClassOf sparql:StructuralNode;
@@ -656,6 +719,15 @@ sparql:GraphGraphPattern
   skos:definition "Represents a GRAPH graph pattern in SPARQL, specifying a named graph to match."@en;
   skos:prefLabel "Graph Graph Pattern"@en;
   rdfs:isDefinedBy sparql:.
+  
+sparql:Graph
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:Graph;
+  skos:definition "Represents the GRAPH keyword in a SPARQL query."@en;
+  skos:prefLabel "GRAPH keyword"@en;
+  sparql:syntax 'GRAPH';
+  rdfs:isDefinedBy sparql:.    
 
 sparql:ServiceGraphPattern
   a owl:Class;
@@ -664,6 +736,15 @@ sparql:ServiceGraphPattern
   skos:definition "Represents a SERVICE graph pattern in SPARQL, specifying a remote SPARQL endpoint to query."@en;
   skos:prefLabel "Service Graph Pattern"@en;
   rdfs:isDefinedBy sparql:.
+
+sparql:Service
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:Service;
+  skos:definition "Represents the SERVICE keyword in a SPARQL query."@en;
+  skos:prefLabel "SERVICE keyword"@en;
+  sparql:syntax 'SERVICE';
+  rdfs:isDefinedBy sparql:.    
 
 sparql:BindClause
   a owl:Class;
@@ -677,7 +758,7 @@ sparql:Bind
   a owl:Class;
   rdfs:subClassOf sparql:SyntacticalNode;
   dct:conformsTo section:Bind;
-  skos:definition "Represents a BIND keyword in SPARQL."@en;
+  skos:definition "Represents the BIND keyword in SPARQL."@en;
   skos:prefLabel "Bind"@en;
   sparql:syntax "BIND";
   rdfs:isDefinedBy sparql:.  
@@ -694,7 +775,7 @@ sparql:Values
   a owl:Class;
   rdfs:subClassOf sparql:SyntacticalNode;
   dct:conformsTo section:Values;
-  skos:definition "Represents a VALUES keyword in SPARQL."@en;
+  skos:definition "Represents the VALUES keyword in SPARQL."@en;
   skos:prefLabel "Values"@en;
   sparql:syntax "VALUES";
   rdfs:isDefinedBy sparql:.  
@@ -707,13 +788,31 @@ sparql:MinusGraphPattern
   skos:prefLabel "Minus Graph Pattern"@en;
   rdfs:isDefinedBy sparql:.
 
-sparql:Filter
+sparql:Minus
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:Minus;
+  skos:definition "Represents the MINUS keyword in a SPARQL query."@en;
+  skos:prefLabel "MINUS keyword"@en;
+  sparql:syntax 'MINUS';
+  rdfs:isDefinedBy sparql:.  
+
+sparql:FilterClause
   a owl:Class;
   rdfs:subClassOf sparql:StructuralNode;
-  dct:conformsTo section:Filter;
+  dct:conformsTo section:FilterClause;
   skos:definition "Represents a FILTER clause in SPARQL, applying constraints to the result set based on a boolean condition."@en;
-  skos:prefLabel "Filter"@en;
+  skos:prefLabel "Filter clause"@en;
   rdfs:isDefinedBy sparql:.
+
+sparql:Filter
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:Filter;
+  skos:definition "Represents the FILTER keyword in a SPARQL query."@en;
+  skos:prefLabel "FILTER keyword"@en;
+  sparql:syntax 'FILTER';
+  rdfs:isDefinedBy sparql:.  
 
 sparql:TriplesTemplate
   a owl:Class;
@@ -731,6 +830,24 @@ sparql:GroupClause
   skos:prefLabel "Group Clause"@en;
   rdfs:isDefinedBy sparql:.
 
+sparql:Group
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:Group;
+  skos:definition "Represents the GROUP keyword in a SPARQL query."@en;
+  skos:prefLabel "GROUP keyword"@en;
+  sparql:syntax 'GROUP';
+  rdfs:isDefinedBy sparql:.  
+
+sparql:By
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:By;
+  skos:definition "Represents the BY keyword in a SPARQL query."@en;
+  skos:prefLabel "BY keyword"@en;
+  sparql:syntax 'BY';
+  rdfs:isDefinedBy sparql:.    
+
 sparql:HavingClause
   a owl:Class;
   rdfs:subClassOf sparql:StructuralNode;
@@ -738,6 +855,15 @@ sparql:HavingClause
   skos:definition "Represents a HAVING clause in SPARQL, applying constraints on the result set after grouping."@en;
   skos:prefLabel "Having Clause"@en;
   rdfs:isDefinedBy sparql:.
+
+sparql:Having
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:Having;
+  skos:definition "Represents the HAVING keyword in a SPARQL query."@en;
+  skos:prefLabel "HAVING keyword"@en;
+  sparql:syntax 'HAVING';
+  rdfs:isDefinedBy sparql:.  
 
 sparql:OrderClause
   a owl:Class;
@@ -747,6 +873,15 @@ sparql:OrderClause
   skos:prefLabel "Order Clause"@en;
   rdfs:isDefinedBy sparql:.
 
+sparql:Order
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:Order;
+  skos:definition "Represents the ORDER keyword in a SPARQL query."@en;
+  skos:prefLabel "ORDER keyword"@en;
+  sparql:syntax 'ORDER';
+  rdfs:isDefinedBy sparql:.  
+  
 sparql:OrderCondition
   a owl:Class;
   rdfs:subClassOf sparql:StructuralNode;
@@ -754,6 +889,24 @@ sparql:OrderCondition
   skos:definition "Represents a condition used in an ORDER BY clause to determine the order of the result set."@en;
   skos:prefLabel "Order Condition"@en;
   rdfs:isDefinedBy sparql:.
+
+sparql:ASC
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:ASC;
+  skos:definition "Represents the ASC keyword in a SPARQL query."@en;
+  skos:prefLabel "ASC keyword"@en;
+  sparql:syntax 'ASC';
+  rdfs:isDefinedBy sparql:.
+
+sparql:DESC
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:DESC;
+  skos:definition "Represents the DESC keyword in a SPARQL query."@en;
+  skos:prefLabel "DESC keyword"@en;
+  sparql:syntax 'DESC';
+  rdfs:isDefinedBy sparql:.    
 
 sparql:LimitClause
   a owl:Class;
@@ -763,6 +916,15 @@ sparql:LimitClause
   skos:prefLabel "Limit Clause"@en;
   rdfs:isDefinedBy sparql:.
 
+sparql:Limit
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:Limit;
+  skos:definition "Represents the LIMIT keyword in a SPARQL query."@en;
+  skos:prefLabel "LIMIT keyword"@en;
+  sparql:syntax 'LIMIT';
+  rdfs:isDefinedBy sparql:.    
+
 sparql:OffsetClause
   a owl:Class;
   rdfs:subClassOf sparql:StructuralNode;
@@ -770,6 +932,15 @@ sparql:OffsetClause
   skos:definition "Represents an OFFSET clause in SPARQL, specifying the number of solutions to skip in the result set."@en;
   skos:prefLabel "Offset Clause"@en;
   rdfs:isDefinedBy sparql:.
+
+sparql:Offset
+  a owl:Class;
+  rdfs:subClassOf sparql:Keyword;
+  dct:conformsTo section:Offset;
+  skos:definition "Represents the OFFSET keyword in a SPARQL query."@en;
+  skos:prefLabel "OFFSET keyword"@en;
+  sparql:syntax 'OFFSET';
+  rdfs:isDefinedBy sparql:.    
 
 sparql:ValuesClause
   a owl:Class;
