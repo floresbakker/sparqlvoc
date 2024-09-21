@@ -14,7 +14,11 @@ ex:prologue
                
 ex:baseDecl 
                 rdf:type sparql:BaseDecl;
-                rdf:_1 ex:iriRefBase.
+                rdf:_1 ex:base;              
+                rdf:_2 ex:iriRefBase.
+
+ex:base
+                rdf:type sparql:Base.
 
 ex:iriRefBase 
                 rdf:type sparql:IRIRef;
@@ -22,17 +26,25 @@ ex:iriRefBase
                 
 ex:prefixDecl    
                 rdf:type sparql:PrefixDecl;
-                rdf:_1 ex:pname_NS;
-                rdf:_2 ex:iriRef_RDF.
+                rdf:_1 ex:prefix;
+                rdf:_2 ex:pname_NS;
+                rdf:_3 ex:iriRef_RDF.
+
+ex:prefix
+                rdf:type sparql:Prefix.
 
 ex:pname_NS   
                 rdf:type sparql:PNAME_NS;
-                rdf:_1 ex:prefix_RDF.
+                rdf:_1 ex:prefix_RDF;
+                rdf:_2 ex:colon.
                 
 ex:prefix_RDF 
                 rdf:type sparql:PN_PREFIX;
                 rdf:value "rdf".
 
+ex:colon
+                rdf:type sparql:Colon.
+                
 ex:iriRef_RDF 
                 rdf:type sparql:IRIRef;
                 rdf:value "http://www.w3.org/1999/02/22-rdf-syntax-ns#".
@@ -44,18 +56,34 @@ ex:selectQuery
                 
 ex:selectClause1
                 rdf:type sparql:SelectClause;
-                rdf:_1 ex:wildcard.
+                rdf:_1 ex:select;
+                rdf:_2 ex:wildcard.
+
+ex:select
+                rdf:type sparql:Select.
                 
 ex:wildcard 
                 rdf:type sparql:Wildcard.
 
 ex:whereClause1 
                 rdf:type sparql:WhereClause;
-                rdf:_1 ex:groupGraphPattern.
+                rdf:_1 ex:where;
+                rdf:_2 ex:groupGraphPattern.
+
+ex:where
+                rdf:type sparql:Where.
 
 ex:groupGraphPattern
                 rdf:type sparql:GroupGraphPattern;
-                rdf:_1 ex:groupGraphPatternSub.
+                rdf:_1 ex:openCurlyBracket ;
+                rdf:_2 ex:groupGraphPatternSub ;
+                rdf:_3 ex:closedCurlyBracket.
+
+ex:openCurlyBracket 
+                rdf:type sparql:OpenCurlyBracket.
+
+ex:closedCurlyBracket
+                rdf:type sparql:ClosedCurlyBracket.
                 
 ex:groupGraphPatternSub
                 rdf:type sparql:GroupGraphPatternSub;
