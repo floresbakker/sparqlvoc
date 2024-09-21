@@ -22,7 +22,11 @@ Modeled as:
 prefix ex: <https://www.example.org/>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix sparql: <http://www.w3.org/ns/sparql#model/def/>
- 
+
+ex:exampleQueryTree
+                rdf:type sparql:AbstractSyntaxTree;
+                rdf:_1   ex:exampleQuery.
+                
 ex:exampleQuery 
                 rdf:type sparql:QueryUnit;
                 rdf:_1 ex:prologue;
@@ -196,4 +200,21 @@ ex:variable_o_name
                 rdf:type sparql:CharacterSequence;
                 rdf:value 'o'.
 ```
+
+# Model
+
+The vocabulary models the SPARQL query language as an abstract syntax tree, consisting of the following nodes in a tree:
+
+- tree
+  - node
+    - non-terminal node
+    - terminal node
+        - keyword
+        - symbol
+        - symbol sequence
+        - character sequence
+
+As a source for the model we use the grammar from the SPARQL 1.1 specification: https://www.w3.org/TR/sparql11-query/#grammar
+
+
 

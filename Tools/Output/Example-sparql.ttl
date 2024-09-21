@@ -27,18 +27,20 @@ sparql:ASC a owl:Class ;
     skos:prefLabel "ASC keyword"@en ;
     sparql:syntax "ASC" .
 
-sparql:AbstractSyntaxTree a owl:Class ;
-    dct:conformsTo section:Tree ;
-    rdfs:isDefinedBy sparql: ;
-    skos:definition "An abstract syntax tree is an object that represents a SPARQL query unit. A tree consists of connected nodes."@en ;
-    skos:prefLabel "Abstract Syntax Tree"@en .
-
 sparql:Add a owl:Class ;
     dct:conformsTo section:Add ;
     rdfs:isDefinedBy sparql: ;
     rdfs:subClassOf sparql:NonTerminalNode ;
     skos:definition "Represents an ADD operation in SPARQL, adding triples from one graph to another."@en ;
     skos:prefLabel "Add"@en .
+
+sparql:And a owl:Class ;
+    dct:conformsTo section:And ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:Symbol ;
+    skos:definition "Represents the AND symbol in a SPARQL query."@en ;
+    skos:prefLabel "AND symbol in a SPARQL query"@en ;
+    sparql:syntax "&&" .
 
 sparql:As a owl:Class ;
     dct:conformsTo section:As ;
@@ -469,6 +471,14 @@ sparql:OptionalGraphPattern a owl:Class ;
     skos:definition "Represents an OPTIONAL graph pattern in SPARQL, which extends the result set with additional values if a pattern exists."@en ;
     skos:prefLabel "Optional Graph Pattern"@en .
 
+sparql:Or a owl:Class ;
+    dct:conformsTo section:Or ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:Symbol ;
+    skos:definition "Represents the OR symbol in a SPARQL query."@en ;
+    skos:prefLabel "OR symbol in a SPARQL query"@en ;
+    sparql:syntax "||" .
+
 sparql:Order a owl:Class ;
     dct:conformsTo section:Order ;
     rdfs:isDefinedBy sparql: ;
@@ -674,10 +684,8 @@ shp:SymbolSequence a sh:NodeShape ;
     sh:rule rule:SymbolSequence ;
     sh:target target:SymbolSequence .
 
-ex:exampleQuery a sparql:QueryUnit ;
-    rdf:_1 ex:prologue ;
-    rdf:_2 ex:selectQuery ;
-    sparql:fragment "BASE <https://example.org/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT * WHERE { ?s ?p ?o }"^^xsd:string .
+ex:exampleQueryTree a sparql:AbstractSyntaxTree ;
+    rdf:_1 ex:exampleQuery .
 
 decl:prov sh:namespace "http://www.w3.org/ns/prov#"^^xsd:anyURI ;
     sh:prefix "prov" .
@@ -693,6 +701,12 @@ decl:sparql sh:namespace "http://www.w3.org/ns/sparql#model/def/"^^xsd:anyURI ;
 
 decl:xsd sh:namespace "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI ;
     sh:prefix "xsd" .
+
+sparql:AbstractSyntaxTree a owl:Class ;
+    dct:conformsTo section:Tree ;
+    rdfs:isDefinedBy sparql: ;
+    skos:definition "An abstract syntax tree is an object that represents a SPARQL query unit. A tree consists of connected nodes."@en ;
+    skos:prefLabel "Abstract Syntax Tree"@en .
 
 sparql:Base a owl:Class ;
     dct:conformsTo section:Base ;
@@ -1135,6 +1149,11 @@ ex:closedCurlyBracket a sparql:ClosedCurlyBracket ;
 
 ex:colon a sparql:Colon ;
     sparql:fragment ":"^^xsd:string .
+
+ex:exampleQuery a sparql:QueryUnit ;
+    rdf:_1 ex:prologue ;
+    rdf:_2 ex:selectQuery ;
+    sparql:fragment "BASE <https://example.org/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT * WHERE { ?s ?p ?o }"^^xsd:string .
 
 ex:graphNodePath a sparql:GraphNodePath ;
     rdf:_1 ex:varOrTerm2 ;

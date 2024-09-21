@@ -1,7 +1,11 @@
 prefix ex: <https://www.example.org/>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix sparql: <http://www.w3.org/ns/sparql#model/def/>
- 
+
+ex:exampleQueryTree
+                rdf:type sparql:AbstractSyntaxTree;
+                rdf:_1   ex:exampleQuery.
+
 ex:exampleQuery 
                 rdf:type sparql:QueryUnit;
                 rdf:_1 ex:prologue;

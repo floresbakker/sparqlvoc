@@ -509,7 +509,25 @@ sparql:Caret
   skos:definition "Represents a caret in a SPARQL query."@en;
   skos:prefLabel "Caret in a SPARQL query"@en;
   sparql:syntax '^';  
-  rdfs:isDefinedBy sparql:.  
+  rdfs:isDefinedBy sparql:.
+
+sparql:And
+  a owl:Class;
+  rdfs:subClassOf sparql:Symbol;
+  dct:conformsTo section:And;
+  skos:definition "Represents the AND symbol in a SPARQL query."@en;
+  skos:prefLabel "AND symbol in a SPARQL query"@en;
+  sparql:syntax '&&';  
+  rdfs:isDefinedBy sparql:.
+
+sparql:Or
+  a owl:Class;
+  rdfs:subClassOf sparql:Symbol;
+  dct:conformsTo section:Or;
+  skos:definition "Represents the OR symbol in a SPARQL query."@en;
+  skos:prefLabel "OR symbol in a SPARQL query"@en;
+  sparql:syntax '||';  
+  rdfs:isDefinedBy sparql:.
 
 sparql:Expression
   a owl:Class;
