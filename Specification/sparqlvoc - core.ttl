@@ -1595,14 +1595,14 @@ sparql:InsertClause
   skos:prefLabel "Insert Clause"@en;
   rdfs:isDefinedBy sparql:.
 
-shp:SerializableNode
+shp:NonTerminalNode
     a sh:NodeShape;
-    sh:rule rule:SerializableNode;
-    sh:target target:SerializableNode;
-    skos:prefLabel 'serializable node shape'@en;
+    sh:rule rule:NonTerminalNode;
+    sh:target target:NonTerminalNode;
+    skos:prefLabel 'Non-terminal node shape'@en;
     rdfs:isDefinedBy sparql:.
 
-target:SerializableNode
+target:NonTerminalNode
     a sh:SPARQLTarget;
     rdfs:comment 'Select non-terminal nodes in a SPARQL Abstract Syntax Tree that do not have a SPARQL fragment yet, and whose child nodes all have a SPARQL fragment already.'@en;
     sh:prefixes sparql:;
@@ -1624,10 +1624,10 @@ select $this {
 }''';
     rdfs:isDefinedBy sparql:.
 
-  rule:SerializableNode
+  rule:NonTerminalNode
     a sh:SPARQLRule;
-    rdfs:comment 'Create the SPARQL fragment for a node in a SPARQL query.'@en;
-    skos:prefLabel 'SPARQL serialization algorithm'@en;
+    rdfs:comment 'Create the SPARQL fragment for a non-terminal node in a SPARQL query.'@en;
+    skos:prefLabel 'SPARQL non-terminal node serialization algorithm'@en;
     sh:prefixes sparql:;
     sh:construct '''
 construct {
@@ -1715,7 +1715,7 @@ target:Symbol
     sh:select '''
 select $this {
 
-  # Select all keyword nodes in the SPARQL query...
+  # Select all symbol nodes in the SPARQL query...
   $this a/rdfs:subClassOf* sparql:Symbol.
   
   # ...that do not yet have a sparql fragment.
@@ -1821,7 +1821,7 @@ target:CharacterSequence
     sh:select '''
 select $this {
 
-  # Select all keyword nodes in the SPARQL query...
+  # Select all character sequence nodes in the SPARQL query...
   $this a/rdfs:subClassOf* sparql:CharacterSequence.
   
   # ...that do not yet have a sparql fragment.
