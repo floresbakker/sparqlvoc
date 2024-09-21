@@ -218,6 +218,14 @@ sparql:Prefix
   sparql:syntax 'PREFIX';
   rdfs:isDefinedBy sparql:.
 
+sparql:ArgList
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:ArgList;
+  skos:definition "Represents an ArgList in SPARQL."@en;
+  skos:prefLabel "ArgList"@en;
+  rdfs:isDefinedBy sparql:.
+  
 sparql:IRI
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
@@ -232,6 +240,14 @@ sparql:IRIRef
   dct:conformsTo section:IRIRef;
   skos:definition "Represents an IRIRef in SPARQL."@en;
   skos:prefLabel "IRI reference"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:Nil
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:Nil;
+  skos:definition "Represents a Nil in SPARQL."@en;
+  skos:prefLabel "Nil"@en;
   rdfs:isDefinedBy sparql:.
 
 sparql:IRIValue
@@ -466,6 +482,42 @@ sparql:ClosedSquareBracket
   sparql:syntax ']';  
   rdfs:isDefinedBy sparql:.
 
+sparql:PlusSign
+  a owl:Class;
+  rdfs:subClassOf sparql:Symbol;
+  dct:conformsTo section:PlusSign;
+  skos:definition "Represents a plus sign in a SPARQL query."@en;
+  skos:prefLabel "Plus sign in a SPARQL query"@en;
+  sparql:syntax '+';  
+  rdfs:isDefinedBy sparql:.
+
+sparql:MinusSign
+  a owl:Class;
+  rdfs:subClassOf sparql:Symbol;
+  dct:conformsTo section:MinusSign;
+  skos:definition "Represents a minus sign in a SPARQL query."@en;
+  skos:prefLabel "Minus sign in a SPARQL query"@en;
+  sparql:syntax '-';  
+  rdfs:isDefinedBy sparql:.
+
+sparql:MultiplicationSign
+  a owl:Class;
+  rdfs:subClassOf sparql:Symbol;
+  dct:conformsTo section:MultiplicationSign;
+  skos:definition "Represents a multiplication sign in a SPARQL query."@en;
+  skos:prefLabel "Multiplication sign in a SPARQL query"@en;
+  sparql:syntax '*';  
+  rdfs:isDefinedBy sparql:.
+
+sparql:DivisionSign
+  a owl:Class;
+  rdfs:subClassOf sparql:Symbol;
+  dct:conformsTo section:DivisionSign;
+  skos:definition "Represents a division sign in a SPARQL query."@en;
+  skos:prefLabel "Division sign in a SPARQL query"@en;
+  sparql:syntax '/';  
+  rdfs:isDefinedBy sparql:.
+  
 sparql:LessThan
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
@@ -484,6 +536,24 @@ sparql:GreaterThan
   sparql:syntax '>';  
   rdfs:isDefinedBy sparql:.
 
+sparql:Equal
+  a owl:Class;
+  rdfs:subClassOf sparql:Symbol;
+  dct:conformsTo section:Equal;
+  skos:definition "Represents an equal symbol in a SPARQL query."@en;
+  skos:prefLabel "Equal symbol in a SPARQL query"@en;
+  sparql:syntax '=';  
+  rdfs:isDefinedBy sparql:.
+
+sparql:NotEqual
+  a owl:Class;
+  rdfs:subClassOf sparql:Symbol;
+  dct:conformsTo section:NotEqual;
+  skos:definition "Represents a not-equal symbol in a SPARQL query."@en;
+  skos:prefLabel "Equal symbol in a SPARQL query"@en;
+  sparql:syntax '!=';  
+  rdfs:isDefinedBy sparql:.
+  
 sparql:ExclamationMark
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
@@ -902,6 +972,374 @@ sparql:Filter
   sparql:syntax 'FILTER';
   rdfs:isDefinedBy sparql:.  
 
+sparql:Constraint
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:Constraint;
+  skos:definition "Represents a constraint clause in SPARQL."@en;
+  skos:prefLabel "Constraint clause"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:BrackettedExpression
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:BrackettedExpression;
+  skos:definition "Represents a bracketted expression clause in SPARQL."@en;
+  skos:prefLabel "BrackettedExpression clause"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:ConditionalOrExpression
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:ConditionalOrExpression;
+  skos:definition "Represents a conditional or expression clause in SPARQL."@en;
+  skos:prefLabel "ConditionalOrExpression clause"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:ConditionalAndExpression
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:ConditionalAndExpression;
+  skos:definition "Represents a conditional and expression clause in SPARQL."@en;
+  skos:prefLabel "ConditionalOrExpression clause"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:ValueLogical
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:ValueLogical;
+  skos:definition "Represents a value logical clause in SPARQL."@en;
+  skos:prefLabel "ValueLogical clause"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:RelationalExpression
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:RelationalExpression;
+  skos:definition "Represents a relational expression clause in SPARQL."@en;
+  skos:prefLabel "RelationalExpression clause"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:NumericExpression
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:NumericExpression;
+  skos:definition "Represents a numeric expression clause in SPARQL."@en;
+  skos:prefLabel "NumericExpression clause"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:ExpressionList
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:ExpressionList;
+  skos:definition "Represents an expression list clause in SPARQL."@en;
+  skos:prefLabel "ExpressionList clause"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:AdditiveExpression
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:AdditiveExpression;
+  skos:definition "Represents a numeric expression clause in SPARQL."@en;
+  skos:prefLabel "AdditiveExpression clause"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:MultiplicativeExpression
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:MultiplicativeExpression;
+  skos:definition "Represents a multiplicative expression clause in SPARQL."@en;
+  skos:prefLabel "MultiplicativeExpression clause"@en;
+  rdfs:isDefinedBy sparql:.  
+
+sparql:NumericLiteralPositive
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:NumericLiteralPositive;
+  skos:definition "Represents a numeric literal positive in SPARQL."@en;
+  skos:prefLabel "NumericLiteralPositive clause"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:NumericLiteralNegative
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:NumericLiteralNegative;
+  skos:definition "Represents a numeric literal negative in SPARQL."@en;
+  skos:prefLabel "NumericLiteralNegative clause"@en;
+  rdfs:isDefinedBy sparql:.    
+
+sparql:NumericLiteralUnsigned
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:NumericLiteralUnsigned;
+  skos:definition "Represents a numeric literal unsigned in SPARQL."@en;
+  skos:prefLabel "NumericLiteralUnsigned clause"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:UnaryExpression
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:UnaryExpression;
+  skos:definition "Represents an unary expression clause in SPARQL."@en;
+  skos:prefLabel "UnaryExpression clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:PrimaryExpression
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:PrimaryExpression;
+  skos:definition "Represents a primary expression clause in SPARQL."@en;
+  skos:prefLabel "PrimaryExpression clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:SubstringExpression
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:SubstringExpression;
+  skos:definition "Represents a substring expression clause in SPARQL."@en;
+  skos:prefLabel "SubstringExpression clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:StrReplaceExpression
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:StrReplaceExpression;
+  skos:definition "Represents a StrReplaceExpression clause in SPARQL."@en;
+  skos:prefLabel "StrReplaceExpression clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:RegexExpression
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:RegexExpression;
+  skos:definition "Represents a RegexExpression clause in SPARQL."@en;
+  skos:prefLabel "RegexExpression clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:ExistsFunc
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:ExistsFunc;
+  skos:definition "Represents a ExistsFunc clause in SPARQL."@en;
+  skos:prefLabel "ExistsFunc clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:NotExistsFunc
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:NotExistsFunc;
+  skos:definition "Represents a NotExistsFunc clause in SPARQL."@en;
+  skos:prefLabel "NotExistsFunc clause"@en;
+  rdfs:isDefinedBy sparql:. 
+  
+sparql:BuiltInCall
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:BuiltInCall;
+  skos:definition "Represents a built in call clause in SPARQL."@en;
+  skos:prefLabel "BuiltInCall clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:IriOrFunction
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:IriOrFunction;
+  skos:definition "Represents an IRI or Function clause in SPARQL."@en;
+  skos:prefLabel "IriOrFunction clause"@en;
+  rdfs:isDefinedBy sparql:. 
+   
+sparql:RDFLiteral
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:RDFLiteral;
+  skos:definition "Represents a RDF literal clause in SPARQL."@en;
+  skos:prefLabel "RDFLiteral clause"@en;
+  rdfs:isDefinedBy sparql:.    
+
+sparql:NumericLiteral
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:NumericLiteral;
+  skos:definition "Represents a numeric literal clause in SPARQL."@en;
+  skos:prefLabel "NumericLiteral clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:BooleanLiteral
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:BooleanLiteral;
+  skos:definition "Represents a Boolean Literal clause in SPARQL."@en;
+  skos:prefLabel "BooleanLiteral clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Aggregate
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:Aggregate;
+  skos:definition "Represents an aggregate clause in SPARQL."@en;
+  skos:prefLabel "Aggregate clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:String
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:String;
+  skos:definition "Represents a string clause in SPARQL."@en;
+  skos:prefLabel "String clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Langtag
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:Langtag;
+  skos:definition "Represents a langtag clause in SPARQL."@en;
+  skos:prefLabel "Langtag clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Langtag
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:Langtag;
+  skos:definition "Represents a langtag clause in SPARQL."@en;
+  skos:prefLabel "Langtag clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:STRING_LITERAL1
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:STRING_LITERAL1;
+  skos:definition "Represents a langtag clause in SPARQL."@en;
+  skos:prefLabel "STRING_LITERAL1 clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:STRING_LITERAL2
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:STRING_LITERAL2;
+  skos:definition "Represents a langtag clause in SPARQL."@en;
+  skos:prefLabel "STRING_LITERAL2 clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:STRING_LITERAL_LONG1
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:STRING_LITERAL_LONG1;
+  skos:definition "Represents a STRING_LITERAL_LONG1 clause in SPARQL."@en;
+  skos:prefLabel "STRING_LITERAL_LONG1 clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:STRING_LITERAL_LONG2
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:STRING_LITERAL_LONG2;
+  skos:definition "Represents a STRING_LITERAL_LONG2 clause in SPARQL."@en;
+  skos:prefLabel "STRING_LITERAL_LONG2 clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Integer
+  a owl:Class;
+  rdfs:subClassOf sparql:CharacterSequence;
+  dct:conformsTo section:Integer;
+  skos:definition "Represents a Integer clause in SPARQL."@en;
+  skos:prefLabel "Integer clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Double
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:Double;
+  skos:definition "Represents a Double clause in SPARQL."@en;
+  skos:prefLabel "Double clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Decimal
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:Decimal;
+  skos:definition "Represents a Decimal clause in SPARQL."@en;
+  skos:prefLabel "Decimal clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Exponent
+  a owl:Class;
+  rdfs:subClassOf sparql:CharacterSequence;
+  dct:conformsTo section:Exponent;
+  skos:definition "Represents a Exponent clause in SPARQL."@en;
+  skos:prefLabel "Exponent clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Integer_Positive
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:Integer_Positive;
+  skos:definition "Represents a Integer Positive clause in SPARQL."@en;
+  skos:prefLabel "Integer Positive clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Decimal_Positive
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:Decimal_Positive;
+  skos:definition "Represents a Decimal Positive clause in SPARQL."@en;
+  skos:prefLabel "Decimal Positive clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Double_Positive
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:Double_Positive;
+  skos:definition "Represents a Double Positive clause in SPARQL."@en;
+  skos:prefLabel "Double Positive clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Integer_Negative
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:Integer_Negative;
+  skos:definition "Represents a Integer Negative clause in SPARQL."@en;
+  skos:prefLabel "Integer Negative clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Decimal_Negative
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:Decimal_Negative;
+  skos:definition "Represents a Decimal Negative clause in SPARQL."@en;
+  skos:prefLabel "Decimal Negative clause"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Double_Negative
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:Double_Negative;
+  skos:definition "Represents a Double Negative clause in SPARQL."@en;
+  skos:prefLabel "Double Negative clause"@en;
+  rdfs:isDefinedBy sparql:. 
+  
+sparql:BlankNode
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:BlankNode ;
+  skos:definition ".."@en;
+  skos:prefLabel "Blank Node"@en;
+  rdfs:isDefinedBy sparql:.  
+
+sparql:BlankNodeLabel
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:BlankNodeLabel ;
+  skos:definition ".."@en;
+  skos:prefLabel "Blank Node"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Anon
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:Anon ;
+  skos:definition ".."@en;
+  skos:prefLabel "Anon"@en;
+  rdfs:isDefinedBy sparql:. 
+  
 sparql:TriplesTemplate
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;

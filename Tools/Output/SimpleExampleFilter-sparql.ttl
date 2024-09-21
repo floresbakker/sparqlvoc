@@ -34,13 +34,6 @@ sparql:Add a owl:Class ;
     skos:definition "Represents an ADD operation in SPARQL, adding triples from one graph to another."@en ;
     skos:prefLabel "Add"@en .
 
-sparql:AdditiveExpression a owl:Class ;
-    dct:conformsTo section:AdditiveExpression ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:NonTerminalNode ;
-    skos:definition "Represents a numeric expression clause in SPARQL."@en ;
-    skos:prefLabel "AdditiveExpression clause"@en .
-
 sparql:Aggregate a owl:Class ;
     dct:conformsTo section:Aggregate ;
     rdfs:isDefinedBy sparql: ;
@@ -136,13 +129,6 @@ sparql:BooleanLiteral a owl:Class ;
     skos:definition "Represents a Boolean Literal clause in SPARQL."@en ;
     skos:prefLabel "BooleanLiteral clause"@en .
 
-sparql:BrackettedExpression a owl:Class ;
-    dct:conformsTo section:BrackettedExpression ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:NonTerminalNode ;
-    skos:definition "Represents a bracketted expression clause in SPARQL."@en ;
-    skos:prefLabel "BrackettedExpression clause"@en .
-
 sparql:BuiltInCall a owl:Class ;
     dct:conformsTo section:BuiltInCall ;
     rdfs:isDefinedBy sparql: ;
@@ -173,14 +159,6 @@ sparql:Clear a owl:Class ;
     skos:definition "Represents a CLEAR operation in SPARQL, removing all data from a specified graph."@en ;
     skos:prefLabel "Clear"@en .
 
-sparql:ClosedParenthesis a owl:Class ;
-    dct:conformsTo section:ClosedParenthesis ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:Symbol ;
-    skos:definition "Represents a closed parenthesis in a SPARQL query."@en ;
-    skos:prefLabel "Closed parenthesis in a SPARQL query"@en ;
-    sparql:syntax ")" .
-
 sparql:ClosedSquareBracket a owl:Class ;
     dct:conformsTo section:ClosedSquareBracket ;
     rdfs:isDefinedBy sparql: ;
@@ -195,27 +173,6 @@ sparql:CollectionPath a owl:Class ;
     rdfs:subClassOf sparql:NonTerminalNode ;
     skos:definition ".."@en ;
     skos:prefLabel "Collection Path"@en .
-
-sparql:ConditionalAndExpression a owl:Class ;
-    dct:conformsTo section:ConditionalAndExpression ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:NonTerminalNode ;
-    skos:definition "Represents a conditional and expression clause in SPARQL."@en ;
-    skos:prefLabel "ConditionalOrExpression clause"@en .
-
-sparql:ConditionalOrExpression a owl:Class ;
-    dct:conformsTo section:ConditionalOrExpression ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:NonTerminalNode ;
-    skos:definition "Represents a conditional or expression clause in SPARQL."@en ;
-    skos:prefLabel "ConditionalOrExpression clause"@en .
-
-sparql:Constraint a owl:Class ;
-    dct:conformsTo section:Constraint ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:NonTerminalNode ;
-    skos:definition "Represents a constraint clause in SPARQL."@en ;
-    skos:prefLabel "Constraint clause"@en .
 
 sparql:Construct a owl:Class ;
     dct:conformsTo section:Construct ;
@@ -368,14 +325,6 @@ sparql:Drop a owl:Class ;
     skos:definition "Represents a DROP operation in SPARQL, removing a graph from the dataset."@en ;
     skos:prefLabel "Drop"@en .
 
-sparql:Equal a owl:Class ;
-    dct:conformsTo section:Equal ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:Symbol ;
-    skos:definition "Represents an equal symbol in a SPARQL query."@en ;
-    skos:prefLabel "Equal symbol in a SPARQL query"@en ;
-    sparql:syntax "=" .
-
 sparql:ExclamationMark a owl:Class ;
     dct:conformsTo section:ExclamationMark ;
     rdfs:isDefinedBy sparql: ;
@@ -398,34 +347,12 @@ sparql:Exponent a owl:Class ;
     skos:definition "Represents a Exponent clause in SPARQL."@en ;
     skos:prefLabel "Exponent clause"@en .
 
-sparql:Expression a owl:Class ;
-    dct:conformsTo section:Expression ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:NonTerminalNode ;
-    skos:definition "Represents conditions used in filters, comparisons, or mathematical expressions."@en ;
-    skos:prefLabel "Expression"@en .
-
 sparql:ExpressionList a owl:Class ;
     dct:conformsTo section:ExpressionList ;
     rdfs:isDefinedBy sparql: ;
     rdfs:subClassOf sparql:NonTerminalNode ;
     skos:definition "Represents an expression list clause in SPARQL."@en ;
     skos:prefLabel "ExpressionList clause"@en .
-
-sparql:Filter a owl:Class ;
-    dct:conformsTo section:Filter ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:Keyword ;
-    skos:definition "Represents the FILTER keyword in a SPARQL query."@en ;
-    skos:prefLabel "FILTER keyword"@en ;
-    sparql:syntax "FILTER" .
-
-sparql:FilterClause a owl:Class ;
-    dct:conformsTo section:FilterClause ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:NonTerminalNode ;
-    skos:definition "Represents a FILTER clause in SPARQL, applying constraints to the result set based on a boolean condition."@en ;
-    skos:prefLabel "Filter clause"@en .
 
 sparql:From a owl:Class ;
     dct:conformsTo section:From ;
@@ -449,13 +376,6 @@ sparql:GraphGraphPattern a owl:Class ;
     rdfs:subClassOf sparql:NonTerminalNode ;
     skos:definition "Represents a GRAPH graph pattern in SPARQL, specifying a named graph to match."@en ;
     skos:prefLabel "Graph Graph Pattern"@en .
-
-sparql:GraphPatternNotTriples a owl:Class ;
-    dct:conformsTo section:GraphPatternNotTriples ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:NonTerminalNode ;
-    skos:definition "Represents graph patterns in SPARQL that are not simple triple patterns, such as optional and union patterns."@en ;
-    skos:prefLabel "Graph Pattern Not Triples"@en .
 
 sparql:GraphTerm a owl:Class ;
     dct:conformsTo section:VarOrTerm ;
@@ -624,13 +544,6 @@ sparql:MultiplicationSign a owl:Class ;
     skos:prefLabel "Multiplication sign in a SPARQL query"@en ;
     sparql:syntax "*" .
 
-sparql:MultiplicativeExpression a owl:Class ;
-    dct:conformsTo section:MultiplicativeExpression ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:NonTerminalNode ;
-    skos:definition "Represents a multiplicative expression clause in SPARQL."@en ;
-    skos:prefLabel "MultiplicativeExpression clause"@en .
-
 sparql:Named a owl:Class ;
     dct:conformsTo section:Named ;
     rdfs:isDefinedBy sparql: ;
@@ -667,13 +580,6 @@ sparql:NotExistsFunc a owl:Class ;
     rdfs:subClassOf sparql:NonTerminalNode ;
     skos:definition "Represents a NotExistsFunc clause in SPARQL."@en ;
     skos:prefLabel "NotExistsFunc clause"@en .
-
-sparql:NumericExpression a owl:Class ;
-    dct:conformsTo section:NumericExpression ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:NonTerminalNode ;
-    skos:definition "Represents a numeric expression clause in SPARQL."@en ;
-    skos:prefLabel "NumericExpression clause"@en .
 
 sparql:NumericLiteral a owl:Class ;
     dct:conformsTo section:NumericLiteral ;
@@ -717,14 +623,6 @@ sparql:OffsetClause a owl:Class ;
     rdfs:subClassOf sparql:NonTerminalNode ;
     skos:definition "Represents an OFFSET clause in SPARQL, specifying the number of solutions to skip in the result set."@en ;
     skos:prefLabel "Offset Clause"@en .
-
-sparql:OpenParenthesis a owl:Class ;
-    dct:conformsTo section:OpenParenthesis ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:Symbol ;
-    skos:definition "Represents an open parenthises in a SPARQL query."@en ;
-    skos:prefLabel "Open parenthesis in a SPARQL query"@en ;
-    sparql:syntax "(" .
 
 sparql:OpenSquareBracket a owl:Class ;
     dct:conformsTo section:OpenSquareBracket ;
@@ -816,13 +714,6 @@ sparql:PrefixedName a owl:Class ;
     skos:definition "Represents a prefixed name in SPARQL."@en ;
     skos:prefLabel "Prefixed name"@en .
 
-sparql:PrimaryExpression a owl:Class ;
-    dct:conformsTo section:PrimaryExpression ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:NonTerminalNode ;
-    skos:definition "Represents a primary expression clause in SPARQL."@en ;
-    skos:prefLabel "PrimaryExpression clause"@en .
-
 sparql:Query a owl:Class ;
     dct:conformsTo section:Query ;
     rdfs:isDefinedBy sparql: ;
@@ -851,13 +742,6 @@ sparql:RegexExpression a owl:Class ;
     rdfs:subClassOf sparql:NonTerminalNode ;
     skos:definition "Represents a RegexExpression clause in SPARQL."@en ;
     skos:prefLabel "RegexExpression clause"@en .
-
-sparql:RelationalExpression a owl:Class ;
-    dct:conformsTo section:RelationalExpression ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:NonTerminalNode ;
-    skos:definition "Represents a relational expression clause in SPARQL."@en ;
-    skos:prefLabel "RelationalExpression clause"@en .
 
 sparql:STRING_LITERAL1 a owl:Class ;
     dct:conformsTo section:STRING_LITERAL1 ;
@@ -966,13 +850,6 @@ sparql:TriplesTemplate a owl:Class ;
     skos:definition "Represents a triple template in SPARQL, used in CONSTRUCT queries to create RDF triples."@en ;
     skos:prefLabel "Triples Template"@en .
 
-sparql:UnaryExpression a owl:Class ;
-    dct:conformsTo section:UnaryExpression ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:NonTerminalNode ;
-    skos:definition "Represents an unary expression clause in SPARQL."@en ;
-    skos:prefLabel "UnaryExpression clause"@en .
-
 sparql:Update a owl:Class ;
     dct:conformsTo section:Update ;
     rdfs:isDefinedBy sparql: ;
@@ -993,13 +870,6 @@ sparql:UpdateUnit a owl:Class ;
     rdfs:subClassOf sparql:NonTerminalNode ;
     skos:definition "Represents the unit of an update in SPARQL."@en ;
     skos:prefLabel "Update Unit"@en .
-
-sparql:ValueLogical a owl:Class ;
-    dct:conformsTo section:ValueLogical ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:NonTerminalNode ;
-    skos:definition "Represents a value logical clause in SPARQL."@en ;
-    skos:prefLabel "ValueLogical clause"@en .
 
 sparql:Values a owl:Class ;
     dct:conformsTo section:Values ;
@@ -1093,6 +963,13 @@ sparql:BaseDecl a owl:Class ;
     skos:definition "Represents a BASE declaration with an IRI in SPARQL."@en ;
     skos:prefLabel "Base Declaration"@en .
 
+sparql:BrackettedExpression a owl:Class ;
+    dct:conformsTo section:BrackettedExpression ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:NonTerminalNode ;
+    skos:definition "Represents a bracketted expression clause in SPARQL."@en ;
+    skos:prefLabel "BrackettedExpression clause"@en .
+
 sparql:ClosedCurlyBracket a owl:Class ;
     dct:conformsTo section:ClosedCurlyBracket ;
     rdfs:isDefinedBy sparql: ;
@@ -1100,6 +977,14 @@ sparql:ClosedCurlyBracket a owl:Class ;
     skos:definition "Represents a closed curly bracket in a SPARQL query."@en ;
     skos:prefLabel "Closed curly bracket in a SPARQL query"@en ;
     sparql:syntax "}" .
+
+sparql:ClosedParenthesis a owl:Class ;
+    dct:conformsTo section:ClosedParenthesis ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:Symbol ;
+    skos:definition "Represents a closed parenthesis in a SPARQL query."@en ;
+    skos:prefLabel "Closed parenthesis in a SPARQL query"@en ;
+    sparql:syntax ")" .
 
 sparql:Colon a owl:Class ;
     dct:conformsTo section:Colon ;
@@ -1109,12 +994,70 @@ sparql:Colon a owl:Class ;
     skos:prefLabel "Colon in a SPARQL query"@en ;
     sparql:syntax ":" .
 
+sparql:ConditionalAndExpression a owl:Class ;
+    dct:conformsTo section:ConditionalAndExpression ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:NonTerminalNode ;
+    skos:definition "Represents a conditional and expression clause in SPARQL."@en ;
+    skos:prefLabel "ConditionalOrExpression clause"@en .
+
+sparql:ConditionalOrExpression a owl:Class ;
+    dct:conformsTo section:ConditionalOrExpression ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:NonTerminalNode ;
+    skos:definition "Represents a conditional or expression clause in SPARQL."@en ;
+    skos:prefLabel "ConditionalOrExpression clause"@en .
+
+sparql:Constraint a owl:Class ;
+    dct:conformsTo section:Constraint ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:NonTerminalNode ;
+    skos:definition "Represents a constraint clause in SPARQL."@en ;
+    skos:prefLabel "Constraint clause"@en .
+
+sparql:Equal a owl:Class ;
+    dct:conformsTo section:Equal ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:Symbol ;
+    skos:definition "Represents an equal symbol in a SPARQL query."@en ;
+    skos:prefLabel "Equal symbol in a SPARQL query"@en ;
+    sparql:syntax "=" .
+
+sparql:Expression a owl:Class ;
+    dct:conformsTo section:Expression ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:NonTerminalNode ;
+    skos:definition "Represents conditions used in filters, comparisons, or mathematical expressions."@en ;
+    skos:prefLabel "Expression"@en .
+
+sparql:Filter a owl:Class ;
+    dct:conformsTo section:Filter ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:Keyword ;
+    skos:definition "Represents the FILTER keyword in a SPARQL query."@en ;
+    skos:prefLabel "FILTER keyword"@en ;
+    sparql:syntax "FILTER" .
+
+sparql:FilterClause a owl:Class ;
+    dct:conformsTo section:FilterClause ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:NonTerminalNode ;
+    skos:definition "Represents a FILTER clause in SPARQL, applying constraints to the result set based on a boolean condition."@en ;
+    skos:prefLabel "Filter clause"@en .
+
 sparql:GraphNodePath a owl:Class ;
     dct:conformsTo section:GraphNodePath ;
     rdfs:isDefinedBy sparql: ;
     rdfs:subClassOf sparql:NonTerminalNode ;
     skos:definition ".."@en ;
     skos:prefLabel "Graph Node Path"@en .
+
+sparql:GraphPatternNotTriples a owl:Class ;
+    dct:conformsTo section:GraphPatternNotTriples ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:NonTerminalNode ;
+    skos:definition "Represents graph patterns in SPARQL that are not simple triple patterns, such as optional and union patterns."@en ;
+    skos:prefLabel "Graph Pattern Not Triples"@en .
 
 sparql:GreaterThan a owl:Class ;
     dct:conformsTo section:GreaterThan ;
@@ -1167,6 +1110,14 @@ sparql:OpenCurlyBracket a owl:Class ;
     skos:definition "Represents an open curly bracket in a SPARQL query."@en ;
     skos:prefLabel "Open curly bracket in a SPARQL query"@en ;
     sparql:syntax "{" .
+
+sparql:OpenParenthesis a owl:Class ;
+    dct:conformsTo section:OpenParenthesis ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:Symbol ;
+    skos:definition "Represents an open parenthises in a SPARQL query."@en ;
+    skos:prefLabel "Open parenthesis in a SPARQL query"@en ;
+    sparql:syntax "(" .
 
 sparql:PNAME_NS a owl:Class ;
     dct:conformsTo section:PNAME_NS ;
@@ -1226,6 +1177,13 @@ sparql:QuestionMark a owl:Class ;
     skos:prefLabel "Question mark in a SPARQL query"@en ;
     sparql:syntax "?" .
 
+sparql:RelationalExpression a owl:Class ;
+    dct:conformsTo section:RelationalExpression ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:NonTerminalNode ;
+    skos:definition "Represents a relational expression clause in SPARQL."@en ;
+    skos:prefLabel "RelationalExpression clause"@en .
+
 sparql:Select a owl:Class ;
     dct:conformsTo section:Select ;
     rdfs:isDefinedBy sparql: ;
@@ -1261,6 +1219,13 @@ sparql:TriplesSameSubjectPath a owl:Class ;
     rdfs:subClassOf sparql:NonTerminalNode ;
     skos:definition ".."@en ;
     skos:prefLabel "Triples Same Subject Path"@en .
+
+sparql:ValueLogical a owl:Class ;
+    dct:conformsTo section:ValueLogical ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:NonTerminalNode ;
+    skos:definition "Represents a value logical clause in SPARQL."@en ;
+    skos:prefLabel "ValueLogical clause"@en .
 
 sparql:VerbSimple a owl:Class ;
     dct:conformsTo section:VerbSimple ;
@@ -1506,6 +1471,14 @@ select $this {
   }
 }""" .
 
+ex:additiveExpression1 a sparql:AdditiveExpression ;
+    rdf:_1 ex:multiplicativeExpression1 ;
+    sparql:fragment "?s"^^xsd:string .
+
+ex:additiveExpression2 a sparql:AdditiveExpression ;
+    rdf:_2 ex:multiplicativeExpression2 ;
+    sparql:fragment "?o"^^xsd:string .
+
 ex:base a sparql:Base ;
     sparql:fragment "BASE"^^xsd:string .
 
@@ -1514,26 +1487,67 @@ ex:baseDecl a sparql:BaseDecl ;
     rdf:_2 ex:iriRefBase ;
     sparql:fragment "BASE <https://example.org/>"^^xsd:string .
 
+ex:brackettedExpression a sparql:BrackettedExpression ;
+    rdf:_1 ex:openParenthesis ;
+    rdf:_2 ex:expression ;
+    rdf:_3 ex:closedParenthesis ;
+    sparql:fragment "( ?s = ?o )"^^xsd:string .
+
 ex:closedCurlyBracket a sparql:ClosedCurlyBracket ;
     sparql:fragment "}"^^xsd:string .
+
+ex:closedParenthesis a sparql:ClosedParenthesis ;
+    sparql:fragment ")"^^xsd:string .
 
 ex:colon a sparql:Colon ;
     sparql:fragment ":"^^xsd:string .
 
+ex:conditionalAndExpression a sparql:ConditionalAndExpression ;
+    rdf:_1 ex:valueLogical ;
+    sparql:fragment "?s = ?o"^^xsd:string .
+
+ex:conditionalOrExpression a sparql:ConditionalOrExpression ;
+    rdf:_1 ex:conditionalAndExpression ;
+    sparql:fragment "?s = ?o"^^xsd:string .
+
+ex:constraint a sparql:Constraint ;
+    rdf:_1 ex:brackettedExpression ;
+    sparql:fragment "( ?s = ?o )"^^xsd:string .
+
+ex:equal a sparql:Equal ;
+    sparql:fragment "="^^xsd:string .
+
 ex:exampleQuery a sparql:QueryUnit ;
     rdf:_1 ex:prologue ;
     rdf:_2 ex:selectQuery ;
-    sparql:fragment "BASE <https://example.org/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT * WHERE { ?s ?p ?o }"^^xsd:string .
+    sparql:fragment "BASE <https://example.org/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT * WHERE { ?s ?p ?o FILTER ( ?s = ?o ) }"^^xsd:string .
+
+ex:expression a sparql:Expression ;
+    rdf:_1 ex:conditionalOrExpression ;
+    sparql:fragment "?s = ?o"^^xsd:string .
+
+ex:filter a sparql:Filter ;
+    sparql:fragment "FILTER"^^xsd:string .
+
+ex:filterClause a sparql:FilterClause ;
+    rdf:_1 ex:filter ;
+    rdf:_2 ex:constraint ;
+    sparql:fragment "FILTER ( ?s = ?o )"^^xsd:string .
 
 ex:graphNodePath a sparql:GraphNodePath ;
     rdf:_1 ex:varOrTerm2 ;
     sparql:fragment "?o"^^xsd:string .
 
+ex:graphPatternNotTriples a sparql:GraphPatternNotTriples ;
+    rdf:_1 ex:filterClause ;
+    sparql:fragment "FILTER ( ?s = ?o )"^^xsd:string .
+
 ex:groupGraphPattern a sparql:GroupGraphPattern ;
     rdf:_1 ex:openCurlyBracket ;
     rdf:_2 ex:groupGraphPatternSub ;
-    rdf:_3 ex:closedCurlyBracket ;
-    sparql:fragment "{ ?s ?p ?o }"^^xsd:string .
+    rdf:_3 ex:graphPatternNotTriples ;
+    rdf:_4 ex:closedCurlyBracket ;
+    sparql:fragment "{ ?s ?p ?o FILTER ( ?s = ?o ) }"^^xsd:string .
 
 ex:groupGraphPatternSub a sparql:GroupGraphPatternSub ;
     rdf:_1 ex:triplesBlock ;
@@ -1559,6 +1573,22 @@ ex:iriValue_RDF a sparql:IRIValue ;
     rdf:value "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
     sparql:fragment "http://www.w3.org/1999/02/22-rdf-syntax-ns#" .
 
+ex:multiplicativeExpression1 a sparql:MultiplicativeExpression ;
+    rdf:_1 ex:unaryExpression1 ;
+    sparql:fragment "?s"^^xsd:string .
+
+ex:multiplicativeExpression2 a sparql:MultiplicativeExpression ;
+    rdf:_2 ex:unaryExpression2 ;
+    sparql:fragment "?o"^^xsd:string .
+
+ex:numericExpression1 a sparql:NumericExpression ;
+    rdf:_1 ex:additiveExpression1 ;
+    sparql:fragment "?s"^^xsd:string .
+
+ex:numericExpression2 a sparql:NumericExpression ;
+    rdf:_2 ex:additiveExpression2 ;
+    sparql:fragment "?o"^^xsd:string .
+
 ex:objectListPath a sparql:ObjectListPath ;
     rdf:_1 ex:objectPath ;
     sparql:fragment "?o"^^xsd:string .
@@ -1569,6 +1599,9 @@ ex:objectPath a sparql:ObjectPath ;
 
 ex:openCurlyBracket a sparql:OpenCurlyBracket ;
     sparql:fragment "{"^^xsd:string .
+
+ex:openParenthesis a sparql:OpenParenthesis ;
+    sparql:fragment "("^^xsd:string .
 
 ex:pname_NS a sparql:PNAME_NS ;
     rdf:_1 ex:prefix_RDF ;
@@ -1588,6 +1621,14 @@ ex:prefix_RDF a sparql:PN_PREFIX ;
     rdf:value "rdf" ;
     sparql:fragment "rdf" .
 
+ex:primaryExpression1 a sparql:PrimaryExpression ;
+    rdf:_1 ex:variable_s ;
+    sparql:fragment "?s"^^xsd:string .
+
+ex:primaryExpression2 a sparql:PrimaryExpression ;
+    rdf:_2 ex:variable_o ;
+    sparql:fragment "?o"^^xsd:string .
+
 ex:prologue a sparql:Prologue ;
     rdf:_1 ex:baseDecl ;
     rdf:_2 ex:prefixDecl ;
@@ -1597,6 +1638,12 @@ ex:propertyListPathNotEmpty a sparql:PropertyListPathNotEmpty ;
     rdf:_1 ex:verbSimple ;
     rdf:_2 ex:objectListPath ;
     sparql:fragment "?p ?o"^^xsd:string .
+
+ex:relationalExpression a sparql:RelationalExpression ;
+    rdf:_1 ex:numericExpression1 ;
+    rdf:_2 ex:equal ;
+    rdf:_3 ex:numericExpression2 ;
+    sparql:fragment "?s = ?o"^^xsd:string .
 
 ex:select a sparql:Select ;
     sparql:fragment "SELECT"^^xsd:string .
@@ -1609,7 +1656,7 @@ ex:selectClause1 a sparql:SelectClause ;
 ex:selectQuery a sparql:SelectQuery ;
     rdf:_1 ex:selectClause1 ;
     rdf:_2 ex:whereClause1 ;
-    sparql:fragment "SELECT * WHERE { ?s ?p ?o }"^^xsd:string .
+    sparql:fragment "SELECT * WHERE { ?s ?p ?o FILTER ( ?s = ?o ) }"^^xsd:string .
 
 ex:triplesBlock a sparql:TriplesBlock ;
     rdf:_1 ex:triplesSameSubjectPath ;
@@ -1619,6 +1666,18 @@ ex:triplesSameSubjectPath a sparql:TriplesSameSubjectPath ;
     rdf:_1 ex:varOrTerm1 ;
     rdf:_2 ex:propertyListPathNotEmpty ;
     sparql:fragment "?s ?p ?o"^^xsd:string .
+
+ex:unaryExpression1 a sparql:UnaryExpression ;
+    rdf:_1 ex:primaryExpression1 ;
+    sparql:fragment "?s"^^xsd:string .
+
+ex:unaryExpression2 a sparql:UnaryExpression ;
+    rdf:_2 ex:primaryExpression2 ;
+    sparql:fragment "?o"^^xsd:string .
+
+ex:valueLogical a sparql:ValueLogical ;
+    rdf:_1 ex:relationalExpression ;
+    sparql:fragment "?s = ?o"^^xsd:string .
 
 ex:varOrTerm1 a sparql:VarOrTerm ;
     rdf:_1 ex:variable_s ;
@@ -1655,17 +1714,9 @@ ex:variable1_s_name a sparql:CharacterSequence ;
     rdf:value "s" ;
     sparql:fragment "s" .
 
-ex:variable_o a sparql:Variable ;
-    rdf:_1 ex:variable1_o ;
-    sparql:fragment "?o"^^xsd:string .
-
 ex:variable_p a sparql:Variable ;
     rdf:_1 ex:variable1_p ;
     sparql:fragment "?p"^^xsd:string .
-
-ex:variable_s a sparql:Variable ;
-    rdf:_1 ex:variable1_s ;
-    sparql:fragment "?s"^^xsd:string .
 
 ex:verbSimple a sparql:VerbSimple ;
     rdf:_1 ex:variable_p ;
@@ -1677,7 +1728,7 @@ ex:where a sparql:Where ;
 ex:whereClause1 a sparql:WhereClause ;
     rdf:_1 ex:where ;
     rdf:_2 ex:groupGraphPattern ;
-    sparql:fragment "WHERE { ?s ?p ?o }"^^xsd:string .
+    sparql:fragment "WHERE { ?s ?p ?o FILTER ( ?s = ?o ) }"^^xsd:string .
 
 ex:wildcard a sparql:Wildcard ;
     sparql:fragment "*"^^xsd:string .
@@ -1687,6 +1738,13 @@ section:Tree a dcm:Text ;
     dct:source "https://sparql.org/#node-trees"^^xsd:anyURI ;
     rdfs:isDefinedBy sparql: ;
     skos:prefLabel "Tree"@en .
+
+sparql:AdditiveExpression a owl:Class ;
+    dct:conformsTo section:AdditiveExpression ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:NonTerminalNode ;
+    skos:definition "Represents a numeric expression clause in SPARQL."@en ;
+    skos:prefLabel "AdditiveExpression clause"@en .
 
 sparql:IRIRef a owl:Class ;
     dct:conformsTo section:IRIRef ;
@@ -1702,11 +1760,39 @@ sparql:IRIValue a owl:Class ;
     skos:definition "Represents an IRI value in SPARQL."@en ;
     skos:prefLabel "IRI value"@en .
 
+sparql:MultiplicativeExpression a owl:Class ;
+    dct:conformsTo section:MultiplicativeExpression ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:NonTerminalNode ;
+    skos:definition "Represents a multiplicative expression clause in SPARQL."@en ;
+    skos:prefLabel "MultiplicativeExpression clause"@en .
+
 sparql:Node a owl:Class ;
     dct:conformsTo section:Node ;
     rdfs:isDefinedBy sparql: ;
     skos:definition "A node is an object within the SPARQL abstract syntax tree."@en ;
     skos:prefLabel "Node"@en .
+
+sparql:NumericExpression a owl:Class ;
+    dct:conformsTo section:NumericExpression ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:NonTerminalNode ;
+    skos:definition "Represents a numeric expression clause in SPARQL."@en ;
+    skos:prefLabel "NumericExpression clause"@en .
+
+sparql:PrimaryExpression a owl:Class ;
+    dct:conformsTo section:PrimaryExpression ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:NonTerminalNode ;
+    skos:definition "Represents a primary expression clause in SPARQL."@en ;
+    skos:prefLabel "PrimaryExpression clause"@en .
+
+sparql:UnaryExpression a owl:Class ;
+    dct:conformsTo section:UnaryExpression ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf sparql:NonTerminalNode ;
+    skos:definition "Represents an unary expression clause in SPARQL."@en ;
+    skos:prefLabel "UnaryExpression clause"@en .
 
 sparql:VarOrTerm a owl:Class ;
     dct:conformsTo section:VarOrTerm ;
@@ -1720,6 +1806,14 @@ ex:greaterThan a sparql:GreaterThan ;
 
 ex:lessThan a sparql:LessThan ;
     sparql:fragment "<"^^xsd:string .
+
+ex:variable_o a sparql:Variable ;
+    rdf:_1 ex:variable1_o ;
+    sparql:fragment "?o"^^xsd:string .
+
+ex:variable_s a sparql:Variable ;
+    rdf:_1 ex:variable1_s ;
+    sparql:fragment "?s"^^xsd:string .
 
 sparql:Variable a owl:Class ;
     dct:conformsTo section:Variable ;
