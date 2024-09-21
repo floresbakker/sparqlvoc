@@ -43,7 +43,19 @@ ex:base
 
 ex:iriRefBase 
                 rdf:type sparql:IRIRef;
-                rdf:value "https:example.org/".
+                rdf:_1 ex:lessThan;
+                rdf:_2 ex:iriValue_Base;
+                rdf:_3 ex:greaterThan.
+
+ex:lessThan
+                rdf:type sparql:LessThan.
+
+ex:greaterThan
+                rdf:type sparql:GreaterThan.
+                              
+ex:iriValue_Base
+                rdf:type sparql:IRIValue;
+                rdf:value "https://example.org/".
                 
 ex:prefixDecl    
                 rdf:type sparql:PrefixDecl;
@@ -68,8 +80,14 @@ ex:colon
                 
 ex:iriRef_RDF 
                 rdf:type sparql:IRIRef;
+                rdf:_1 ex:lessThan;
+                rdf:_2 ex:iriValue_RDF;
+                rdf:_3 ex:greaterThan.
+
+ex:iriValue_RDF
+                rdf:type sparql:IRIValue;
                 rdf:value "http://www.w3.org/1999/02/22-rdf-syntax-ns#".
-               
+
 ex:selectQuery
                 rdf:type sparql:SelectQuery;
                 rdf:_1 ex:selectClause1;
@@ -125,6 +143,14 @@ ex:varOrTerm1
 
 ex:variable_s
                 rdf:type sparql:Variable1;
+                rdf:_1 ex:questionMark;
+                rdf:_2 ex:variable_s_name.
+
+ex:questionMark
+                rdf:type sparql:QuestionMark.
+
+ex:variable_s_name 
+                rdf:type sparql:CharacterSequence;
                 rdf:value 's'.
                 
 ex:propertyListPathNotEmpty
@@ -138,8 +164,13 @@ ex:verbSimple
 
 ex:variable_p
                 rdf:type sparql:Variable1;
-                rdf:value 'p'.                
+                rdf:_1 ex:questionMark;
+                rdf:_2 ex:variable_p_name.                    
 
+ex:variable_p_name 
+                rdf:type sparql:CharacterSequence;
+                rdf:value 'p'.   
+                
 ex:objectListPath
                 rdf:type sparql:ObjectListPath;
                 rdf:_1 ex:objectPath.
@@ -158,7 +189,11 @@ ex:varOrTerm2
 
 ex:variable_o
                 rdf:type sparql:Variable1;
+                rdf:_1 ex:questionMark;
+                rdf:_2 ex:variable_o_name.
+                   
+ex:variable_o_name 
+                rdf:type sparql:CharacterSequence;
                 rdf:value 'o'.
-
 ```
 
