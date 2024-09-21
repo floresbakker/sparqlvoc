@@ -96,39 +96,39 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
   
 ### SPARQL
 
-sparql:Tree
+sparql:AbstractSyntaxTree
   a owl:Class;
   dct:conformsTo section:Tree;
-  skos:definition 'tree.'@en;
-  skos:prefLabel 'Tree'@en;
+  skos:definition 'An abstract syntax tree is an object that represents a SPARQL query unit. A tree consists of connected nodes.'@en;
+  skos:prefLabel 'Abstract Syntax Tree'@en;
   rdfs:isDefinedBy sparql:.
 
-sparql:StructuralNode
+sparql:Node
   a owl:Class;
   dct:conformsTo section:Node;
   skos:definition 'A node is an object within the SPARQL abstract syntax tree.'@en;
   skos:prefLabel 'Node'@en;
   rdfs:isDefinedBy sparql:.
 
-sparql:StructuralNode
+sparql:NonTerminalNode
   a owl:Class;
   rdfs:subClassOf sparql:Node;
-  dct:conformsTo section:StructureNode;
-  skos:definition 'A node that represents a structure of nodes in the SPARQL abstract syntax tree.'@en;
-  skos:prefLabel 'Structural node'@en;
+  dct:conformsTo section:StructuralNode;
+  skos:definition 'A node that represents a structural component in the SPARQL abstract syntax tree.'@en;
+  skos:prefLabel 'Non-terminal node'@en;
   rdfs:isDefinedBy sparql:.
 
-sparql:SyntacticalNode
+sparql:TerminalNode
   a owl:Class;
   rdfs:subClassOf sparql:Node;  
-  dct:conformsTo section:SyntaxNode;
-  skos:definition 'A node that represents a syntax element in the SPARQL abstract syntax tree, i.e. a keyword or symbol.'@en;
-  skos:prefLabel 'Syntactical node'@en;
+  dct:conformsTo section:TerminalNode;
+  skos:definition 'A node that represents a syntactical component in the SPARQL abstract syntax tree, i.e. a keyword or symbol.'@en;
+  skos:prefLabel 'Terminal node'@en;
   rdfs:isDefinedBy sparql:.
 
 sparql:Keyword
   a owl:Class;
-  rdfs:subClassOf sparql:SyntacticalNode;  
+  rdfs:subClassOf sparql:TerminalNode;  
   dct:conformsTo section:Keyword;
   skos:definition 'A keyword in the SPARQL syntax.'@en;
   skos:prefLabel 'Keyword'@en;
@@ -136,15 +136,33 @@ sparql:Keyword
 
 sparql:Symbol
   a owl:Class;
-  rdfs:subClassOf sparql:SyntacticalNode;  
+  rdfs:subClassOf sparql:TerminalNode;  
   dct:conformsTo section:Symbol;
   skos:definition 'A symbol in the SPARQL syntax.'@en;
   skos:prefLabel 'Symbol'@en;
   rdfs:isDefinedBy sparql:.
+
+sparql:SymbolSequence
+  a owl:Class;
+  rdfs:subClassOf sparql:TerminalNode;  
+  dct:conformsTo section:SymbolSequence;
+  skos:definition 'A symbol sequence in the SPARQL syntax.'@en;
+  skos:prefLabel 'Symbol sequence'@en;
+  skos:example '''"?s" or "<https://example.org>"''';
+  rdfs:isDefinedBy sparql:.
+
+sparql:CharacterSequence
+  a owl:Class;
+  rdfs:subClassOf sparql:TerminalNode;  
+  dct:conformsTo section:CharacterSequence;
+  skos:definition 'A character sequence in the SPARQL syntax.'@en;
+  skos:prefLabel 'Character sequence'@en;
+  skos:example '''"s" in "?s" or "https://example.org" in "<https://example.org>"''';
+  rdfs:isDefinedBy sparql:.
   
 sparql:QueryUnit
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:QueryUnit;
   skos:definition "Represents the unit of a query in SPARQL. It is the root node in the SPARQL abstract syntax tree."@en;
   skos:prefLabel "Query Unit"@en;
@@ -152,7 +170,7 @@ sparql:QueryUnit
 
 sparql:Query
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Query;
   skos:definition "Represents a SPARQL query with various forms such as Select, Construct, Describe, and Ask."@en;
   skos:prefLabel "Query"@en;
@@ -160,7 +178,7 @@ sparql:Query
 
 sparql:UpdateUnit
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;  
+  rdfs:subClassOf sparql:NonTerminalNode;  
   dct:conformsTo section:UpdateUnit;
   skos:definition "Represents the unit of an update in SPARQL."@en;
   skos:prefLabel "Update Unit"@en;
@@ -168,7 +186,7 @@ sparql:UpdateUnit
 
 sparql:Prologue
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Prologue;
   skos:definition "Represents the prologue of a SPARQL query, which includes base and prefix declarations."@en;
   skos:prefLabel "Prologue"@en;
@@ -176,7 +194,7 @@ sparql:Prologue
 
 sparql:BaseDecl
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:BaseDecl;
   skos:definition "Represents a BASE declaration with an IRI in SPARQL."@en;
   skos:prefLabel "Base Declaration"@en;
@@ -202,7 +220,7 @@ sparql:Prefix
 
 sparql:IRI
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:IRI;
   skos:definition "Represents an IRI in SPARQL."@en;
   skos:prefLabel "IRI"@en;
@@ -210,16 +228,23 @@ sparql:IRI
 
 sparql:IRIRef
   a owl:Class;
-  rdfs:subClassOf sparql:SyntacticalNode;
+  rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:IRIRef;
   skos:definition "Represents an IRIRef in SPARQL."@en;
   skos:prefLabel "IRI reference"@en;
-  sparql:syntax '<>';
+  rdfs:isDefinedBy sparql:.
+
+sparql:IRIValue
+  a owl:Class;
+  rdfs:subClassOf sparql:CharacterSequence;
+  dct:conformsTo section:IRIValue;
+  skos:definition "Represents an IRI value in SPARQL."@en;
+  skos:prefLabel "IRI value"@en;
   rdfs:isDefinedBy sparql:.
 
 sparql:PrefixedName
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PrefixedName;
   skos:definition "Represents a prefixed name in SPARQL."@en;
   skos:prefLabel "Prefixed name"@en;
@@ -227,7 +252,7 @@ sparql:PrefixedName
 
 sparql:PrefixDecl
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PrefixDecl;
   skos:definition "Represents a PREFIX declaration with a namespace prefix and IRI in SPARQL."@en;
   skos:prefLabel "Prefix Declaration"@en;
@@ -235,7 +260,7 @@ sparql:PrefixDecl
 
 sparql:PNAME_LN
   a owl:Class;
-  rdfs:subClassOf sparql:SyntacticalNode;
+  rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:PNAME_LN;
   skos:definition "Represents an PNAME_LN in a SPARQL prefix declaration."@en;
   skos:prefLabel "PNAME_LN"@en;
@@ -243,7 +268,7 @@ sparql:PNAME_LN
 
 sparql:PNAME_NS
   a owl:Class;
-  rdfs:subClassOf sparql:SyntacticalNode;
+  rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:PNAME_NS;
   skos:definition "Represents an PNAME_NS in a SPARQL prefix declaration."@en;
   skos:prefLabel "PNAME_NS"@en;
@@ -251,7 +276,7 @@ sparql:PNAME_NS
 
 sparql:PN_PREFIX
   a owl:Class;
-  rdfs:subClassOf sparql:SyntacticalNode;
+  rdfs:subClassOf sparql:CharacterSequence;
   dct:conformsTo section:PN_PREFIX;
   skos:definition "Represents an PN_PREFIX in a SPARQL prefix declaration."@en;
   skos:prefLabel "PN_PREFIX"@en;
@@ -259,7 +284,7 @@ sparql:PN_PREFIX
 
 sparql:PN_LOCAL
   a owl:Class;
-  rdfs:subClassOf sparql:SyntacticalNode;
+  rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:PN_LOCAL;
   skos:definition "Represents an PN_LOCAL in SPARQL."@en;
   skos:prefLabel "PN_LOCAL"@en;
@@ -267,7 +292,7 @@ sparql:PN_LOCAL
   
 sparql:SelectQuery
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:SelectQuery;
   skos:definition "Represents a SELECT query in SPARQL with optional DISTINCT/REDUCED and WHERE clause."@en;
   skos:prefLabel "Select Query"@en;
@@ -275,7 +300,7 @@ sparql:SelectQuery
 
 sparql:SubSelect
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:SubSelect;
   skos:definition "Represents a sub-select query in SPARQL with select, where, and solution modifier clauses."@en;
   skos:prefLabel "Sub Select"@en;
@@ -283,7 +308,7 @@ sparql:SubSelect
 
 sparql:SelectClause
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:SelectClause;
   skos:definition "Represents a SELECT clause in SPARQL, specifying variables or expressions."@en;
   skos:prefLabel "Select Clause"@en;
@@ -327,7 +352,7 @@ sparql:As
 
 sparql:Variable
   a owl:Class;
-  rdfs:subClassOf sparql:SyntacticalNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Variable;
   skos:definition "Represents a variable in a select clause in SPARQL."@en;
   skos:prefLabel "Variable in select clause"@en;
@@ -335,7 +360,7 @@ sparql:Variable
 
 sparql:Variable1
   a owl:Class;
-  rdfs:subClassOf sparql:Variable;
+  rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Variable;
   skos:definition "Represents a variable in a select clause in SPARQL with the question mark notation."@en;
   skos:prefLabel "Variable in select clause with question mark"@en;
@@ -344,7 +369,7 @@ sparql:Variable1
 
 sparql:Variable2
   a owl:Class;
-  rdfs:subClassOf sparql:Variable;
+  rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Variable;
   skos:definition "Represents a variable in a select clause in SPARQL with the dollar notation."@en;
   skos:prefLabel "Variable in select clause with dollar symbol"@en;
@@ -441,9 +466,54 @@ sparql:ClosedSquareBracket
   sparql:syntax ']';  
   rdfs:isDefinedBy sparql:.
 
+sparql:LessThan
+  a owl:Class;
+  rdfs:subClassOf sparql:Symbol;
+  dct:conformsTo section:LessThan;
+  skos:definition "Represents a less than symbol in a SPARQL query."@en;
+  skos:prefLabel "Less than symbol in a SPARQL query"@en;
+  sparql:syntax '<';  
+  rdfs:isDefinedBy sparql:.
+
+sparql:GreaterThan
+  a owl:Class;
+  rdfs:subClassOf sparql:Symbol;
+  dct:conformsTo section:GreaterThan;
+  skos:definition "Represents a greater than symbol in a SPARQL query."@en;
+  skos:prefLabel "Greater than symbol in a SPARQL query"@en;
+  sparql:syntax '>';  
+  rdfs:isDefinedBy sparql:.
+
+sparql:ExclamationMark
+  a owl:Class;
+  rdfs:subClassOf sparql:Symbol;
+  dct:conformsTo section:ExclamationMark;
+  skos:definition "Represents an exclamation mark in a SPARQL query."@en;
+  skos:prefLabel "Exclamation mark in a SPARQL query"@en;
+  sparql:syntax '!';  
+  rdfs:isDefinedBy sparql:.
+
+sparql:QuestionMark
+  a owl:Class;
+  rdfs:subClassOf sparql:Symbol;
+  dct:conformsTo section:QuestionMark;
+  skos:definition "Represents a question mark in a SPARQL query."@en;
+  skos:prefLabel "Question mark in a SPARQL query"@en;
+  sparql:syntax '?';  
+  rdfs:isDefinedBy sparql:.
+
+sparql:Caret
+  a owl:Class;
+  rdfs:subClassOf sparql:Symbol;
+  dct:conformsTo section:Caret;
+  skos:definition "Represents a caret in a SPARQL query."@en;
+  skos:prefLabel "Caret in a SPARQL query"@en;
+  sparql:syntax '^';  
+  rdfs:isDefinedBy sparql:.  
+
 sparql:Expression
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Expression;
   skos:definition 'Represents conditions used in filters, comparisons, or mathematical expressions.'@en;
   skos:prefLabel 'Expression'@en;
@@ -451,7 +521,7 @@ sparql:Expression
 
 sparql:ConstructQuery
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:ConstructQuery;
   skos:definition "Represents a CONSTRUCT query in SPARQL, which constructs new RDF triples."@en;
   skos:prefLabel "Construct Query"@en;
@@ -468,7 +538,7 @@ sparql:Construct
 
 sparql:DescribeQuery
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:DescribeQuery;
   skos:definition "Represents a DESCRIBE query in SPARQL, returning descriptions of resources."@en;
   skos:prefLabel "Describe Query"@en;
@@ -485,7 +555,7 @@ sparql:Describe
 
 sparql:AskQuery
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:AskQuery;
   skos:definition "Represents an ASK query in SPARQL, which returns a boolean result."@en;
   skos:prefLabel "Ask Query"@en;
@@ -502,7 +572,7 @@ sparql:Ask
 
 sparql:DatasetClause
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:DatasetClause;
   skos:definition "Represents a dataset clause in SPARQL, specifying a graph from which to query."@en;
   skos:prefLabel "Dataset Clause"@en;
@@ -519,7 +589,7 @@ sparql:From
   
 sparql:DefaultGraphClause
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:DefaultGraphClause;
   skos:definition "Represents a default graph clause in SPARQL, specifying the source selector."@en;
   skos:prefLabel "Default Graph Clause"@en;
@@ -527,7 +597,7 @@ sparql:DefaultGraphClause
 
 sparql:NamedGraphClause
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:NamedGraphClause;
   skos:definition "Represents a named graph clause in SPARQL, specifying the source selector."@en;
   skos:prefLabel "Named Graph Clause"@en;
@@ -544,7 +614,7 @@ sparql:Named
   
 sparql:SourceSelector
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:SourceSelector;
   skos:definition "Represents a source selector in SPARQL, identifying a graph using an IRI."@en;
   skos:prefLabel "Source Selector"@en;
@@ -552,7 +622,7 @@ sparql:SourceSelector
 
 sparql:WhereClause
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:WhereClause;
   skos:definition "Represents a WHERE clause in SPARQL, containing graph patterns to match."@en;
   skos:prefLabel "Where Clause"@en;
@@ -569,7 +639,7 @@ sparql:Where
 
 sparql:SolutionModifier
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:SolutionModifier;
   skos:definition "Represents a solution modifier in SPARQL, modifying the result set (e.g., LIMIT, OFFSET)."@en;
   skos:prefLabel "Solution Modifier"@en;
@@ -577,7 +647,7 @@ sparql:SolutionModifier
 
 sparql:GroupGraphPattern
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:GroupGraphPattern;
   skos:definition "Represents a group graph pattern in SPARQL, containing a set of graph patterns that must all match."@en;
   skos:prefLabel "Group Graph Pattern"@en;
@@ -585,7 +655,7 @@ sparql:GroupGraphPattern
 
 sparql:GroupGraphPatternSub
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:GroupGraphPatternSub;
   skos:definition "Represents a group graph pattern sub in SPARQL, containing a set of graph patterns that must all match."@en;
   skos:prefLabel "Group Graph Pattern Sub"@en;
@@ -593,7 +663,7 @@ sparql:GroupGraphPatternSub
 
 sparql:TriplesBlock
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:TriplesBlock;
   skos:definition "Represents a triple block in SPARQL."@en;
   skos:prefLabel "Triples Block"@en;
@@ -601,7 +671,7 @@ sparql:TriplesBlock
 
 sparql:GraphPatternNotTriples
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:GraphPatternNotTriples;
   skos:definition "Represents graph patterns in SPARQL that are not simple triple patterns, such as optional and union patterns."@en;
   skos:prefLabel "Graph Pattern Not Triples"@en;
@@ -609,7 +679,7 @@ sparql:GraphPatternNotTriples
 
 sparql:TriplesSameSubjectPath 
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:TriplesSameSubjectPath;
   skos:definition ".."@en;
   skos:prefLabel "Triples Same Subject Path"@en;
@@ -617,7 +687,7 @@ sparql:TriplesSameSubjectPath
 
 sparql:VarOrTerm
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:VarOrTerm;
   skos:definition ".."@en;
   skos:prefLabel "Var or Term"@en;
@@ -625,7 +695,7 @@ sparql:VarOrTerm
 
 sparql:GraphTerm
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:VarOrTerm;
   skos:definition ".."@en;
   skos:prefLabel "Graph term"@en;
@@ -633,7 +703,7 @@ sparql:GraphTerm
 
 sparql:PropertyListPathNotEmpty
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PropertyListPathNotEmpty;
   skos:definition ".."@en;
   skos:prefLabel "Property List Path Not Empty"@en;
@@ -641,7 +711,7 @@ sparql:PropertyListPathNotEmpty
   
 sparql:VerbSimple
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:VerbSimple;
   skos:definition ".."@en;
   skos:prefLabel "Verb Simple"@en;
@@ -649,7 +719,7 @@ sparql:VerbSimple
 
 sparql:ObjectListPath
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:ObjectListPath;
   skos:definition ".."@en;
   skos:prefLabel "Object List Path"@en;
@@ -657,7 +727,7 @@ sparql:ObjectListPath
   
 sparql:ObjectPath
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:ObjectPath;
   skos:definition ".."@en;
   skos:prefLabel "Object Path"@en;
@@ -665,7 +735,7 @@ sparql:ObjectPath
 
 sparql:TriplesNodePath
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:TriplesNodePath;
   skos:definition ".."@en;
   skos:prefLabel "Triples Node Path"@en;
@@ -673,7 +743,7 @@ sparql:TriplesNodePath
 
 sparql:CollectionPath 
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:CollectionPath ;
   skos:definition ".."@en;
   skos:prefLabel "Collection Path"@en;
@@ -681,7 +751,7 @@ sparql:CollectionPath
 
 sparql:GraphNodePath
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:GraphNodePath;
   skos:definition ".."@en;
   skos:prefLabel "Graph Node Path"@en;
@@ -689,7 +759,7 @@ sparql:GraphNodePath
 
 sparql:BlankNodePropertyListPath  
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:BlankNodePropertyListPath   ;
   skos:definition ".."@en;
   skos:prefLabel "Blank Node Property List Path"@en;
@@ -697,7 +767,7 @@ sparql:BlankNodePropertyListPath
 
 sparql:OptionalGraphPattern
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:OptionalGraphPattern;
   skos:definition "Represents an OPTIONAL graph pattern in SPARQL, which extends the result set with additional values if a pattern exists."@en;
   skos:prefLabel "Optional Graph Pattern"@en;
@@ -714,7 +784,7 @@ sparql:Optional
 
 sparql:GraphGraphPattern
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:GraphGraphPattern;
   skos:definition "Represents a GRAPH graph pattern in SPARQL, specifying a named graph to match."@en;
   skos:prefLabel "Graph Graph Pattern"@en;
@@ -731,7 +801,7 @@ sparql:Graph
 
 sparql:ServiceGraphPattern
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:ServiceGraphPattern;
   skos:definition "Represents a SERVICE graph pattern in SPARQL, specifying a remote SPARQL endpoint to query."@en;
   skos:prefLabel "Service Graph Pattern"@en;
@@ -748,7 +818,7 @@ sparql:Service
 
 sparql:BindClause
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:BindClause;
   skos:definition "Represents a BIND clause in SPARQL, binding a value to a variable in the result set."@en;
   skos:prefLabel "Bind clause"@en;
@@ -756,7 +826,7 @@ sparql:BindClause
 
 sparql:Bind
   a owl:Class;
-  rdfs:subClassOf sparql:SyntacticalNode;
+  rdfs:subClassOf sparql:TerminalNode;
   dct:conformsTo section:Bind;
   skos:definition "Represents the BIND keyword in SPARQL."@en;
   skos:prefLabel "Bind"@en;
@@ -765,7 +835,7 @@ sparql:Bind
 
 sparql:InlineData
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:InlineData;
   skos:definition "Represents an inline data block in SPARQL, providing explicit values for variables in the query."@en;
   skos:prefLabel "Inline Data"@en;
@@ -773,7 +843,7 @@ sparql:InlineData
 
 sparql:Values
   a owl:Class;
-  rdfs:subClassOf sparql:SyntacticalNode;
+  rdfs:subClassOf sparql:TerminalNode;
   dct:conformsTo section:Values;
   skos:definition "Represents the VALUES keyword in SPARQL."@en;
   skos:prefLabel "Values"@en;
@@ -782,7 +852,7 @@ sparql:Values
 
 sparql:MinusGraphPattern
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:MinusGraphPattern;
   skos:definition "Represents a MINUS graph pattern in SPARQL, which removes certain solutions from the result set."@en;
   skos:prefLabel "Minus Graph Pattern"@en;
@@ -799,7 +869,7 @@ sparql:Minus
 
 sparql:FilterClause
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:FilterClause;
   skos:definition "Represents a FILTER clause in SPARQL, applying constraints to the result set based on a boolean condition."@en;
   skos:prefLabel "Filter clause"@en;
@@ -816,7 +886,7 @@ sparql:Filter
 
 sparql:TriplesTemplate
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:TriplesTemplate;
   skos:definition "Represents a triple template in SPARQL, used in CONSTRUCT queries to create RDF triples."@en;
   skos:prefLabel "Triples Template"@en;
@@ -824,7 +894,7 @@ sparql:TriplesTemplate
 
 sparql:GroupClause
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:GroupClause;
   skos:definition "Represents a GROUP BY clause in SPARQL, grouping results by specified expressions."@en;
   skos:prefLabel "Group Clause"@en;
@@ -850,7 +920,7 @@ sparql:By
 
 sparql:HavingClause
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:HavingClause;
   skos:definition "Represents a HAVING clause in SPARQL, applying constraints on the result set after grouping."@en;
   skos:prefLabel "Having Clause"@en;
@@ -867,7 +937,7 @@ sparql:Having
 
 sparql:OrderClause
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:OrderClause;
   skos:definition "Represents an ORDER BY clause in SPARQL, specifying the order of solutions in the result set."@en;
   skos:prefLabel "Order Clause"@en;
@@ -884,7 +954,7 @@ sparql:Order
   
 sparql:OrderCondition
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:OrderCondition;
   skos:definition "Represents a condition used in an ORDER BY clause to determine the order of the result set."@en;
   skos:prefLabel "Order Condition"@en;
@@ -910,7 +980,7 @@ sparql:DESC
 
 sparql:LimitClause
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:LimitClause;
   skos:definition "Represents a LIMIT clause in SPARQL, specifying the maximum number of solutions to return."@en;
   skos:prefLabel "Limit Clause"@en;
@@ -927,7 +997,7 @@ sparql:Limit
 
 sparql:OffsetClause
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:OffsetClause;
   skos:definition "Represents an OFFSET clause in SPARQL, specifying the number of solutions to skip in the result set."@en;
   skos:prefLabel "Offset Clause"@en;
@@ -944,7 +1014,7 @@ sparql:Offset
 
 sparql:ValuesClause
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:ValuesClause;
   skos:definition "Represents a VALUES clause in SPARQL, providing explicit values for variables within the query."@en;
   skos:prefLabel "Values Clause"@en;
@@ -952,7 +1022,7 @@ sparql:ValuesClause
 
 sparql:Update
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Update;
   skos:definition "Represents a SPARQL update request, modifying data in the RDF store."@en;
   skos:prefLabel "Update"@en;
@@ -960,7 +1030,7 @@ sparql:Update
 
 sparql:Update1
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Update1;
   skos:definition "Represents a single update operation within an update request in SPARQL."@en;
   skos:prefLabel "Update1"@en;
@@ -968,7 +1038,7 @@ sparql:Update1
 
 sparql:Load
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Load;
   skos:definition "Represents a LOAD operation in SPARQL, loading RDF data into a graph from a source."@en;
   skos:prefLabel "Load"@en;
@@ -976,7 +1046,7 @@ sparql:Load
 
 sparql:Clear
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Clear;
   skos:definition "Represents a CLEAR operation in SPARQL, removing all data from a specified graph."@en;
   skos:prefLabel "Clear"@en;
@@ -984,7 +1054,7 @@ sparql:Clear
 
 sparql:Drop
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Drop;
   skos:definition "Represents a DROP operation in SPARQL, removing a graph from the dataset."@en;
   skos:prefLabel "Drop"@en;
@@ -992,7 +1062,7 @@ sparql:Drop
 
 sparql:Create
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Create;
   skos:definition "Represents a CREATE operation in SPARQL, creating an empty graph in the dataset."@en;
   skos:prefLabel "Create"@en;
@@ -1000,7 +1070,7 @@ sparql:Create
 
 sparql:Add
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Add;
   skos:definition "Represents an ADD operation in SPARQL, adding triples from one graph to another."@en;
   skos:prefLabel "Add"@en;
@@ -1008,7 +1078,7 @@ sparql:Add
 
 sparql:Move
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Move;
   skos:definition "Represents a MOVE operation in SPARQL, moving triples from one graph to another."@en;
   skos:prefLabel "Move"@en;
@@ -1016,7 +1086,7 @@ sparql:Move
 
 sparql:Copy
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Copy;
   skos:definition "Represents a COPY operation in SPARQL, copying triples from one graph to another."@en;
   skos:prefLabel "Copy"@en;
@@ -1024,7 +1094,7 @@ sparql:Copy
 
 sparql:InsertData
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:InsertData;
   skos:definition "Represents an INSERT DATA operation in SPARQL, inserting triples directly into the dataset."@en;
   skos:prefLabel "Insert Data"@en;
@@ -1032,7 +1102,7 @@ sparql:InsertData
 
 sparql:DeleteData
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:DeleteData;
   skos:definition "Represents a DELETE DATA operation in SPARQL, removing triples directly from the dataset."@en;
   skos:prefLabel "Delete Data"@en;
@@ -1040,7 +1110,7 @@ sparql:DeleteData
 
 sparql:DeleteWhere
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:DeleteWhere;
   skos:definition "Represents a DELETE WHERE operation in SPARQL, removing triples based on a pattern."@en;
   skos:prefLabel "Delete Where"@en;
@@ -1048,7 +1118,7 @@ sparql:DeleteWhere
 
 sparql:Modify
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Modify;
   skos:definition "Represents a MODIFY operation in SPARQL, applying a set of INSERT and DELETE patterns to the dataset."@en;
   skos:prefLabel "Modify"@en;
@@ -1063,7 +1133,7 @@ sparql:DeleteClause
 
 sparql:InsertClause
   a owl:Class;
-  rdfs:subClassOf sparql:StructuralNode;
+  rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:InsertClause;
   skos:definition "Represents an INSERT clause in SPARQL, specifying triples to be inserted."@en;
   skos:prefLabel "Insert Clause"@en;
@@ -1076,20 +1146,20 @@ shp:SerializableNode
     skos:prefLabel 'serializable node shape'@en;
     rdfs:isDefinedBy sparql:.
 
-  target:SerializableNode
+target:SerializableNode
     a sh:SPARQLTarget;
-    rdfs:comment 'Select nodes in a SPARQL Abstract Syntax Tree that do not have a SPARQL fragment yet, and whose child nodes all have a SPARQL fragment already.'@en;
+    rdfs:comment 'Select non-terminal nodes in a SPARQL Abstract Syntax Tree that do not have a SPARQL fragment yet, and whose child nodes all have a SPARQL fragment already.'@en;
     sh:prefixes sparql:;
     sh:select '''
 select $this {
 
-  # Select all structural nodes in the SPARQL query...
-  $this a/rdfs:subClassOf* sparql:StructuralNode.
+  # Select all non-terminal nodes in the SPARQL query...
+  $this a/rdfs:subClassOf* sparql:NonTerminalNode.
   
   # ...that do not yet have a sparql fragment.
   filter not exists { $this sparql:fragment []. }
   
-  # ...but whose child nodes all have an SPARQL fragment (both structural child nodes and syntactical child nodes)
+  # ...but whose child nodes all have an SPARQL fragment (both non-terminal child nodes and terminal child nodes)
   minus {
     $this ?member ?child.
     filter not exists { ?child sparql:fragment []. }
@@ -1111,7 +1181,7 @@ construct {
   
 } where {
  
-  # Get the SPARQL fragments of child nodes, if there are any.
+  # Get the SPARQL fragments of child nodes, if there are any. Note how each child node fragment is separated by a space.
   {
     select $this (group_concat(str(?fragment);separator=' ') as ?fragments) {
       {
@@ -1129,54 +1199,6 @@ construct {
   
 }''';
     rdfs:isDefinedBy sparql:.
-
-                
-shp:Variable
-    a sh:NodeShape;
-    sh:rule rule:Variable;
-    sh:target target:Variable;
-    skos:prefLabel 'Variable shape'@en;
-    rdfs:isDefinedBy sparql:.    
-
-target:Variable
-    a sh:SPARQLTarget;
-    rdfs:comment ''@en;
-    sh:prefixes sparql:;
-    sh:select '''
-select $this {
-
-  # Select all Variable nodes in the SPARQL query...
-  $this a/rdfs:subClassOf* sparql:Variable.
-  
-  # ...that do not yet have a sparql fragment.
-  filter not exists { $this sparql:fragment []. }
-  
-}''';
-    rdfs:isDefinedBy sparql:.
-
-rule:Variable
-    a sh:SPARQLRule;
-    rdfs:comment ''@en;
-    skos:prefLabel ''@en;
-    sh:prefixes sparql:;
-    sh:construct '''
-construct {
-
-  # Assert the new SPARQL fragment for this SPARQL node
-  $this sparql:fragment ?fragment.
-  
-} where {
-
-  # Retrieve the key name from the ontology
-  $this a ?class;
-        rdf:value ?variableName.
-  ?class sparql:syntax ?syntax.
- 
-  # Build the SPARQL fragment for this node.
-  bind(strdt(concat(str(?syntax), str(?variableName)),xsd:string) as ?fragment)
-  
-}''';
-    rdfs:isDefinedBy sparql:.  
 
 shp:Keyword
     a sh:NodeShape;
@@ -1267,112 +1289,23 @@ construct {
   
 }''';
     rdfs:isDefinedBy sparql:.      
-   
-shp:IRIRef
+
+shp:SymbolSequence
     a sh:NodeShape;
-    sh:rule rule:IRIRef;
-    sh:target target:IRIRef;
-    skos:prefLabel 'IRIRef shape'@en;
+    sh:rule rule:SymbolSequence;
+    sh:target target:SymbolSequence;
+    skos:prefLabel 'Symbol sequence shape'@en;
     rdfs:isDefinedBy sparql:.    
 
-target:IRIRef
+target:SymbolSequence
     a sh:SPARQLTarget;
     rdfs:comment ''@en;
     sh:prefixes sparql:;
     sh:select '''
 select $this {
 
-  # Select all IRIRef nodes in the SPARQL query...
-  $this a/rdfs:subClassOf* sparql:IRIRef.
-  
-  # ...that do not yet have a sparql fragment.
-  filter not exists { $this sparql:fragment []. }
-  
-}''';
-    rdfs:isDefinedBy sparql:.
-
-rule:IRIRef
-    a sh:SPARQLRule;
-    rdfs:comment ''@en;
-    skos:prefLabel ''@en;
-    sh:prefixes sparql:;
-    sh:construct '''
-construct {
-
-  # Assert the new SPARQL fragment for this SPARQL node
-  $this sparql:fragment ?fragment.
-  
-} where {
-
-  # Retrieve the key name from the ontology
-  $this a ?class;
-        rdf:value ?iri.
- 
-  # Build the SPARQL fragment for this node.
-  bind(strdt(concat('<', str(?iri), '>'),xsd:string) as ?fragment)
-  
-}''';
-    rdfs:isDefinedBy sparql:.  
-    
-
-shp:PN_PREFIX
-    a sh:NodeShape;
-    sh:rule rule:PN_PREFIX;
-    sh:target target:PN_PREFIX;
-    skos:prefLabel 'PN_PREFIX shape'@en;
-    rdfs:isDefinedBy sparql:.    
-
-target:PN_PREFIX
-    a sh:SPARQLTarget;
-    rdfs:comment ''@en;
-    sh:prefixes sparql:;
-    sh:select '''
-select $this {
-
-  # Select all PN_PREFIX nodes in the SPARQL query...
-  $this a/rdfs:subClassOf* sparql:PN_PREFIX.
-  
-  # ...that do not yet have a sparql fragment.
-  filter not exists { $this sparql:fragment []. }
-  
-}''';
-    rdfs:isDefinedBy sparql:.
-
-rule:PN_PREFIX
-    a sh:SPARQLRule;
-    rdfs:comment ''@en;
-    skos:prefLabel ''@en;
-    sh:prefixes sparql:;
-    sh:construct '''
-construct {
-
-  # Assert the new SPARQL fragment for the prefix
-  $this sparql:fragment ?fragment.
-  
-} where {
-
-  # Retrieve the prefix name
-  $this rdf:value ?fragment.
-  
-}''';
-    rdfs:isDefinedBy sparql:.  
-
-shp:PNAME_NS
-    a sh:NodeShape;
-    sh:rule rule:SerializableSymbol;
-    sh:target target:PNAME_NS;
-    skos:prefLabel 'PNAME_NS shape'@en;
-    rdfs:isDefinedBy sparql:.    
-
-target:PNAME_NS
-    a sh:SPARQLTarget;
-    rdfs:comment ''@en;
-    sh:prefixes sparql:;
-    sh:select '''
-select $this {
-
-  # Select all PNAME_NS nodes in the SPARQL query...
-  $this a/rdfs:subClassOf* sparql:PNAME_NS.
+  # Select all symbol sequence nodes in the SPARQL query...
+  $this a/rdfs:subClassOf* sparql:SymbolSequence.
   
   # ...that do not yet have a sparql fragment.
   filter not exists { $this sparql:fragment []. }
@@ -1386,10 +1319,10 @@ select $this {
 }''';
     rdfs:isDefinedBy sparql:.
 
-  rule:SerializableSymbol
+  rule:SymbolSequence
     a sh:SPARQLRule;
-    rdfs:comment 'Create the SPARQL fragment for a symbol in a SPARQL query.'@en;
-    skos:prefLabel 'SPARQL symbol serialization algorithm'@en;
+    rdfs:comment 'Create the SPARQL fragment for a symbol sequence in a SPARQL query.'@en;
+    skos:prefLabel 'SPARQL symbol sequence serialization algorithm'@en;
     sh:prefixes sparql:;
     sh:construct '''
 construct {
@@ -1399,7 +1332,7 @@ construct {
   
 } where {
  
-  # Get the SPARQL fragments of child nodes, if there are any. Note how the fragment is concatenated without space separator.
+  # Get the SPARQL fragments of child nodes, if there are any. Note how the fragments of the child nodes are concatenated without space separator.
   {
     select $this (group_concat(str(?fragment);separator='') as ?fragments) {
       {
@@ -1417,3 +1350,44 @@ construct {
   
 }''';
     rdfs:isDefinedBy sparql:.
+
+shp:CharacterSequence
+    a sh:NodeShape;
+    sh:rule rule:CharacterSequence;
+    sh:target target:CharacterSequence;
+    skos:prefLabel 'CharacterSequence shape'@en;
+    rdfs:isDefinedBy sparql:.    
+
+target:CharacterSequence
+    a sh:SPARQLTarget;
+    rdfs:comment ''@en;
+    sh:prefixes sparql:;
+    sh:select '''
+select $this {
+
+  # Select all keyword nodes in the SPARQL query...
+  $this a/rdfs:subClassOf* sparql:CharacterSequence.
+  
+  # ...that do not yet have a sparql fragment.
+  filter not exists { $this sparql:fragment []. }
+  
+}''';
+    rdfs:isDefinedBy sparql:.
+
+rule:CharacterSequence
+    a sh:SPARQLRule;
+    rdfs:comment ''@en;
+    skos:prefLabel ''@en;
+    sh:prefixes sparql:;
+    sh:construct '''
+construct {
+
+  # Assert the new SPARQL fragment for this SPARQL node
+  $this sparql:fragment ?fragment.
+  
+} where {
+  
+  $this rdf:value ?fragment.
+  
+}''';
+    rdfs:isDefinedBy sparql:.   
