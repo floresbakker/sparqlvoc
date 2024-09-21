@@ -33,8 +33,7 @@ Highly unstable & unfinished. Work in progress.
 BASE <https:example.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 SELECT *
-WHERE {?s ?p ?o;
- .}
+WHERE { ?s ?p ?o }
 ```
 
 Modeled as:
