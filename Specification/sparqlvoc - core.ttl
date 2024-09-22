@@ -238,7 +238,7 @@ sparql:IRIRef
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:IRIRef;
-  skos:definition "Represents an IRIRef in SPARQL."@en;
+  skos:definition "Represents an IRIRef symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "IRI reference"@en;
   rdfs:isDefinedBy sparql:.
 
@@ -246,7 +246,7 @@ sparql:Nil
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Nil;
-  skos:definition "Represents a Nil in SPARQL."@en;
+  skos:definition "Represents a Nil symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Nil"@en;
   rdfs:isDefinedBy sparql:.
 
@@ -254,7 +254,7 @@ sparql:IRIValue
   a owl:Class;
   rdfs:subClassOf sparql:CharacterSequence;
   dct:conformsTo section:IRIValue;
-  skos:definition "Represents an IRI value in SPARQL."@en;
+  skos:definition "Represents an IRI value character sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "IRI value"@en;
   rdfs:isDefinedBy sparql:.
 
@@ -262,7 +262,7 @@ sparql:PrefixedName
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PrefixedName;
-  skos:definition "Represents a prefixed name in SPARQL."@en;
+  skos:definition "Represents a prefixed name clause in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Prefixed name"@en;
   rdfs:isDefinedBy sparql:.
 
@@ -278,7 +278,7 @@ sparql:PNAME_LN
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:PNAME_LN;
-  skos:definition "Represents an PNAME_LN in a SPARQL prefix declaration."@en;
+  skos:definition "Represents an PNAME_LN symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "PNAME_LN"@en;
   rdfs:isDefinedBy sparql:.    
 
@@ -286,7 +286,7 @@ sparql:PNAME_NS
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:PNAME_NS;
-  skos:definition "Represents an PNAME_NS in a SPARQL prefix declaration."@en;
+  skos:definition "Represents an PNAME_NS symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "PNAME_NS"@en;
   rdfs:isDefinedBy sparql:.  
 
@@ -294,7 +294,7 @@ sparql:PN_PREFIX
   a owl:Class;
   rdfs:subClassOf sparql:CharacterSequence;
   dct:conformsTo section:PN_PREFIX;
-  skos:definition "Represents an PN_PREFIX in a SPARQL prefix declaration."@en;
+  skos:definition "Represents an PN_PREFIX character sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "PN_PREFIX"@en;
   rdfs:isDefinedBy sparql:.  
 
@@ -302,7 +302,7 @@ sparql:PN_LOCAL
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:PN_LOCAL;
-  skos:definition "Represents an PN_LOCAL in SPARQL."@en;
+  skos:definition "Represents an PN_LOCAL symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "PN_LOCAL"@en;
   rdfs:isDefinedBy sparql:.  
   
@@ -310,7 +310,7 @@ sparql:SelectQuery
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:SelectQuery;
-  skos:definition "Represents a SELECT query in SPARQL with optional DISTINCT/REDUCED and WHERE clause."@en;
+  skos:definition "Represents a SELECT query clause in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Select Query"@en;
   rdfs:isDefinedBy sparql:.
 
@@ -378,7 +378,7 @@ sparql:Variable1
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Variable;
-  skos:definition "Represents a variable in a select clause in SPARQL with the question mark notation."@en;
+  skos:definition "Represents Variable1 symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Variable in select clause with question mark"@en;
   sparql:syntax '?';
   rdfs:isDefinedBy sparql:.
@@ -387,7 +387,7 @@ sparql:Variable2
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Variable;
-  skos:definition "Represents a variable in a select clause in SPARQL with the dollar notation."@en;
+  skos:definition "Represents Variable2 symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Variable in select clause with dollar symbol"@en;
   sparql:syntax '$';
   rdfs:isDefinedBy sparql:.  
@@ -396,7 +396,7 @@ sparql:Wildcard
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:Wildcard;
-  skos:definition "Represents a wildcard in a select clause in SPARQL."@en;
+  skos:definition "Represents a wildcard symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Wildcard in select clause"@en;
   sparql:syntax '*';
   rdfs:isDefinedBy sparql:.
@@ -405,7 +405,7 @@ sparql:Colon
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:Colon;
-  skos:definition "Represents a colon in a SPARQL query."@en;
+  skos:definition "Represents a colon symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Colon in a SPARQL query"@en;
   sparql:syntax ':';  
   rdfs:isDefinedBy sparql:.
@@ -414,7 +414,7 @@ sparql:SemiColon
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:SemiColon;
-  skos:definition "Represents a semicolon in a SPARQL query."@en;
+  skos:definition "Represents a semicolon symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Semicolon in a SPARQL query"@en;
   sparql:syntax ';';  
   rdfs:isDefinedBy sparql:.
@@ -423,7 +423,7 @@ sparql:Period
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:Period;
-  skos:definition "Represents a period in a SPARQL query."@en;
+  skos:definition "Represents a period symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Period in a SPARQL query"@en;
   sparql:syntax '.';  
   rdfs:isDefinedBy sparql:.
@@ -432,7 +432,7 @@ sparql:OpenCurlyBracket
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:OpenCurlyBracket;
-  skos:definition "Represents an open curly bracket in a SPARQL query."@en;
+  skos:definition "Represents an open curly bracket symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Open curly bracket in a SPARQL query"@en;
   sparql:syntax '{';  
   rdfs:isDefinedBy sparql:.
@@ -441,7 +441,7 @@ sparql:ClosedCurlyBracket
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:ClosedCurlyBracket;
-  skos:definition "Represents a closed curly bracket in a SPARQL query."@en;
+  skos:definition "Represents a closed curly bracket symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Closed curly bracket in a SPARQL query"@en;
   sparql:syntax '}';  
   rdfs:isDefinedBy sparql:.
@@ -450,7 +450,7 @@ sparql:OpenParenthesis
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:OpenParenthesis;
-  skos:definition "Represents an open parenthises in a SPARQL query."@en;
+  skos:definition "Represents an open parenthises symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Open parenthesis in a SPARQL query"@en;
   sparql:syntax '(';  
   rdfs:isDefinedBy sparql:.
@@ -459,7 +459,7 @@ sparql:ClosedParenthesis
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:ClosedParenthesis;
-  skos:definition "Represents a closed parenthesis in a SPARQL query."@en;
+  skos:definition "Represents a closed parenthesis symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Closed parenthesis in a SPARQL query"@en;
   sparql:syntax ')';  
   rdfs:isDefinedBy sparql:.    
@@ -468,7 +468,7 @@ sparql:OpenSquareBracket
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:OpenSquareBracket;
-  skos:definition "Represents an open square bracket in a SPARQL query."@en;
+  skos:definition "Represents an open square bracket symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Open square bracket in a SPARQL query"@en;
   sparql:syntax '[';  
   rdfs:isDefinedBy sparql:.
@@ -477,7 +477,7 @@ sparql:ClosedSquareBracket
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:ClosedSquareBracket;
-  skos:definition "Represents a closed square bracket in a SPARQL query."@en;
+  skos:definition "Represents a closed square bracket symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Closed square bracket in a SPARQL query"@en;
   sparql:syntax ']';  
   rdfs:isDefinedBy sparql:.
@@ -486,7 +486,7 @@ sparql:PlusSign
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:PlusSign;
-  skos:definition "Represents a plus sign in a SPARQL query."@en;
+  skos:definition "Represents a plus symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Plus sign in a SPARQL query"@en;
   sparql:syntax '+';  
   rdfs:isDefinedBy sparql:.
@@ -495,7 +495,7 @@ sparql:MinusSign
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:MinusSign;
-  skos:definition "Represents a minus sign in a SPARQL query."@en;
+  skos:definition "Represents a minus symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Minus sign in a SPARQL query"@en;
   sparql:syntax '-';  
   rdfs:isDefinedBy sparql:.
@@ -504,7 +504,7 @@ sparql:MultiplicationSign
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:MultiplicationSign;
-  skos:definition "Represents a multiplication sign in a SPARQL query."@en;
+  skos:definition "Represents a multiplication symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Multiplication sign in a SPARQL query"@en;
   sparql:syntax '*';  
   rdfs:isDefinedBy sparql:.
@@ -513,7 +513,7 @@ sparql:DivisionSign
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:DivisionSign;
-  skos:definition "Represents a division sign in a SPARQL query."@en;
+  skos:definition "Represents a division symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Division sign in a SPARQL query"@en;
   sparql:syntax '/';  
   rdfs:isDefinedBy sparql:.
@@ -522,7 +522,7 @@ sparql:LessThan
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:LessThan;
-  skos:definition "Represents a less than symbol in a SPARQL query."@en;
+  skos:definition "Represents a less than symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Less than symbol in a SPARQL query"@en;
   sparql:syntax '<';  
   rdfs:isDefinedBy sparql:.
@@ -531,7 +531,7 @@ sparql:GreaterThan
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:GreaterThan;
-  skos:definition "Represents a greater than symbol in a SPARQL query."@en;
+  skos:definition "Represents a greater than symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Greater than symbol in a SPARQL query"@en;
   sparql:syntax '>';  
   rdfs:isDefinedBy sparql:.
@@ -540,7 +540,7 @@ sparql:Equal
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:Equal;
-  skos:definition "Represents an equal symbol in a SPARQL query."@en;
+  skos:definition "Represents an equal symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Equal symbol in a SPARQL query"@en;
   sparql:syntax '=';  
   rdfs:isDefinedBy sparql:.
@@ -549,7 +549,7 @@ sparql:NotEqual
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:NotEqual;
-  skos:definition "Represents a not-equal symbol in a SPARQL query."@en;
+  skos:definition "Represents a not-equal symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Equal symbol in a SPARQL query"@en;
   sparql:syntax '!=';  
   rdfs:isDefinedBy sparql:.
@@ -558,7 +558,7 @@ sparql:ExclamationMark
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:ExclamationMark;
-  skos:definition "Represents an exclamation mark in a SPARQL query."@en;
+  skos:definition "Represents an exclamation mark symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Exclamation mark in a SPARQL query"@en;
   sparql:syntax '!';  
   rdfs:isDefinedBy sparql:.
@@ -567,7 +567,7 @@ sparql:QuestionMark
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:QuestionMark;
-  skos:definition "Represents a question mark in a SPARQL query."@en;
+  skos:definition "Represents a question symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Question mark in a SPARQL query"@en;
   sparql:syntax '?';  
   rdfs:isDefinedBy sparql:.
@@ -576,7 +576,7 @@ sparql:Caret
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:Caret;
-  skos:definition "Represents a caret in a SPARQL query."@en;
+  skos:definition "Represents a caret symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Caret in a SPARQL query"@en;
   sparql:syntax '^';  
   rdfs:isDefinedBy sparql:.
@@ -585,7 +585,7 @@ sparql:And
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:And;
-  skos:definition "Represents the AND symbol in a SPARQL query."@en;
+  skos:definition "Represents an AND symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "AND symbol in a SPARQL query"@en;
   sparql:syntax '&&';  
   rdfs:isDefinedBy sparql:.
@@ -594,7 +594,7 @@ sparql:Or
   a owl:Class;
   rdfs:subClassOf sparql:Symbol;
   dct:conformsTo section:Or;
-  skos:definition "Represents the OR symbol in a SPARQL query."@en;
+  skos:definition "Represents an OR symbol in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "OR symbol in a SPARQL query"@en;
   sparql:syntax '||';  
   rdfs:isDefinedBy sparql:.
@@ -1098,7 +1098,7 @@ sparql:BindClause
 
 sparql:Bind
   a owl:Class;
-  rdfs:subClassOf sparql:TerminalNode;
+  rdfs:subClassOf sparql:Keyword;
   dct:conformsTo section:Bind;
   skos:definition "Represents the BIND keyword in SPARQL."@en;
   skos:prefLabel "Bind"@en;
@@ -1115,7 +1115,7 @@ sparql:InlineData
 
 sparql:Values
   a owl:Class;
-  rdfs:subClassOf sparql:TerminalNode;
+  rdfs:subClassOf sparql:Keyword;
   dct:conformsTo section:Values;
   skos:definition "Represents the VALUES keyword in SPARQL."@en;
   skos:prefLabel "Values"@en;
@@ -1440,15 +1440,7 @@ sparql:Langtag
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Langtag;
-  skos:definition "Represents a langtag clause in SPARQL."@en;
-  skos:prefLabel "Langtag clause"@en;
-  rdfs:isDefinedBy sparql:. 
-
-sparql:Langtag
-  a owl:Class;
-  rdfs:subClassOf sparql:SymbolSequence;
-  dct:conformsTo section:Langtag;
-  skos:definition "Represents a langtag clause in SPARQL."@en;
+  skos:definition "Represents a langtag symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Langtag clause"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1456,7 +1448,7 @@ sparql:STRING_LITERAL1
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:STRING_LITERAL1;
-  skos:definition "Represents a langtag clause in SPARQL."@en;
+  skos:definition "Represents a STRING_LITERAL1 symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "STRING_LITERAL1 clause"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1464,7 +1456,7 @@ sparql:STRING_LITERAL2
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:STRING_LITERAL2;
-  skos:definition "Represents a langtag clause in SPARQL."@en;
+  skos:definition "Represents a STRING_LITERAL2 symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "STRING_LITERAL2 clause"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1472,7 +1464,7 @@ sparql:STRING_LITERAL_LONG1
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:STRING_LITERAL_LONG1;
-  skos:definition "Represents a STRING_LITERAL_LONG1 clause in SPARQL."@en;
+  skos:definition "Represents a STRING_LITERAL_LONG1 symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "STRING_LITERAL_LONG1 clause"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1480,7 +1472,7 @@ sparql:STRING_LITERAL_LONG2
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:STRING_LITERAL_LONG2;
-  skos:definition "Represents a STRING_LITERAL_LONG2 clause in SPARQL."@en;
+  skos:definition "Represents a STRING_LITERAL_LONG2 symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "STRING_LITERAL_LONG2 clause"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1488,7 +1480,7 @@ sparql:Integer
   a owl:Class;
   rdfs:subClassOf sparql:CharacterSequence;
   dct:conformsTo section:Integer;
-  skos:definition "Represents a Integer clause in SPARQL."@en;
+  skos:definition "Represents an Integer symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Integer clause"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1496,7 +1488,7 @@ sparql:Double
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Double;
-  skos:definition "Represents a Double clause in SPARQL."@en;
+  skos:definition "Represents a Double symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Double clause"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1504,7 +1496,7 @@ sparql:Decimal
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Decimal;
-  skos:definition "Represents a Decimal clause in SPARQL."@en;
+  skos:definition "Represents a Decimal symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Decimal clause"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1512,7 +1504,7 @@ sparql:Exponent
   a owl:Class;
   rdfs:subClassOf sparql:CharacterSequence;
   dct:conformsTo section:Exponent;
-  skos:definition "Represents a Exponent clause in SPARQL."@en;
+  skos:definition "Represents an Exponent character sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Exponent clause"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1520,7 +1512,7 @@ sparql:Integer_Positive
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Integer_Positive;
-  skos:definition "Represents a Integer Positive clause in SPARQL."@en;
+  skos:definition "Represents a Integer Positive symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Integer Positive clause"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1528,7 +1520,7 @@ sparql:Decimal_Positive
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Decimal_Positive;
-  skos:definition "Represents a Decimal Positive clause in SPARQL."@en;
+  skos:definition "Represents a Decimal Positive symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Decimal Positive clause"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1536,7 +1528,7 @@ sparql:Double_Positive
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Double_Positive;
-  skos:definition "Represents a Double Positive clause in SPARQL."@en;
+  skos:definition "Represents a Double Positive symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Double Positive clause"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1544,7 +1536,7 @@ sparql:Integer_Negative
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Integer_Negative;
-  skos:definition "Represents a Integer Negative clause in SPARQL."@en;
+  skos:definition "Represents a Integer Negative symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Integer Negative clause"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1552,7 +1544,7 @@ sparql:Decimal_Negative
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Decimal_Negative;
-  skos:definition "Represents a Decimal Negative clause in SPARQL."@en;
+  skos:definition "Represents a Decimal Negative symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Decimal Negative clause"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1560,7 +1552,7 @@ sparql:Double_Negative
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Double_Negative;
-  skos:definition "Represents a Double Negative clause in SPARQL."@en;
+  skos:definition "Represents a Double Negative symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Double Negative clause"@en;
   rdfs:isDefinedBy sparql:. 
   
@@ -1568,7 +1560,7 @@ sparql:BlankNode
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:BlankNode ;
-  skos:definition ".."@en;
+  skos:definition "Represents a blank node clause in the abstract syntax tree of SPARQL syntax."@en;
   skos:prefLabel "Blank Node"@en;
   rdfs:isDefinedBy sparql:.  
 
@@ -1576,7 +1568,7 @@ sparql:BlankNodeLabel
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:BlankNodeLabel ;
-  skos:definition ".."@en;
+  skos:definition "Represents a blank node label symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Blank Node"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -1584,7 +1576,7 @@ sparql:Anon
   a owl:Class;
   rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:Anon ;
-  skos:definition ".."@en;
+  skos:definition "Represents an Anon symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "Anon"@en;
   rdfs:isDefinedBy sparql:. 
   
