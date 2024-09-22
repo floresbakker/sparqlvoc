@@ -250,6 +250,62 @@ sparql:Nil
   skos:prefLabel "Nil"@en;
   rdfs:isDefinedBy sparql:.
 
+sparql:WS
+  a owl:Class;
+  rdfs:subClassOf sparql:CharacterSequence;
+  dct:conformsTo section:WS;
+  skos:definition "Represents a WS character sequence in the abstract syntax tree of SPARQL."@en;
+  skos:prefLabel "WS"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:PN_CHARS_BASE
+  a owl:Class;
+  rdfs:subClassOf sparql:CharacterSequence;
+  dct:conformsTo section:PN_CHARS_BASE;
+  skos:definition "Represents a PN_CHARS_BASE character sequence in the abstract syntax tree of SPARQL."@en;
+  skos:prefLabel "PN_CHARS_BASE"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:PN_CHARS_U
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:PN_CHARS_U;
+  skos:definition "Represents a PN_CHARS_U symbol sequence in the abstract syntax tree of SPARQL."@en;
+  skos:prefLabel "PN_CHARS_U"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:PN_CHARS
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:PN_CHARS;
+  skos:definition "Represents a PN_CHARS symbol sequence in the abstract syntax tree of SPARQL."@en;
+  skos:prefLabel "PN_CHARS"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:PLX
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:PLX;
+  skos:definition "Represents a PLX symbol sequence in the abstract syntax tree of SPARQL."@en;
+  skos:prefLabel "PLX"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:PERCENT
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:PERCENT;
+  skos:definition "Represents a PERCENT symbol sequence in the abstract syntax tree of SPARQL."@en;
+  skos:prefLabel "PERCENT"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:HEX
+  a owl:Class;
+  rdfs:subClassOf sparql:CharacterSequence;
+  dct:conformsTo section:HEX;
+  skos:definition "Represents a HEX character sequence in the abstract syntax tree of SPARQL."@en;
+  skos:prefLabel "HEX"@en;
+  rdfs:isDefinedBy sparql:.
+  
 sparql:IRIValue
   a owl:Class;
   rdfs:subClassOf sparql:CharacterSequence;
@@ -292,9 +348,9 @@ sparql:PNAME_NS
 
 sparql:PN_PREFIX
   a owl:Class;
-  rdfs:subClassOf sparql:CharacterSequence;
+  rdfs:subClassOf sparql:SymbolSequence;
   dct:conformsTo section:PN_PREFIX;
-  skos:definition "Represents an PN_PREFIX character sequence in the abstract syntax tree of SPARQL."@en;
+  skos:definition "Represents an PN_PREFIX symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "PN_PREFIX"@en;
   rdfs:isDefinedBy sparql:.  
 
@@ -304,6 +360,14 @@ sparql:PN_LOCAL
   dct:conformsTo section:PN_LOCAL;
   skos:definition "Represents an PN_LOCAL symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "PN_LOCAL"@en;
+  rdfs:isDefinedBy sparql:.  
+
+sparql:VARNAME
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:VARNAME;
+  skos:definition "Represents an VARNAME symbol sequence in the abstract syntax tree of SPARQL."@en;
+  skos:prefLabel "VARNAME"@en;
   rdfs:isDefinedBy sparql:.  
   
 sparql:SelectQuery
@@ -1474,6 +1538,14 @@ sparql:STRING_LITERAL_LONG2
   dct:conformsTo section:STRING_LITERAL_LONG2;
   skos:definition "Represents a STRING_LITERAL_LONG2 symbol sequence in the abstract syntax tree of SPARQL."@en;
   skos:prefLabel "STRING_LITERAL_LONG2 symbol sequence"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:Echar
+  a owl:Class;
+  rdfs:subClassOf sparql:SymbolSequence;
+  dct:conformsTo section:Echar;
+  skos:definition "Represents an Echar symbol sequence in the abstract syntax tree of SPARQL."@en;
+  skos:prefLabel "Echar symbol sequence"@en;
   rdfs:isDefinedBy sparql:. 
 
 sparql:Integer

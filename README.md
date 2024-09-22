@@ -46,7 +46,7 @@ prefix sparql: <http://www.w3.org/ns/sparql#model/def/>
 ex:exampleQueryTree
                 rdf:type sparql:AbstractSyntaxTree;
                 rdf:_1   ex:exampleQuery.
-                
+
 ex:exampleQuery 
                 rdf:type sparql:QueryUnit;
                 rdf:_1 ex:prologue;
@@ -92,11 +92,16 @@ ex:prefix
 
 ex:pname_NS   
                 rdf:type sparql:PNAME_NS;
-                rdf:_1 ex:prefix_RDF;
+                rdf:_1 ex:pn_prefix_RDF;
                 rdf:_2 ex:colon.
                 
-ex:prefix_RDF 
+ex:pn_prefix_RDF 
                 rdf:type sparql:PN_PREFIX;
+                rdf:_1 ex:pn_chars_base_RDF.
+                
+
+ex:pn_chars_base_RDF
+                rdf:type sparql:PN_CHARS_BASE;
                 rdf:value "rdf".
 
 ex:colon
@@ -166,14 +171,18 @@ ex:varOrTerm1
                 rdf:_1 ex:variable_s.
 
 ex:variable_s
+                rdf:type sparql:Variable;
+                rdf:_1 ex:variable1_s.
+
+ex:variable1_s                
                 rdf:type sparql:Variable1;
                 rdf:_1 ex:questionMark;
-                rdf:_2 ex:variable_s_name.
+                rdf:_2 ex:variable1_s_name.
 
 ex:questionMark
                 rdf:type sparql:QuestionMark.
 
-ex:variable_s_name 
+ex:variable1_s_name 
                 rdf:type sparql:CharacterSequence;
                 rdf:value 's'.
                 
@@ -187,11 +196,15 @@ ex:verbSimple
                 rdf:_1 ex:variable_p.
 
 ex:variable_p
+                rdf:type sparql:Variable;
+                rdf:_1 ex:variable1_p.                    
+
+ex:variable1_p
                 rdf:type sparql:Variable1;
                 rdf:_1 ex:questionMark;
-                rdf:_2 ex:variable_p_name.                    
-
-ex:variable_p_name 
+                rdf:_2 ex:variable1_p_name.  
+                
+ex:variable1_p_name 
                 rdf:type sparql:CharacterSequence;
                 rdf:value 'p'.   
                 
@@ -212,13 +225,17 @@ ex:varOrTerm2
                 rdf:_1 ex:variable_o.
 
 ex:variable_o
+                rdf:type sparql:Variable;
+                rdf:_1 ex:variable1_o.
+
+ex:variable1_o
                 rdf:type sparql:Variable1;
                 rdf:_1 ex:questionMark;
-                rdf:_2 ex:variable_o_name.
-                   
-ex:variable_o_name 
+                rdf:_2 ex:variable1_o_name.                   
+
+ex:variable1_o_name 
                 rdf:type sparql:CharacterSequence;
-                rdf:value 'o'.
+                rdf:value 'o'.                   
 ```
 
 # Extended example - Filter clause
@@ -288,11 +305,16 @@ ex:prefix
 
 ex:pname_NS   
                 rdf:type sparql:PNAME_NS;
-                rdf:_1 ex:prefix_RDF;
+                rdf:_1 ex:pn_prefix_RDF;
                 rdf:_2 ex:colon.
                 
-ex:prefix_RDF 
+ex:pn_prefix_RDF 
                 rdf:type sparql:PN_PREFIX;
+                rdf:_1 ex:pn_chars_base_RDF.
+                
+
+ex:pn_chars_base_RDF
+                rdf:type sparql:PN_CHARS_BASE;
                 rdf:value "rdf".
 
 ex:colon
@@ -520,5 +542,5 @@ ex:variable1_o
                    
 ex:variable1_o_name 
                 rdf:type sparql:CharacterSequence;
-                rdf:value 'o'.                   
+                rdf:value 'o'.                         
 ```

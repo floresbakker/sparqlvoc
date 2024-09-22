@@ -51,11 +51,16 @@ ex:prefix
 
 ex:pname_NS   
                 rdf:type sparql:PNAME_NS;
-                rdf:_1 ex:prefix_RDF;
+                rdf:_1 ex:pn_prefix_RDF;
                 rdf:_2 ex:colon.
                 
-ex:prefix_RDF 
+ex:pn_prefix_RDF 
                 rdf:type sparql:PN_PREFIX;
+                rdf:_1 ex:pn_chars_base_RDF.
+                
+
+ex:pn_chars_base_RDF
+                rdf:type sparql:PN_CHARS_BASE;
                 rdf:value "rdf".
 
 ex:colon
