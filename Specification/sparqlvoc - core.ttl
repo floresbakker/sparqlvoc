@@ -47,7 +47,6 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
       skos:;
     sh:declare
       decl:sparql,
-      decl:prov,
       decl:rdf,
       decl:rdfs,
       decl:xsd;      
@@ -60,10 +59,6 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
   decl:sparql
     sh:prefix "sparql";
     sh:namespace "http://www.w3.org/ns/sparql#model/def/"^^xsd:anyURI.
-
-  decl:prov
-    sh:prefix "prov";
-    sh:namespace "http://www.w3.org/ns/prov#"^^xsd:anyURI.
 
   decl:rdf
     sh:prefix "rdf";
@@ -86,11 +81,11 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 ### Sections from the SPARQL Specification
 
-  section:Tree
+  section:AbstractSyntaxTree
     a dcm:Text;
     dct:isPartOf standard:sparql;
-    dct:source 'https://sparql.org/#node-trees'^^xsd:anyURI;
-    skos:prefLabel 'Tree'@en;
+    dct:source 'https://www.w3.org/TR/sparql11-query/'^^xsd:anyURI;
+    skos:prefLabel 'Abstract Syntax Tree'@en;
     rdfs:isDefinedBy sparql:.
 
   
@@ -100,8 +95,8 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 sparql:AbstractSyntaxTree
   a owl:Class;
-  dct:conformsTo section:Tree;
-  skos:definition 'An abstract syntax tree is an object that represents a SPARQL query unit. A tree consists of connected nodes.'@en;
+  dct:conformsTo section:AbstractSyntaxTree;
+  skos:definition 'An abstract syntax tree is an object that represents a SPARQL query unit. It consists of an hierarchy of connected nodes that model the structure and syntax of a SPARQL query unit.'@en;
   skos:prefLabel 'Abstract Syntax Tree'@en;
   rdfs:isDefinedBy sparql:.
 
@@ -116,7 +111,7 @@ sparql:NonTerminalNode
   a owl:Class;
   rdfs:subClassOf sparql:Node;
   dct:conformsTo section:StructuralNode;
-  skos:definition 'A node that represents a structural component in the SPARQL abstract syntax tree.'@en;
+  skos:definition 'A node that represents a structural object in the SPARQL abstract syntax tree.'@en;
   skos:prefLabel 'Non-terminal node'@en;
   rdfs:isDefinedBy sparql:.
 
@@ -124,8 +119,9 @@ sparql:TerminalNode
   a owl:Class;
   rdfs:subClassOf sparql:Node;  
   dct:conformsTo section:TerminalNode;
-  skos:definition 'A node that represents a syntactical component in the SPARQL abstract syntax tree, i.e. a keyword or symbol.'@en;
+  skos:definition 'A node that represents a syntactical object in the SPARQL abstract syntax tree, i.e. a keyword or symbol.'@en;
   skos:prefLabel 'Terminal node'@en;
+  skos:example '''"SELECT", "FILTER", "?s" or "<https://example.org>"''';  
   rdfs:isDefinedBy sparql:.
 
 sparql:Keyword
@@ -134,21 +130,23 @@ sparql:Keyword
   dct:conformsTo section:Keyword;
   skos:definition 'A keyword in the SPARQL syntax.'@en;
   skos:prefLabel 'Keyword'@en;
+  skos:example '''"SELECT" or "FILTER"''';
   rdfs:isDefinedBy sparql:.
 
 sparql:Symbol
   a owl:Class;
   rdfs:subClassOf sparql:TerminalNode;  
   dct:conformsTo section:Symbol;
-  skos:definition 'A symbol in the SPARQL syntax.'@en;
+  skos:definition 'A symbol represents a meaningful token in the SPARQL syntax that does not have any underlying components.'@en;
   skos:prefLabel 'Symbol'@en;
+  skos:example '''"*" or "+"''';  
   rdfs:isDefinedBy sparql:.
 
 sparql:SymbolSequence
   a owl:Class;
   rdfs:subClassOf sparql:TerminalNode;  
   dct:conformsTo section:SymbolSequence;
-  skos:definition 'A symbol sequence in the SPARQL syntax.'@en;
+  skos:definition 'A symbol sequence represents a meaningful token in the SPARQL syntax that can be broken down into underlying components like symbols and character sequences.'@en;
   skos:prefLabel 'Symbol sequence'@en;
   skos:example '''"?s" or "<https://example.org>"''';
   rdfs:isDefinedBy sparql:.
@@ -157,7 +155,7 @@ sparql:CharacterSequence
   a owl:Class;
   rdfs:subClassOf sparql:TerminalNode;  
   dct:conformsTo section:CharacterSequence;
-  skos:definition 'A character sequence in the SPARQL syntax.'@en;
+  skos:definition 'A character sequence represents a group of characters that on its own does not have meaning within the SPARQL syntax. A character sequence is always part of a symbol sequence.'@en;
   skos:prefLabel 'Character sequence'@en;
   skos:example '''"s" in "?s" or "https://example.org" in "<https://example.org>"''';
   rdfs:isDefinedBy sparql:.
