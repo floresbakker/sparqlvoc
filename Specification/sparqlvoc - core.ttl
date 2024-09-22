@@ -769,7 +769,7 @@ sparql:TriplesSameSubject
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:TriplesSameSubject;
-  skos:definition ".."@en;
+  skos:definition "Represents a group of triples that share the same subject in a query pattern."@en;
   skos:prefLabel "Triples Same Subject"@en;
   rdfs:isDefinedBy sparql:. 
   
@@ -777,7 +777,7 @@ sparql:TriplesSameSubjectPath
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:TriplesSameSubjectPath;
-  skos:definition ".."@en;
+  skos:definition "Represents a set of triples with the same subject, following a property path."@en;
   skos:prefLabel "Triples Same Subject Path"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -785,7 +785,7 @@ sparql:VarOrTerm
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:VarOrTerm;
-  skos:definition ".."@en;
+  skos:definition "Represents either a variable or a term (IRI, literal, or blank node) in a SPARQL query."@en;
   skos:prefLabel "Var or Term"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -793,7 +793,7 @@ sparql:VarOrIri
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:VarOrIri;
-  skos:definition ".."@en;
+  skos:definition "Represents either a variable or an IRI in a query expression."@en;
   skos:prefLabel "Var or Iri"@en;
   rdfs:isDefinedBy sparql:. 
   
@@ -801,7 +801,7 @@ sparql:GraphTerm
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:VarOrTerm;
-  skos:definition ".."@en;
+  skos:definition "Represents an RDF term within a graph, such as a subject, predicate, or object."@en;
   skos:prefLabel "Graph term"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -809,7 +809,7 @@ sparql:PropertyList
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PropertyList;
-  skos:definition ".."@en;
+  skos:definition "Represents a list of properties associated with a subject in a SPARQL query."@en;
   skos:prefLabel "Property List"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -817,7 +817,7 @@ sparql:PropertyListNotEmpty
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PropertyListNotEmpty;
-  skos:definition ".."@en;
+  skos:definition "Represents a property list that is not empty, indicating that the subject has at least one property."@en;
   skos:prefLabel "Property List Not Empty"@en;
   rdfs:isDefinedBy sparql:. 
   
@@ -825,7 +825,7 @@ sparql:PropertyListPath
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PropertyListPath;
-  skos:definition ".."@en;
+  skos:definition "Represents a list of properties along a path in a SPARQL query."@en;
   skos:prefLabel "Property List Path"@en;
   rdfs:isDefinedBy sparql:. 
   
@@ -833,7 +833,7 @@ sparql:PropertyListPathNotEmpty
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PropertyListPathNotEmpty;
-  skos:definition ".."@en;
+  skos:definition "Represents a non-empty list of properties along a path."@en;
   skos:prefLabel "Property List Path Not Empty"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -841,7 +841,7 @@ sparql:Verb
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Verb;
-  skos:definition ".."@en;
+  skos:definition "Represents a verb in a query pattern, typically a predicate in an RDF triple."@en;
   skos:prefLabel "Verb"@en;
   rdfs:isDefinedBy sparql:. 
   
@@ -849,7 +849,7 @@ sparql:VerbPath
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:VerbPath;
-  skos:definition ".."@en;
+  skos:definition "Represents a path expression that acts as a verb in an RDF triple."@en;
   skos:prefLabel "Verb Path"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -857,7 +857,7 @@ sparql:VerbSimple
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:VerbSimple;
-  skos:definition ".."@en;
+  skos:definition "Represents a simple verb, typically a single predicate in an RDF triple."@en;
   skos:prefLabel "Verb Simple"@en;
   rdfs:isDefinedBy sparql:. 
 
@@ -865,7 +865,7 @@ sparql:ObjectList
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:ObjectList;
-  skos:definition ".."@en;
+  skos:definition "Represents a list of objects in a SPARQL query pattern."@en;
   skos:prefLabel "Object List"@en;
   rdfs:isDefinedBy sparql:.  
 
@@ -873,7 +873,7 @@ sparql:Object
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Object;
-  skos:definition ".."@en;
+  skos:definition "Represents the object in an RDF triple, which can be an IRI, a literal, or a blank node."@en;
   skos:prefLabel "Object"@en;
   rdfs:isDefinedBy sparql:.  
 
@@ -881,7 +881,7 @@ sparql:ObjectListPath
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:ObjectListPath;
-  skos:definition ".."@en;
+  skos:definition "Represents a list of objects along a specified path in a property path expression."@en;
   skos:prefLabel "Object List Path"@en;
   rdfs:isDefinedBy sparql:.  
   
@@ -889,7 +889,7 @@ sparql:ObjectPath
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:ObjectPath;
-  skos:definition ".."@en;
+  skos:definition "Represents the path to an object in a property path expression."@en;
   skos:prefLabel "Object Path"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -897,7 +897,7 @@ sparql:Path
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Path;
-  skos:definition ".."@en;
+  skos:definition "Represents a property path, which is a sequence of properties used to traverse the RDF graph in SPARQL queries."@en;
   skos:prefLabel "Path"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -905,7 +905,7 @@ sparql:PathAlternative
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PathAlternative;
-  skos:definition ".."@en;
+  skos:definition "Represents an alternative path in a property path, typically using the | operator to express multiple possible paths."@en;
   skos:prefLabel "Path Alternative"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -913,7 +913,7 @@ sparql:PathSequence
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PathSequence;
-  skos:definition ".."@en;
+  skos:definition "Represents a sequence of property paths, allowing traversal over multiple properties."@en;
   skos:prefLabel "Path Sequence"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -921,7 +921,7 @@ sparql:PathElt
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PathElt;
-  skos:definition ".."@en;
+  skos:definition "Represents an element of a property path in SPARQL."@en;
   skos:prefLabel "Path Elt"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -929,7 +929,7 @@ sparql:PathEltOrInverse
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PathEltOrInverse;
-  skos:definition ".."@en;
+  skos:definition "Represents either a path element or its inverse (using ^ to reverse the direction of the path)."@en;
   skos:prefLabel "Path Elt Or Inverse"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -937,7 +937,7 @@ sparql:PathMod
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PathMod;
-  skos:definition ".."@en;
+  skos:definition "Represents a modifier on a path, such as * (zero or more), + (one or more), or ? (zero or one)."@en;
   skos:prefLabel "Path Mod"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -945,7 +945,7 @@ sparql:PathPrimary
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PathPrimary;
-  skos:definition ".."@en;
+  skos:definition "Represents the primary part of a property path expression."@en;
   skos:prefLabel "Path Primary"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -953,7 +953,7 @@ sparql:PathNegatedPropertySet
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PathNegatedPropertySet;
-  skos:definition ".."@en;
+  skos:definition "Represents a negated property set in a path, which matches any property except the ones listed."@en;
   skos:prefLabel "Path Negated Property Set"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -961,7 +961,7 @@ sparql:PathOneInPropertySet
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:PathOneInPropertySet;
-  skos:definition ".."@en;
+  skos:definition "Represents one property in a property set, used in path expressions."@en;
   skos:prefLabel "Path One In Property Set"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -969,7 +969,7 @@ sparql:IntegerClause
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:IntegerClause;
-  skos:definition ".."@en;
+  skos:definition "Represents the INSERT clause in SPARQL Update, which adds new triples to the dataset."@en;
   skos:prefLabel "Integer Clause"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -977,7 +977,7 @@ sparql:TriplesNode
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:TriplesNode;
-  skos:definition ".."@en;
+  skos:definition "Represents a node that is part of a triple in a query pattern, typically a subject or object."@en;
   skos:prefLabel "Triples Node"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -985,7 +985,7 @@ sparql:BlankNodePropertyList
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:BlankNodePropertyList;
-  skos:definition ".."@en;
+  skos:definition "Represents a property list associated with a blank node in SPARQL, typically used to describe multiple property-value pairs for a blank node."@en;
   skos:prefLabel "BlankNodePropertyList"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -993,7 +993,7 @@ sparql:TriplesNodePath
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:TriplesNodePath;
-  skos:definition ".."@en;
+  skos:definition "Represents a path between nodes in a triple pattern, allowing for traversal over multiple nodes."@en;
   skos:prefLabel "Triples Node Path"@en;
   rdfs:isDefinedBy sparql:.   
 
@@ -1001,7 +1001,7 @@ sparql:Collection
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:Collection ;
-  skos:definition ".."@en;
+  skos:definition "Represents an RDF collection, a sequence of items, typically represented with RDF rdf:first and rdf:rest properties."@en;
   skos:prefLabel "Collection"@en;
   rdfs:isDefinedBy sparql:.  
 
@@ -1009,7 +1009,7 @@ sparql:CollectionPath
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:CollectionPath ;
-  skos:definition ".."@en;
+  skos:definition "Represents a path over RDF collections in a SPARQL property path, allowing traversal of RDF list structures."@en;
   skos:prefLabel "Collection Path"@en;
   rdfs:isDefinedBy sparql:.  
 
@@ -1017,7 +1017,7 @@ sparql:GraphNode
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:GraphNode;
-  skos:definition ".."@en;
+  skos:definition "Represents a node in the RDF graph, which could be an IRI, a blank node, or a literal value."@en;
   skos:prefLabel "Graph Node"@en;
   rdfs:isDefinedBy sparql:.    
 
@@ -1025,7 +1025,7 @@ sparql:GraphNodePath
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:GraphNodePath;
-  skos:definition ".."@en;
+  skos:definition "Represents a path that can be followed between nodes in the RDF graph, used in property path expressions."@en;
   skos:prefLabel "Graph Node Path"@en;
   rdfs:isDefinedBy sparql:.    
 
@@ -1033,7 +1033,7 @@ sparql:BlankNodePropertyListPath
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
   dct:conformsTo section:BlankNodePropertyListPath   ;
-  skos:definition ".."@en;
+  skos:definition "Represents a path of properties that applies to a blank node, used in property path expressions in SPARQL queries."@en;
   skos:prefLabel "Blank Node Property List Path"@en;
   rdfs:isDefinedBy sparql:.  
 
