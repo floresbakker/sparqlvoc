@@ -312,7 +312,6 @@ ex:pn_prefix_RDF
                 rdf:type sparql:PN_PREFIX;
                 rdf:_1 ex:pn_chars_base_RDF.
                 
-
 ex:pn_chars_base_RDF
                 rdf:type sparql:PN_CHARS_BASE;
                 rdf:value "rdf".
