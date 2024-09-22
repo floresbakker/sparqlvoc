@@ -94,7 +94,9 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:isDefinedBy sparql:.
 
   
-### SPARQL
+### SPARQL voc ###
+
+### Classes ###
 
 sparql:AbstractSyntaxTree
   a owl:Class;
@@ -765,6 +767,14 @@ sparql:GraphPatternNotTriples
   skos:prefLabel "Graph Pattern Not Triples"@en;
   rdfs:isDefinedBy sparql:.
 
+sparql:TriplesSameSubject
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:TriplesSameSubject;
+  skos:definition ".."@en;
+  skos:prefLabel "Triples Same Subject"@en;
+  rdfs:isDefinedBy sparql:. 
+  
 sparql:TriplesSameSubjectPath 
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
@@ -781,6 +791,14 @@ sparql:VarOrTerm
   skos:prefLabel "Var or Term"@en;
   rdfs:isDefinedBy sparql:. 
 
+sparql:VarOrIri
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:VarOrIri;
+  skos:definition ".."@en;
+  skos:prefLabel "Var or Iri"@en;
+  rdfs:isDefinedBy sparql:. 
+  
 sparql:GraphTerm
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
@@ -789,6 +807,30 @@ sparql:GraphTerm
   skos:prefLabel "Graph term"@en;
   rdfs:isDefinedBy sparql:.   
 
+sparql:PropertyList
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:PropertyList;
+  skos:definition ".."@en;
+  skos:prefLabel "Property List"@en;
+  rdfs:isDefinedBy sparql:. 
+
+sparql:PropertyListNotEmpty
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:PropertyListNotEmpty;
+  skos:definition ".."@en;
+  skos:prefLabel "Property List Not Empty"@en;
+  rdfs:isDefinedBy sparql:. 
+  
+sparql:PropertyListPath
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:PropertyListPath;
+  skos:definition ".."@en;
+  skos:prefLabel "Property List Path"@en;
+  rdfs:isDefinedBy sparql:. 
+  
 sparql:PropertyListPathNotEmpty
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
@@ -796,7 +838,23 @@ sparql:PropertyListPathNotEmpty
   skos:definition ".."@en;
   skos:prefLabel "Property List Path Not Empty"@en;
   rdfs:isDefinedBy sparql:. 
+
+sparql:Verb
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:Verb;
+  skos:definition ".."@en;
+  skos:prefLabel "Verb"@en;
+  rdfs:isDefinedBy sparql:. 
   
+sparql:VerbPath
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:VerbPath;
+  skos:definition ".."@en;
+  skos:prefLabel "Verb Path"@en;
+  rdfs:isDefinedBy sparql:. 
+
 sparql:VerbSimple
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
@@ -804,6 +862,22 @@ sparql:VerbSimple
   skos:definition ".."@en;
   skos:prefLabel "Verb Simple"@en;
   rdfs:isDefinedBy sparql:. 
+
+sparql:ObjectList
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:ObjectList;
+  skos:definition ".."@en;
+  skos:prefLabel "Object List"@en;
+  rdfs:isDefinedBy sparql:.  
+
+sparql:Object
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:Object;
+  skos:definition ".."@en;
+  skos:prefLabel "Object"@en;
+  rdfs:isDefinedBy sparql:.  
 
 sparql:ObjectListPath
   a owl:Class;
@@ -821,6 +895,102 @@ sparql:ObjectPath
   skos:prefLabel "Object Path"@en;
   rdfs:isDefinedBy sparql:.   
 
+sparql:Path
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:Path;
+  skos:definition ".."@en;
+  skos:prefLabel "Path"@en;
+  rdfs:isDefinedBy sparql:.   
+
+sparql:PathAlternative
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:PathAlternative;
+  skos:definition ".."@en;
+  skos:prefLabel "Path Alternative"@en;
+  rdfs:isDefinedBy sparql:.   
+
+sparql:PathSequence
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:PathSequence;
+  skos:definition ".."@en;
+  skos:prefLabel "Path Sequence"@en;
+  rdfs:isDefinedBy sparql:.   
+
+sparql:PathElt
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:PathElt;
+  skos:definition ".."@en;
+  skos:prefLabel "Path Elt"@en;
+  rdfs:isDefinedBy sparql:.   
+
+sparql:PathEltOrInverse
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:PathEltOrInverse;
+  skos:definition ".."@en;
+  skos:prefLabel "Path Elt Or Inverse"@en;
+  rdfs:isDefinedBy sparql:.   
+
+sparql:PathMod
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:PathMod;
+  skos:definition ".."@en;
+  skos:prefLabel "Path Mod"@en;
+  rdfs:isDefinedBy sparql:.   
+
+sparql:PathPrimary
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:PathPrimary;
+  skos:definition ".."@en;
+  skos:prefLabel "Path Primary"@en;
+  rdfs:isDefinedBy sparql:.   
+
+sparql:PathNegatedPropertySet
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:PathNegatedPropertySet;
+  skos:definition ".."@en;
+  skos:prefLabel "Path Negated Property Set"@en;
+  rdfs:isDefinedBy sparql:.   
+
+sparql:PathOneInPropertySet
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:PathOneInPropertySet;
+  skos:definition ".."@en;
+  skos:prefLabel "Path One In Property Set"@en;
+  rdfs:isDefinedBy sparql:.   
+
+sparql:IntegerClause
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:IntegerClause;
+  skos:definition ".."@en;
+  skos:prefLabel "Integer Clause"@en;
+  rdfs:isDefinedBy sparql:.   
+
+sparql:TriplesNode
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:TriplesNode;
+  skos:definition ".."@en;
+  skos:prefLabel "Triples Node"@en;
+  rdfs:isDefinedBy sparql:.   
+
+sparql:BlankNodePropertyList
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:BlankNodePropertyList;
+  skos:definition ".."@en;
+  skos:prefLabel "BlankNodePropertyList"@en;
+  rdfs:isDefinedBy sparql:.   
+
 sparql:TriplesNodePath
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
@@ -829,6 +999,14 @@ sparql:TriplesNodePath
   skos:prefLabel "Triples Node Path"@en;
   rdfs:isDefinedBy sparql:.   
 
+sparql:Collection
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:Collection ;
+  skos:definition ".."@en;
+  skos:prefLabel "Collection"@en;
+  rdfs:isDefinedBy sparql:.  
+
 sparql:CollectionPath 
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
@@ -836,6 +1014,14 @@ sparql:CollectionPath
   skos:definition ".."@en;
   skos:prefLabel "Collection Path"@en;
   rdfs:isDefinedBy sparql:.  
+
+sparql:GraphNode
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:GraphNode;
+  skos:definition ".."@en;
+  skos:prefLabel "Graph Node"@en;
+  rdfs:isDefinedBy sparql:.    
 
 sparql:GraphNodePath
   a owl:Class;
@@ -938,6 +1124,38 @@ sparql:Values
   sparql:syntax "VALUES";
   rdfs:isDefinedBy sparql:.  
 
+sparql:DataBlock
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:DataBlock;
+  skos:definition "Represents a data block in SPARQL."@en;
+  skos:prefLabel "Data block"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:InlineDataOneVar
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:InlineDataOneVar;
+  skos:definition "Represents an inline data one var in SPARQL."@en;
+  skos:prefLabel "Inline data one var"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:InlineDataFull
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:InlineDataFull;
+  skos:definition "Represents an inline data full in SPARQL."@en;
+  skos:prefLabel "Inline data full"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:DataBlockValue
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:DataBlockValue;
+  skos:definition "Represents a data block value in SPARQL."@en;
+  skos:prefLabel "Data block value"@en;
+  rdfs:isDefinedBy sparql:.
+  
 sparql:MinusGraphPattern
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
@@ -954,6 +1172,14 @@ sparql:Minus
   skos:prefLabel "MINUS keyword"@en;
   sparql:syntax 'MINUS';
   rdfs:isDefinedBy sparql:.  
+
+sparql:GroupOrUnionGraphPattern
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:GroupOrUnionGraphPattern;
+  skos:definition "Represents a group or union graph pattern in SPARQL."@en;
+  skos:prefLabel "Group or union graph pattern"@en;
+  rdfs:isDefinedBy sparql:.
 
 sparql:FilterClause
   a owl:Class;
@@ -1034,6 +1260,22 @@ sparql:ExpressionList
   dct:conformsTo section:ExpressionList;
   skos:definition "Represents an expression list clause in SPARQL."@en;
   skos:prefLabel "ExpressionList clause"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:ConstructTemplate
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:ConstructTemplate;
+  skos:definition "Represents a construct template in SPARQL."@en;
+  skos:prefLabel "Construct Template"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:ConstructTriples
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:ConstructTriples;
+  skos:definition "Represents construct triples in SPARQL."@en;
+  skos:prefLabel "Construct triples"@en;
   rdfs:isDefinedBy sparql:.
 
 sparql:AdditiveExpression
@@ -1140,6 +1382,14 @@ sparql:BuiltInCall
   skos:prefLabel "BuiltInCall clause"@en;
   rdfs:isDefinedBy sparql:. 
 
+sparql:FunctionCall
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:FunctionCall;
+  skos:definition "Represents a function call clause in SPARQL."@en;
+  skos:prefLabel "FunctionCall clause"@en;
+  rdfs:isDefinedBy sparql:.
+  
 sparql:IriOrFunction
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
@@ -1356,6 +1606,14 @@ sparql:GroupClause
   skos:prefLabel "Group Clause"@en;
   rdfs:isDefinedBy sparql:.
 
+sparql:GroupCondition
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:GroupCondition;
+  skos:definition "Represents a group condition clause in SPARQL."@en;
+  skos:prefLabel "Group Condition"@en;
+  rdfs:isDefinedBy sparql:.
+  
 sparql:Group
   a owl:Class;
   rdfs:subClassOf sparql:Keyword;
@@ -1391,6 +1649,14 @@ sparql:Having
   sparql:syntax 'HAVING';
   rdfs:isDefinedBy sparql:.  
 
+sparql:HavingCondition
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:HavingCondition;
+  skos:definition "Represents a HAVING condition in SPARQL."@en;
+  skos:prefLabel "Having Clause"@en;
+  rdfs:isDefinedBy sparql:.
+  
 sparql:OrderClause
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;
@@ -1450,6 +1716,14 @@ sparql:Limit
   skos:prefLabel "LIMIT keyword"@en;
   sparql:syntax 'LIMIT';
   rdfs:isDefinedBy sparql:.    
+
+sparql:LimitOffsetClauses
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:LimitOffsetClauses;
+  skos:definition "Represents limit offset clauses in SPARQL."@en;
+  skos:prefLabel "Offset Clause"@en;
+  rdfs:isDefinedBy sparql:.
 
 sparql:OffsetClause
   a owl:Class;
@@ -1594,6 +1868,81 @@ sparql:InsertClause
   skos:definition "Represents an INSERT clause in SPARQL, specifying triples to be inserted."@en;
   skos:prefLabel "Insert Clause"@en;
   rdfs:isDefinedBy sparql:.
+
+sparql:UsingClause
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:UsingClause;
+  skos:definition "Represents an Using clause in SPARQL."@en;
+  skos:prefLabel "Using Clause"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:GraphOrDefault
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:GraphOrDefault;
+  skos:definition "Represents a graph or default in SPARQL."@en;
+  skos:prefLabel "Graph or default"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:GraphRef
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:GraphRef;
+  skos:definition "Represents a graph ref in SPARQL."@en;
+  skos:prefLabel "Graph ref"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:GraphRefAll
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:GraphRefAll;
+  skos:definition "Represents a graph ref all in SPARQL."@en;
+  skos:prefLabel "Graph ref all"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:QuadPattern
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:QuadPattern;
+  skos:definition "Represents a quad pattern in SPARQL."@en;
+  skos:prefLabel "Quad pattern"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:QuadData
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:QuadData;
+  skos:definition "Represents a quad data in SPARQL."@en;
+  skos:prefLabel "Quad data"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:Quads
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:Quads;
+  skos:definition "Represents quads in SPARQL."@en;
+  skos:prefLabel "Quads"@en;
+  rdfs:isDefinedBy sparql:.
+
+sparql:QuadsNotTriples
+  a owl:Class;
+  rdfs:subClassOf sparql:NonTerminalNode;
+  dct:conformsTo section:QuadsNotTriples;
+  skos:definition "Represents quads not triples in SPARQL."@en;
+  skos:prefLabel "Quads not triples"@en;
+  rdfs:isDefinedBy sparql:.
+  
+### Datatype properties ###
+
+sparql:fragment
+  a owl:DatatypeProperty;
+  rdfs:domain sparql:Node;
+  rdfs:range xsd:string;
+  skos:prefLabel "the fragment property";
+  skos:definition "The property that is used to represent an actual SPARQL query fragment".
+
+### Shapes ###
 
 shp:NonTerminalNode
     a sh:NodeShape;
