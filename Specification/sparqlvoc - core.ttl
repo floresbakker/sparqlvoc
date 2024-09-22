@@ -306,14 +306,6 @@ sparql:HEX
   skos:prefLabel "HEX"@en;
   rdfs:isDefinedBy sparql:.
   
-sparql:IRIValue
-  a owl:Class;
-  rdfs:subClassOf sparql:CharacterSequence;
-  dct:conformsTo section:IRIValue;
-  skos:definition "Represents an IRI value character sequence in the abstract syntax tree of SPARQL."@en;
-  skos:prefLabel "IRI value"@en;
-  rdfs:isDefinedBy sparql:.
-
 sparql:PrefixedName
   a owl:Class;
   rdfs:subClassOf sparql:NonTerminalNode;

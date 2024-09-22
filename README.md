@@ -25,7 +25,7 @@ Sparqlvoc offers five algorithms captured in five SHACL nodeshapes to generate a
 
 # Status
 
-Highly unstable & unfinished. Work in progress.
+Unstable & unfinished. Work in progress.
 
 # Simple example
 
@@ -78,7 +78,7 @@ ex:greaterThan
                 rdf:type sparql:GreaterThan.
                               
 ex:iriValue_Base
-                rdf:type sparql:IRIValue;
+                rdf:type sparql:CharacterSequence;
                 rdf:value "https://example.org/".
                 
 ex:prefixDecl    
@@ -114,7 +114,7 @@ ex:iriRef_RDF
                 rdf:_3 ex:greaterThan.
 
 ex:iriValue_RDF
-                rdf:type sparql:IRIValue;
+                rdf:type sparql:CharacterSequence;
                 rdf:value "http://www.w3.org/1999/02/22-rdf-syntax-ns#".
 
 ex:selectQuery
@@ -235,7 +235,7 @@ ex:variable1_o
 
 ex:variable1_o_name 
                 rdf:type sparql:CharacterSequence;
-                rdf:value 'o'.                   
+                rdf:value 'o'.                                    
 ```
 
 # Extended example - Filter clause
@@ -291,7 +291,7 @@ ex:greaterThan
                 rdf:type sparql:GreaterThan.
                               
 ex:iriValue_Base
-                rdf:type sparql:IRIValue;
+                rdf:type sparql:CharacterSequence;
                 rdf:value "https://example.org/".
                 
 ex:prefixDecl    
@@ -312,6 +312,7 @@ ex:pn_prefix_RDF
                 rdf:type sparql:PN_PREFIX;
                 rdf:_1 ex:pn_chars_base_RDF.
                 
+
 ex:pn_chars_base_RDF
                 rdf:type sparql:PN_CHARS_BASE;
                 rdf:value "rdf".
@@ -326,7 +327,7 @@ ex:iriRef_RDF
                 rdf:_3 ex:greaterThan.
 
 ex:iriValue_RDF
-                rdf:type sparql:IRIValue;
+                rdf:type sparql:CharacterSequence;
                 rdf:value "http://www.w3.org/1999/02/22-rdf-syntax-ns#".
 
 ex:selectQuery
@@ -541,5 +542,5 @@ ex:variable1_o
                    
 ex:variable1_o_name 
                 rdf:type sparql:CharacterSequence;
-                rdf:value 'o'.                         
+                rdf:value 'o'.                              
 ```

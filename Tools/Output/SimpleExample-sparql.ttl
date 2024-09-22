@@ -1911,11 +1911,11 @@ ex:iriRef_RDF a sparql:IRIRef ;
     rdf:_3 ex:greaterThan ;
     sparql:fragment "<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"^^xsd:string .
 
-ex:iriValue_Base a sparql:IRIValue ;
+ex:iriValue_Base a sparql:CharacterSequence ;
     rdf:value "https://example.org/" ;
     sparql:fragment "https://example.org/" .
 
-ex:iriValue_RDF a sparql:IRIValue ;
+ex:iriValue_RDF a sparql:CharacterSequence ;
     rdf:value "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
     sparql:fragment "http://www.w3.org/1999/02/22-rdf-syntax-ns#" .
 
@@ -2058,13 +2058,6 @@ sparql:IRIRef a owl:Class ;
     rdfs:subClassOf sparql:SymbolSequence ;
     skos:definition "Represents an IRIRef symbol sequence in the abstract syntax tree of SPARQL."@en ;
     skos:prefLabel "IRI reference"@en .
-
-sparql:IRIValue a owl:Class ;
-    dct:conformsTo section:IRIValue ;
-    rdfs:isDefinedBy sparql: ;
-    rdfs:subClassOf sparql:CharacterSequence ;
-    skos:definition "Represents an IRI value character sequence in the abstract syntax tree of SPARQL."@en ;
-    skos:prefLabel "IRI value"@en .
 
 sparql:VarOrTerm a owl:Class ;
     dct:conformsTo section:VarOrTerm ;
