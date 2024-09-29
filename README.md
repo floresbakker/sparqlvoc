@@ -2,27 +2,6 @@
 
 A RDF-based vocabulary to model SPARQL queries into RDF. Sparqlvoc offers OWL-classes, properties and SHACL shapes, with which SPARQL queries can be represented, queried, generated, validated, analysed, transformed and reused. With Sparqlvoc SPARQL queries themselves become semantic objects worthy of inspection.
 
-The vocabulary models the SPARQL query language as an abstract syntax tree, consisting of the following nodes in a tree:
-
-- tree
-  - node
-    - non-terminal node
-    - terminal node
-        - keyword
-        - symbol
-        - symbol sequence
-        - character sequence
-
-As a source for the model we use the grammar from the SPARQL 1.1 specification: https://www.w3.org/TR/sparql11-query/#grammar.
-
-Sparqlvoc offers five algorithms captured in five SHACL nodeshapes to generate an actual SPARQL query based on its RDF-based abstract syntax tree. These five algorithms align with the above mentioned model of the abstract syntax tree and its components.
-
-1. shp:NonTerminalNode
-2. shp:Keyword
-3. shp:Symbol
-4. shp:SymbolSequence
-5. shp:CharacterSequence
-
 # Abstract
 The SPARQL Vocabulary provides a RDF-based formal representation of the SPARQL query language according to the SPARQL 1.1 specification https://www.w3.org/TR/sparql11-query/. It leverages modeling and generation of SPARQL queries through an abstract syntax tree (AST) framework. To this end, the vocabulary defines classes and properties to describe the various components of SPARQL queries, including SELECT, WHERE, FILTER, and UNION constructs. Additionally, it incorporates SHACL shapes for validating SPARQL query structures and supports algorithms for serializing SPARQL queries from RDF representations. This vocabulary enhances semantic data retrieval and management, bridging SPARQL with broader semantic web technologies.
 
