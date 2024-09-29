@@ -23,6 +23,48 @@ Sparqlvoc offers five algorithms captured in five SHACL nodeshapes to generate a
 4. shp:SymbolSequence
 5. shp:CharacterSequence
 
+# Abstract
+The SPARQL Vocabulary provides a RDF-based formal representation of the SPARQL query language according to the SPARQL 1.1 specification https://www.w3.org/TR/sparql11-query/. It leverages modeling and generation of SPARQL queries through an abstract syntax tree (AST) framework. To this end, the vocabulary defines classes and properties to describe the various components of SPARQL queries, including SELECT, WHERE, FILTER, and UNION constructs. Additionally, it incorporates SHACL shapes for validating SPARQL query structures and supports algorithms for serializing SPARQL queries from RDF representations. This vocabulary enhances semantic data retrieval and management, bridging SPARQL with broader semantic web technologies.
+
+# Description
+
+The SPARQL Vocabulary formalizes the SPARQL query language, offering a structured representation of its syntax and semantics. The vocabulary models the SPARQL query language as an abstract syntax tree, consisting of the following nodes in a tree:
+
+- tree
+  - node
+    - non-terminal node
+    - terminal node
+        - keyword
+        - symbol
+        - symbol sequence
+        - character sequence
+
+As a source for the model we use the grammar from the SPARQL 1.1 specification: https://www.w3.org/TR/sparql11-query/#grammar.
+
+The vocabulary defines classes for different SPARQL query components, such as 'sparql:SelectQuery' for SELECT queries, 'sparql:WhereClause' for WHERE clauses, and properties to capture relationships between these components. Central to this vocabulary is the class 'sparql:QueryUnit', which serves as a building block for all types of queries. All SPARQL building blocks are in a way connected to this root node in the abstract syntax tree of SPARQL. Each query component is associated with a fragment of a SPARQL query. The fragment itself is modeled though the datatype property sparql:fragment, connected to each node of the tree. The vocabulary also includes SHACL shapes to validate the correctness of SPARQL query structures, ensuring that generated queries conform to the syntax rules of SPARQL. The SPARQL Vocabulary offers five algorithms captured in five SHACL nodeshapes to generate an actual SPARQL query based on its RDF-based abstract syntax tree. These five algorithms align with the above mentioned model of the abstract syntax tree and its components.
+
+1. shp:NonTerminalNode
+2. shp:Keyword
+3. shp:Symbol
+4. shp:SymbolSequence
+5. shp:CharacterSequence
+
+These shapes allow for the creation of well-formed queries that can be efficiently executed against RDF data stores. This comprehensive approach facilitates the generation of SPARQL queries from RDF representations, allowing users to leverage semantic technologies for effective data querying and retrieval.
+
+# Introduction
+
+In the rapidly evolving landscape of semantic web technologies, the ability to query and manipulate RDF data effectively is paramount. As organizations seek to harness the power of linked data and knowledge graphs, they encounter the need for robust frameworks that facilitate the creation, validation, and execution of SPARQL queries. The SPARQL Vocabulary addresses this necessity by providing a structured approach to model and generate SPARQL queries through an abstract syntax tree representation, enhancing the agility and precision of data retrieval operations.
+
+# Background
+Organizations today are inundated with data from a multitude of sources, necessitating effective querying techniques to extract meaningful insights. The complexity of SPARQL, with its various query forms and constructs, presents challenges for users seeking to create well-structured queries. As the demand for semantic interoperability and linked data increases, there is a pressing need for frameworks that facilitate SPARQL query generation while ensuring adherence to semantic web standards. The SPARQL Vocabulary meets these challenges head-on, offering a formalized structure for both novice and experienced users to construct SPARQL queries with confidence.
+
+# Objective
+To address the challenges of SPARQL query generation and validation, we introduce the SPARQL Vocabulary - a transformative framework designed to empower users in mastering SPARQL query creation. This vocabulary enables users to (1) model and represent SPARQL query constructs, (2) generate and validate SPARQL queries programmatically, and (3) ensure compliance with SPARQL syntax rules. By leveraging the power of RDF and the flexibility of an abstract syntax tree, the SPARQL Vocabulary enhances the efficiency and accuracy of data retrieval in semantic web applications, fostering greater insights from linked data resources.
+
+# Audience
+This document is intended for a diverse audience of software developers, data scientists, semantic web practitioners, and anyone involved in querying and managing RDF data. It aims to support users seeking to enhance their understanding and application of SPARQL within the context of semantic technologies.
+
+
 # Status
 
 Unstable & unfinished. Work in progress.
