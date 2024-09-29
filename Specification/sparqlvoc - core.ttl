@@ -16,7 +16,6 @@ prefix status: <http://purl.org/adms/status/>
 prefix target: <http://www.w3.org/ns/sparql#model/target/>
 prefix vann: <http://purl.org/vocab/vann/>
 prefix void: <http://rdfs.org/ns/void#>
-prefix xml: <http://www.w3.org/XML/1998/namespace#> 
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 
@@ -88,7 +87,1241 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
     skos:prefLabel 'Abstract Syntax Tree'@en;
     rdfs:isDefinedBy sparql:.
 
-  
+  section:Node
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/'^^xsd:anyURI;
+    skos:prefLabel 'Node'@en;
+    rdfs:isDefinedBy sparql:.
+
+  section:NonTerminalNode
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/'^^xsd:anyURI;
+    skos:prefLabel 'Non terminal node'@en;
+    rdfs:isDefinedBy sparql:.
+
+  section:TerminalNode
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/'^^xsd:anyURI;
+    skos:prefLabel 'Terminal node'@en;
+    rdfs:isDefinedBy sparql:.
+
+  section:Keyword
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/'^^xsd:anyURI;
+    skos:prefLabel 'Keyword'@en;
+    rdfs:isDefinedBy sparql:.
+
+  section:Symbol
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/'^^xsd:anyURI;
+    skos:prefLabel 'Symbol'@en;
+    rdfs:isDefinedBy sparql:.
+
+  section:SymbolSequence
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/'^^xsd:anyURI;
+    skos:prefLabel 'Symbol sequence'@en;
+    rdfs:isDefinedBy sparql:.    
+
+  section:CharacterSequence
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/'^^xsd:anyURI;
+    skos:prefLabel 'Character sequence'@en;
+    rdfs:isDefinedBy sparql:.    
+
+section:Query
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rQuery'^^xsd:anyURI;
+    dct:identifier '2';
+    skos:prefLabel 'Query'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:UpdateUnit
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rUpdateUnit'^^xsd:anyURI;
+    dct:identifier '3';
+    skos:prefLabel 'Update unit'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Prologue
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPrologue'^^xsd:anyURI;
+    dct:identifier '4';
+    skos:prefLabel 'Prologue'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:BaseDecl
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rBaseDecl'^^xsd:anyURI;
+    dct:identifier '5';
+    skos:prefLabel 'Base declaration'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PrefixDecl
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPrefixDecl'^^xsd:anyURI;
+    dct:identifier '6';
+    skos:prefLabel 'Prefix declaration'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:SelectQuery
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rSelectQuery'^^xsd:anyURI;
+    dct:identifier '7';
+    skos:prefLabel 'Select query'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:SubSelect
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rSubSelect'^^xsd:anyURI;
+    dct:identifier '8';
+    skos:prefLabel 'Sub-select'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:SelectClause
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rSelectClause'^^xsd:anyURI;
+    dct:identifier '9';
+    skos:prefLabel 'Select clause'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:ConstructQuery
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rConstructQuery'^^xsd:anyURI;
+    dct:identifier '10';
+    skos:prefLabel 'Construct query'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:DescribeQuery
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDescribeQuery'^^xsd:anyURI;
+    dct:identifier '11';
+    skos:prefLabel 'Describe query'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:AskQuery
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rAskQuery'^^xsd:anyURI;
+    dct:identifier '12';
+    skos:prefLabel 'Ask query'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:DatasetClause
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDatasetClause'^^xsd:anyURI;
+    dct:identifier '13';
+    skos:prefLabel 'Dataset clause'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:DefaultGraphClause
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDefaultGraphClause'^^xsd:anyURI;
+    dct:identifier '14';
+    skos:prefLabel 'Default graph clause'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:NamedGraphClause
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rNamedGraphClause'^^xsd:anyURI;
+    dct:identifier '15';
+    skos:prefLabel 'Named graph clause'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:SourceSelector
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rSourceSelector'^^xsd:anyURI;
+    dct:identifier '16';
+    skos:prefLabel 'Source selector'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:WhereClause
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rWhereClause'^^xsd:anyURI;
+    dct:identifier '17';
+    skos:prefLabel 'Where clause'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:SolutionModifier
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rSolutionModifier'^^xsd:anyURI;
+    dct:identifier '18';
+    skos:prefLabel 'Solution modifier'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:GroupClause
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rGroupClause'^^xsd:anyURI;
+    dct:identifier '19';
+    skos:prefLabel 'Group clause'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:GroupCondition
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rGroupCondition'^^xsd:anyURI;
+    dct:identifier '20';
+    skos:prefLabel 'Group condition'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:HavingClause
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rHavingClause'^^xsd:anyURI;
+    dct:identifier '21';
+    skos:prefLabel 'Having clause'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:HavingCondition
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rHavingCondition'^^xsd:anyURI;
+    dct:identifier '22';
+    skos:prefLabel 'Having condition'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:OrderClause
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rOrderClause'^^xsd:anyURI;
+    dct:identifier '23';
+    skos:prefLabel 'Order clause'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:OrderCondition
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rOrderCondition'^^xsd:anyURI;
+    dct:identifier '24';
+    skos:prefLabel 'Order condition'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:LimitOffsetClauses
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rLimitOffsetClauses'^^xsd:anyURI;
+    dct:identifier '25';
+    skos:prefLabel 'Limit/Offset clauses'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:LimitClause
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rLimitClause'^^xsd:anyURI;
+    dct:identifier '26';
+    skos:prefLabel 'Limit clause'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:OffsetClause
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rOffsetClause'^^xsd:anyURI;
+    dct:identifier '27';
+    skos:prefLabel 'Offset clause'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:ValuesClause
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rValuesClause'^^xsd:anyURI;
+    dct:identifier '28';
+    skos:prefLabel 'Values clause'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Update
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rUpdate'^^xsd:anyURI;
+    dct:identifier '29';
+    skos:prefLabel 'Update'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Update1
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rUpdate1'^^xsd:anyURI;
+    dct:identifier '30';
+    skos:prefLabel 'Update1'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Load
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rLoad'^^xsd:anyURI;
+    dct:identifier '31';
+    skos:prefLabel 'Load'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Clear
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rClear'^^xsd:anyURI;
+    dct:identifier '32';
+    skos:prefLabel 'Clear'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Drop
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDrop'^^xsd:anyURI;
+    dct:identifier '33';
+    skos:prefLabel 'Drop'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Create
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rCreate'^^xsd:anyURI;
+    dct:identifier '34';
+    skos:prefLabel 'Create'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Add
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rAdd'^^xsd:anyURI;
+    dct:identifier '35';
+    skos:prefLabel 'Add'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Move
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rMove'^^xsd:anyURI;
+    dct:identifier '36';
+    skos:prefLabel 'Move'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Copy
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rCopy'^^xsd:anyURI;
+    dct:identifier '37';
+    skos:prefLabel 'Copy'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:InsertData
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rInsertData'^^xsd:anyURI;
+    dct:identifier '38';
+    skos:prefLabel 'Insert data'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:DeleteData
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDeleteData'^^xsd:anyURI;
+    dct:identifier '39';
+    skos:prefLabel 'Delete data'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:DeleteWhere
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDeleteWhere'^^xsd:anyURI;
+    dct:identifier '40';
+    skos:prefLabel 'Delete where'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Modify
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rModify'^^xsd:anyURI;
+    dct:identifier '41';
+    skos:prefLabel 'Modify'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:DeleteClause
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDeleteClause'^^xsd:anyURI;
+    dct:identifier '42';
+    skos:prefLabel 'Delete clause'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:InsertClause
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rInsertClause'^^xsd:anyURI;
+    dct:identifier '43';
+    skos:prefLabel 'Insert clause'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:UsingClause
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rUsingClause'^^xsd:anyURI;
+    dct:identifier '44';
+    skos:prefLabel 'Using clause'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:GraphOrDefault
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rGraphOrDefault'^^xsd:anyURI;
+    dct:identifier '45';
+    skos:prefLabel 'Graph or default'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:GraphRef
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rGraphRef'^^xsd:anyURI;
+    dct:identifier '46';
+    skos:prefLabel 'Graph reference'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:GraphRefAll
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rGraphRefAll'^^xsd:anyURI;
+    dct:identifier '47';
+    skos:prefLabel 'Graph reference all'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:QuadPattern
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rQuadPattern'^^xsd:anyURI;
+    dct:identifier '48';
+    skos:prefLabel 'Quad pattern'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:QuadData
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rQuadData'^^xsd:anyURI;
+    dct:identifier '49';
+    skos:prefLabel 'Quad data'@en;
+    rdfs:isDefinedBy sparql:.
+    
+section:Quads
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rQuads'^^xsd:anyURI;
+    dct:identifier '50';
+    skos:prefLabel 'Quads'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:QuadsNotTriples
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rQuadsNotTriples'^^xsd:anyURI;
+    dct:identifier '51';
+    skos:prefLabel 'Quads (Not Triples)'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:TriplesTemplate
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rTriplesTemplate'^^xsd:anyURI;
+    dct:identifier '52';
+    skos:prefLabel 'Triples template'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:GroupGraphPattern
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rGroupGraphPattern'^^xsd:anyURI;
+    dct:identifier '53';
+    skos:prefLabel 'Group graph pattern'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:GroupGraphPatternSub
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rGroupGraphPatternSub'^^xsd:anyURI;
+    dct:identifier '54';
+    skos:prefLabel 'Group graph pattern sub'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:TriplesBlock
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rTriplesBlock'^^xsd:anyURI;
+    dct:identifier '55';
+    skos:prefLabel 'Triples block'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:GraphPatternNotTriples
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rGraphPatternNotTriples'^^xsd:anyURI;
+    dct:identifier '56';
+    skos:prefLabel 'Graph pattern not triples'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:OptionalGraphPattern
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rOptionalGraphPattern'^^xsd:anyURI;
+    dct:identifier '57';
+    skos:prefLabel 'Optional graph pattern'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:GraphGraphPattern
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rGraphGraphPattern'^^xsd:anyURI;
+    dct:identifier '58';
+    skos:prefLabel 'Graph graph pattern'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:ServiceGraphPattern
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rServiceGraphPattern'^^xsd:anyURI;
+    dct:identifier '59';
+    skos:prefLabel 'Service graph pattern'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Bind
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rBind'^^xsd:anyURI;
+    dct:identifier '60';
+    skos:prefLabel 'Bind'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:InlineData
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rInlineData'^^xsd:anyURI;
+    dct:identifier '61';
+    skos:prefLabel 'Inline data'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:DataBlock
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDataBlock'^^xsd:anyURI;
+    dct:identifier '62';
+    skos:prefLabel 'Data block'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:InlineDataOneVar
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rInlineDataOneVar'^^xsd:anyURI;
+    dct:identifier '63';
+    skos:prefLabel 'Inline data one variable'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:InlineDataFull
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rInlineDataFull'^^xsd:anyURI;
+    dct:identifier '64';
+    skos:prefLabel 'Inline data full'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:DataBlockValue
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDataBlockValue'^^xsd:anyURI;
+    dct:identifier '65';
+    skos:prefLabel 'Data block value'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:MinusGraphPattern
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rMinusGraphPattern'^^xsd:anyURI;
+    dct:identifier '66';
+    skos:prefLabel 'Minus graph pattern'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:GroupOrUnionGraphPattern
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rGroupOrUnionGraphPattern'^^xsd:anyURI;
+    dct:identifier '67';
+    skos:prefLabel 'Group or union graph pattern'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Filter
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rFilter'^^xsd:anyURI;
+    dct:identifier '68';
+    skos:prefLabel 'Filter'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Constraint
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rConstraint'^^xsd:anyURI;
+    dct:identifier '69';
+    skos:prefLabel 'Constraint'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:FunctionCall
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rFunctionCall'^^xsd:anyURI;
+    dct:identifier '70';
+    skos:prefLabel 'Function call'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:ArgList
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rArgList'^^xsd:anyURI;
+    dct:identifier '71';
+    skos:prefLabel 'Argument list'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:ExpressionList
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rExpressionList'^^xsd:anyURI;
+    dct:identifier '72';
+    skos:prefLabel 'Expression list'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:ConstructTemplate
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rConstructTemplate'^^xsd:anyURI;
+    dct:identifier '73';
+    skos:prefLabel 'Construct template'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:ConstructTriples
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rConstructTriples'^^xsd:anyURI;
+    dct:identifier '74';
+    skos:prefLabel 'Construct triples'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:TriplesSameSubject
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rTriplesSameSubject'^^xsd:anyURI;
+    dct:identifier '75';
+    skos:prefLabel 'Triples same subject'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PropertyList
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPropertyList'^^xsd:anyURI;
+    dct:identifier '76';
+    skos:prefLabel 'Property list'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PropertyListNotEmpty
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPropertyListNotEmpty'^^xsd:anyURI;
+    dct:identifier '77';
+    skos:prefLabel 'Property list not empty'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Verb
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rVerb'^^xsd:anyURI;
+    dct:identifier '78';
+    skos:prefLabel 'Verb'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:ObjectList
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rObjectList'^^xsd:anyURI;
+    dct:identifier '79';
+    skos:prefLabel 'Object list'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Object
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rObject'^^xsd:anyURI;
+    dct:identifier '80';
+    skos:prefLabel 'Object'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:TriplesSameSubjectPath
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rTriplesSameSubjectPath'^^xsd:anyURI;
+    dct:identifier '81';
+    skos:prefLabel 'Triples same subject path'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PropertyListPath
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPropertyListPath'^^xsd:anyURI;
+    dct:identifier '82';
+    skos:prefLabel 'Property list path'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PropertyListPathNotEmpty
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPropertyListPathNotEmpty'^^xsd:anyURI;
+    dct:identifier '83';
+    skos:prefLabel 'Property list path not empty'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:VerbPath
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rVerbPath'^^xsd:anyURI;
+    dct:identifier '84';
+    skos:prefLabel 'Verb path'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:VerbSimple
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rVerbSimple'^^xsd:anyURI;
+    dct:identifier '85';
+    skos:prefLabel 'Verb simple'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:ObjectListPath
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rObjectListPath'^^xsd:anyURI;
+    dct:identifier '86';
+    skos:prefLabel 'Object list path'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:ObjectPath
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rObjectPath'^^xsd:anyURI;
+    dct:identifier '87';
+    skos:prefLabel 'Object path'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Path
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPath'^^xsd:anyURI;
+    dct:identifier '88';
+    skos:prefLabel 'Path'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PathAlternative
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPathAlternative'^^xsd:anyURI;
+    dct:identifier '89';
+    skos:prefLabel 'Path alternative'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PathSequence
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPathSequence'^^xsd:anyURI;
+    dct:identifier '90';
+    skos:prefLabel 'Path sequence'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PathElt
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPathElt'^^xsd:anyURI;
+    dct:identifier '91';
+    skos:prefLabel 'Path element'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PathEltOrInverse
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPathEltOrInverse'^^xsd:anyURI;
+    dct:identifier '92';
+    skos:prefLabel 'Path element or inverse'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PathMod
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPathMod'^^xsd:anyURI;
+    dct:identifier '93';
+    skos:prefLabel 'Path modifier'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PathPrimary
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPathPrimary'^^xsd:anyURI;
+    dct:identifier '94';
+    skos:prefLabel 'Path primary'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PathNegatedPropertySet
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPathNegatedPropertySet'^^xsd:anyURI;
+    dct:identifier '95';
+    skos:prefLabel 'Path negated property set'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PathOneInPropertySet
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPathOneInPropertySet'^^xsd:anyURI;
+    dct:identifier '96';
+    skos:prefLabel 'Path one in property set'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Integer
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rInteger'^^xsd:anyURI;
+    dct:identifier '97';
+    skos:prefLabel 'Integer'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:TriplesNode
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rTriplesNode'^^xsd:anyURI;
+    dct:identifier '98';
+    skos:prefLabel 'Triples node'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:BlankNodePropertyList
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rBlankNodePropertyList'^^xsd:anyURI;
+    dct:identifier '99';
+    skos:prefLabel 'Blank node property list'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:TriplesNodePath
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rTriplesNodePath'^^xsd:anyURI;
+    dct:identifier '100';
+    skos:prefLabel 'Triples node path'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:ExistsFunc
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rExistsFunc'^^xsd:anyURI;
+    dct:identifier '125';
+    skos:prefLabel 'Exists function'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:NotExistsFunc
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rNotExistsFunc'^^xsd:anyURI;
+    dct:identifier '126';
+    skos:prefLabel 'Not exists function'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:Aggregate
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rAggregate'^^xsd:anyURI;
+    dct:identifier '127';
+    skos:prefLabel 'Aggregate'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:iriOrFunction
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#ririOrFunction'^^xsd:anyURI;
+    dct:identifier '128';
+    skos:prefLabel 'IRI or function'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:RDFLiteral
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rRDFLiteral'^^xsd:anyURI;
+    dct:identifier '129';
+    skos:prefLabel 'RDF literal'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:NumericLiteral
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rNumericLiteral'^^xsd:anyURI;
+    dct:identifier '130';
+    skos:prefLabel 'Numeric literal'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:NumericLiteralUnsigned
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rNumericLiteralUnsigned'^^xsd:anyURI;
+    dct:identifier '131';
+    skos:prefLabel 'Unsigned numeric literal'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:NumericLiteralPositive
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rNumericLiteralPositive'^^xsd:anyURI;
+    dct:identifier '132';
+    skos:prefLabel 'Positive numeric literal'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:NumericLiteralNegative
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rNumericLiteralNegative'^^xsd:anyURI;
+    dct:identifier '133';
+    skos:prefLabel 'Negative numeric literal'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:BooleanLiteral
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rBooleanLiteral'^^xsd:anyURI;
+    dct:identifier '134';
+    skos:prefLabel 'Boolean literal'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:String
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rString'^^xsd:anyURI;
+    dct:identifier '135';
+    skos:prefLabel 'String'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:iri
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#riri'^^xsd:anyURI;
+    dct:identifier '136';
+    skos:prefLabel 'IRI'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PrefixedName
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPrefixedName'^^xsd:anyURI;
+    dct:identifier '137';
+    skos:prefLabel 'Prefixed name'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:BlankNode
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rBlankNode'^^xsd:anyURI;
+    dct:identifier '138';
+    skos:prefLabel 'Blank node'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:IRIREF
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rIRIREF'^^xsd:anyURI;
+    dct:identifier '139';
+    skos:prefLabel 'IRI reference'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PNAME_NS
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPNAME_NS'^^xsd:anyURI;
+    dct:identifier '140';
+    skos:prefLabel 'Prefix name namespace'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PNAME_LN
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPNAME_LN'^^xsd:anyURI;
+    dct:identifier '141';
+    skos:prefLabel 'Prefix name local part'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:BLANK_NODE_LABEL
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rBLANK_NODE_LABEL'^^xsd:anyURI;
+    dct:identifier '142';
+    skos:prefLabel 'Blank node label'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:VAR1
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rVAR1'^^xsd:anyURI;
+    dct:identifier '143';
+    skos:prefLabel 'Variable type 1'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:VAR2
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rVAR2'^^xsd:anyURI;
+    dct:identifier '144';
+    skos:prefLabel 'Variable type 2'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:LANGTAG
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rLANGTAG'^^xsd:anyURI;
+    dct:identifier '145';
+    skos:prefLabel 'Language tag'@en;
+    rdfs:isDefinedBy sparql:.
+
+
+section:INTEGER
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rINTEGER'^^xsd:anyURI;
+    dct:identifier '146';
+    skos:prefLabel 'Integer'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:DECIMAL
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDECIMAL'^^xsd:anyURI;
+    dct:identifier '147';
+    skos:prefLabel 'Decimal'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:DOUBLE
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDOUBLE'^^xsd:anyURI;
+    dct:identifier '148';
+    skos:prefLabel 'Double'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:INTEGER_POSITIVE
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rINTEGER_POSITIVE'^^xsd:anyURI;
+    dct:identifier '149';
+    skos:prefLabel 'Positive Integer'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:DECIMAL_POSITIVE
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDECIMAL_POSITIVE'^^xsd:anyURI;
+    dct:identifier '150';
+    skos:prefLabel 'Positive Decimal'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:DOUBLE_POSITIVE
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDOUBLE_POSITIVE'^^xsd:anyURI;
+    dct:identifier '151';
+    skos:prefLabel 'Positive Double'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:INTEGER_NEGATIVE
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rINTEGER_NEGATIVE'^^xsd:anyURI;
+    dct:identifier '152';
+    skos:prefLabel 'Negative Integer'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:DECIMAL_NEGATIVE
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDECIMAL_NEGATIVE'^^xsd:anyURI;
+    dct:identifier '153';
+    skos:prefLabel 'Negative Decimal'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:DOUBLE_NEGATIVE
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rDOUBLE_NEGATIVE'^^xsd:anyURI;
+    dct:identifier '154';
+    skos:prefLabel 'Negative Double'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:EXPONENT
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rEXPONENT'^^xsd:anyURI;
+    dct:identifier '155';
+    skos:prefLabel 'Exponent'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:STRING_LITERAL1
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rSTRING_LITERAL1'^^xsd:anyURI;
+    dct:identifier '156';
+    skos:prefLabel 'String Literal 1'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:STRING_LITERAL2
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rSTRING_LITERAL2'^^xsd:anyURI;
+    dct:identifier '157';
+    skos:prefLabel 'String Literal 2'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:STRING_LITERAL_LONG1
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rSTRING_LITERAL_LONG1'^^xsd:anyURI;
+    dct:identifier '158';
+    skos:prefLabel 'Long String Literal 1'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:STRING_LITERAL_LONG2
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rSTRING_LITERAL_LONG2'^^xsd:anyURI;
+    dct:identifier '159';
+    skos:prefLabel 'Long String Literal 2'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:ECHAR
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rECHAR'^^xsd:anyURI;
+    dct:identifier '160';
+    skos:prefLabel 'Escape Character'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:NIL
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rNIL'^^xsd:anyURI;
+    dct:identifier '161';
+    skos:prefLabel 'Nil'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:WS
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rWS'^^xsd:anyURI;
+    dct:identifier '162';
+    skos:prefLabel 'Whitespace'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:ANON
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rANON'^^xsd:anyURI;
+    dct:identifier '163';
+    skos:prefLabel 'Anonymous'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PN_CHARS_BASE
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPN_CHARS_BASE'^^xsd:anyURI;
+    dct:identifier '164';
+    skos:prefLabel 'PN Characters Base'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PN_CHARS_U
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPN_CHARS_U'^^xsd:anyURI;
+    dct:identifier '165';
+    skos:prefLabel 'PN Characters U'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:VARNAME
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rVARNAME'^^xsd:anyURI;
+    dct:identifier '166';
+    skos:prefLabel 'Variable Name'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PN_CHARS
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPN_CHARS'^^xsd:anyURI;
+    dct:identifier '167';
+    skos:prefLabel 'PN Characters'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PN_PREFIX
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPN_PREFIX'^^xsd:anyURI;
+    dct:identifier '168';
+    skos:prefLabel 'PN Prefix'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PN_LOCAL
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPN_LOCAL'^^xsd:anyURI;
+    dct:identifier '169';
+    skos:prefLabel 'PN Local'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PLX
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPLX'^^xsd:anyURI;
+    dct:identifier '170';
+    skos:prefLabel 'PLX'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PERCENT
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPERCENT'^^xsd:anyURI;
+    dct:identifier '171';
+    skos:prefLabel 'Percent'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:HEX
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rHEX'^^xsd:anyURI;
+    dct:identifier '172';
+    skos:prefLabel 'Hexadecimal'@en;
+    rdfs:isDefinedBy sparql:.
+
+section:PN_LOCAL_ESC
+    a dcm:Text;
+    dct:isPartOf standard:sparql;
+    dct:source 'https://www.w3.org/TR/sparql11-query/#rPN_LOCAL_ESC'^^xsd:anyURI;
+    dct:identifier '173';
+    skos:prefLabel 'PN Local Escape'@en;
+    rdfs:isDefinedBy sparql:.
+ 
+    
 ### SPARQL voc ###
 
 ### Classes ###
